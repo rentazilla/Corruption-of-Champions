@@ -253,7 +253,7 @@ internal function minotaurDeFeet():void {
 	}
 	if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00326] >= 25 && player.minotaurNeed()) minotaurGangBadEnd();
 	else if(player.pregnancyIncubation > 0 && player.pregnancyIncubation <= 216) {
-		if(player.pregnancyIncubation > 120) analSpearSemiPregMinotaurGangbang();
+		if(player.pregnancyIncubation > 120 && !player.assholeOffLimits()) analSpearSemiPregMinotaurGangbang();
 		else loseToMinoMobVeryPregnant()
 	}
 	else nonAddictMinotaurGangBang();
@@ -284,6 +284,12 @@ private function nonAddictMinotaurGangBang():void {
 		else outputText("tailhole", false);
 		outputText(".  ", false);
 	}
+	
+	if(player.assholeOffLimits()) {
+		// XXX assholeOffLimits: Revise when we know what this actually looks like
+		outputText("The huge beast grunts with surprise as he encounters your buttplug, but fat fingers reach down and pry it out of you, tossing it aside.  ");
+	}
+	
 	outputText("The cruel, flared tip of the horse-like cock batters at the unyielding entrance for a moment, slowly stretching your rectal orifice wider and wider with each painful push.  Gasping in pain, you cry out in anguish before transitioning into a low moan.  The dripping member before you plunges into your open orifice, pre-cum lubricating its passage as the flare is pushed to the back of your throat.  Ordinarily your body might try to reject such an intrusion, but all you feel is a numb sort of acceptance as you relax your throat to let the pre-cum roll into your belly.", false);
 	outputText("\n\n", false);
 	
@@ -351,7 +357,7 @@ private function nonAddictMinotaurGangBang():void {
 		if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00326] <= 5) outputText("You open your mouth wide, licking your lips until they're shiny and inviting enough for the stud to fuck.  He does not disappoint.  The fat head pushes past your puckered cock-suckers and slides into your throat, the passage eased by the leavings of the one before him.  You sigh happily and begin to suck his cock like a lollipop, though all you want is his creamy center.  The others crowd around, touching themselves and waiting for another turn.  ", false);
 		else outputText("You open your mouth wide, licking your lips until they're shiny and inviting enough for the stud to fuck.  He does not disappoint.  The fat head pushes past your puckered cock-suckers and slides into your throat, the passage eased by the leavings of the one before him.  You sigh happily and begin to suck his cock like a lollipop, though all you want is his creamy center.  Two more swollen fuck-sticks find their way to your waiting holes, and you giggle in dizzy bliss when you're packed full of your sons spunk once again.  ", false);
 	}
-	outputText("You black out at that point, but when you wake up soaked in cum with a bottle of it next to you, you know it was a good night.", false);
+	outputText("You black out at that point, but when you wake up soaked in cum with a bottle of it" + (player.assholeOffLimits() ? " and a goo-splattered plug" : "") + " next to you, you know it was a good night.", false);
 	//Force cum bottle loot!
 	flags[kFLAGS.BONUS_ITEM_AFTER_COMBAT_ID] = consumables.MINOCUM.id;
 	//Preggers chance!
@@ -722,7 +728,14 @@ private function victoryAllThePenetrationsMinotaurGangBang():void {
 	
 	outputText("Within seconds a crowd has formed behind you.  Numerous hands squeeze and caress your " + buttDescript() + ", a few even daring to press at the tight ring of your " + assholeDescript() + ".  They jostle around a bit as they fight over the honor of penetrating your back door, but a winner is selected before you bore of the spectacle.  He grabs your " + buttDescript() + " in both hands to aid in his efforts to align his cock with your pucker, squeezing softly.\n\n", false);
 	
-	outputText("The beast-man finally hits your anus with his tip and pushes forward.  ", false);
+	if(player.assholeOffLimits()) {
+		// XXX assholeOffLimits: Revise when we know what this actually looks like
+		outputText("The beast-man tugs the plug from your ass with fingers thicker than the plug itself.  He finally hits your anus with his tip and pushes forward.  ", false);
+	}
+	else {
+		outputText("The beast-man finally hits your anus with his tip and pushes forward.  ", false);
+	}
+	
 	if(player.analCapacity() < 40) outputText("Your " + assholeDescript() + " is so tight that he's forced to push and release over and over.  The painful penetration drags on and on as he widens your hole to accept his monstrous cock.", false);
 	else if(player.analCapacity() < 60) outputText("Your " + assholeDescript() + " slowly widens to accept the cock that's being deposited into its depths.  You find yourself somewhat grateful that you've been stretched enough to prevent this from being painful.", false);
 	else outputText("Your " + assholeDescript() + " devours the cock easily.  The only thing even close to a tight fit is the feeling of your pucker being stretched at his very base.", false);

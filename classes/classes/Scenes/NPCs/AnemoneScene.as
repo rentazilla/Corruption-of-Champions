@@ -116,6 +116,7 @@ package classes.Scenes.NPCs
 				//(change "If you do, which of your parts" to "If you do, which part" in pre-sex choice menu)
 				var cockRape:Function =null;
 				var vaginaRape:Function =null;
+				var yourButtRape:Function = null;
 				var anal:Function =null;
 				var eggs:Function =null;
 				if (player.canOviposit()) eggs = anemoneGetsLayedByBeePositor;
@@ -124,9 +125,10 @@ package classes.Scenes.NPCs
 				//Normal male: -requires dick of area < 36
 				if (player.cockTotal() > 0) cockRape = rapeAnemoneWithDick;
 				if (player.hasVagina()) vaginaRape = rapeAnemoneWithPussy;
+				if (!player.assholeOffLimits()) yourButtRape = victoryButtholeRape;
 				var bikiniTits:Function =null;
 				if (player.hasVagina() && player.biggestTitSize() >= 4 && player.armor is LustyMaidensArmor) bikiniTits = (player.armor as LustyMaidensArmor).lustyMaidenPaizuri;
-				choices("Your Ass", victoryButtholeRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "Her Butt", anal, "Lay Egg", eggs, "", 0, "", 0, "", 0, "B.Titfuck", bikiniTits, "Leave", cleanupAfterCombat);
+				choices("Your Ass", yourButtRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "Her Butt", anal, "Lay Egg", eggs, "", 0, "", 0, "", 0, "B.Titfuck", bikiniTits, "Leave", cleanupAfterCombat);
 			}
 			else cleanupAfterCombat();
 		}
@@ -389,7 +391,7 @@ package classes.Scenes.NPCs
 				return;
 			}
 			//loss, male:
-			if (player.cockTotal() > 0) {
+			if (player.cockTotal() > 0 && (player.cockThatFits(36) >= 0 || !player.assholeOffLimits())) {
 				outputText(images.showImage("anemone-male-fuck"), false);
 				if (player.cockThatFits(36) >= 0) {
 					outputText("Shivering, you slump before the anemone and begin trying to remove your " + player.armorName + ".  She claps and peals happily, splashing over to you.  Pushing your trembling hands out of the way, she unfastens your garments and pulls them free of you, taking the opportunity to run a hand up your " + cockDescript(x) + ".  ", false);
@@ -535,7 +537,7 @@ package classes.Scenes.NPCs
 					cleanupAfterCombat();
 				}
 			}
-			//loss rape, vaginal (only full females):
+			//loss rape, vaginal (only full females or herms with a buttplug and no small cocks):
 			else {
 				outputText(images.showImage("anemone-female-fuck"), false);
 				outputText("Shivering, you fall to your knees before the anemone and begin trying to remove your " + player.armorName + ".  She claps and peals happily, splashing over to you.  Pushing your trembling hands out of the way, she unfastens your garments and pulls them free of you, but her bright expression dims a bit when she sees only your " + vaginaDescript(0) + ".", false);
@@ -628,10 +630,12 @@ package classes.Scenes.NPCs
 				outputText("As her fondling devolves into genuine masturbation you realize this would be a good opportunity to take care of your own lusts.  If you do, how will you do it?", false);
 				var cockRape:Function =null;
 				var vaginaRape:Function =null;
+				var buttRape:Function = null
 				//Normal male: -requires dick of area < 36
 				if (player.cockTotal() > 0) cockRape = rapeAnemoneWithDick;
 				if (player.hasVagina()) vaginaRape = rapeAnemoneWithPussy;
-				simpleChoices("Your ass", victoryButtholeRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "", 0, "Leave", 13);
+				if (!player.assholeOffLimits()) buttRape = victoryButtholeRape;
+				simpleChoices("Your ass", buttRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "", 0, "Leave", 13);
 				return;
 			}
 			doNext(13);

@@ -116,6 +116,11 @@ private function RoxanneChooseApproachOrRepeat():void {
 		
 	}
 	else outputText("If you're reading this, something broke.", false);
+	
+	if(player.assholeOffLimits()) {
+		outputText("  <b>If you do, you're taking a very big risk with your [asshole]...</b>");
+	}
+	
 	//Clear the 'are you losing the contest intionally flag'
 	flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00226] = 0;
 	simpleChoices("Yes",roxanneDrinkingContest,"No",2855,"Lose",2884,"",0,"",0);
@@ -201,9 +206,11 @@ public function roxanneDrinkingContest():void {
 		//[Fellatio] [Cunnilingus] [Rimming]
 		var fellatio:Function = null;
 		var cunnilingus:Function = null;
+		var rimjob:Function = null;
 		if(player.hasCock()) fellatio = roxanneGivesABlowjob;
 		if(player.hasVagina()) cunnilingus = roxanneCunnilingus;
-		simpleChoices("Cunnilingus",cunnilingus,"Fellatio",fellatio,"Rimming",roxanneRimjob,"",0,"",0);
+		if(!player.assholeOffLimits()) rimjob = roxanneRimjob;
+		simpleChoices("Cunnilingus",cunnilingus,"Fellatio",fellatio,"Rimming",rimjob,"",0,"",0);
 	}
 }
 

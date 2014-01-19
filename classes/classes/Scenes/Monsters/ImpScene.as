@@ -465,7 +465,7 @@ package classes.Scenes.Monsters
 				}
 				outputText("The imp is pushing deeper and deeper and in moments you cry out again as you feel first its hooves and then its " + eCockDescript(0) + " tearing open your cervix and bottoming out in your womb.  ", false);
 				//<<Asshole large+>>
-				if(player.analCapacity() >= 35) {
+				if(player.analCapacity() >= 35 && !player.assholeOffLimits()) {
 					outputText("When the imp realizes it cannot go any further you feel its hands against your asshole, and your eyes go wide in realization of what it is planning on doing.  Lubed up by your now drooling juices, the fist pushes hard into your " + assholeDescript() + ", shoving past your ring-muscles.  ", false);
 					//<<Assole <gaping, Cor <80>>
 					if(player.ass.analLooseness < 4 && player.cor < 80) outputText("Your howl of pain leaves your throat raw.  ", false);
@@ -1493,7 +1493,7 @@ package classes.Scenes.Monsters
 		}
 		public function loseToAnImpLord():void {
 			clearOutput();
-			if(player.hasVagina() && (player.gender == 2 || rand(2) == 0)) getRapedAsAGirl();
+			if(player.hasVagina() && (player.gender == 2 || player.assholeOffLimits() || rand(2) == 0)) getRapedAsAGirl();
 			else if(player.hasCock()) loseToImpLord();
 			else {
 				outputText("Taking a look at your defeated form, the imp lord snarls, \"<i>Useless,</i>\" before kicking you in the head, knocking you out cold.");
@@ -1685,20 +1685,32 @@ package classes.Scenes.Monsters
 			if(player.tallness > 48 && player.tallness < 60 && player.lowerBody != LOWER_BODY_TYPE_CENTAUR) {
 				outputText("\n\nYou allow the creature to stand, and lay back on the ground, patting your [chest] gently.  The aroused greater imp takes the hint, and crawls on top of you.  He quickly takes a [nipple] into his hungry waiting mouth.  He suckles gently, expertly milking you of your corrupt milk.  He's so good at it, you suspect he's done this several times before.  After a few minutes, he moves over to your next breast.  As he does you can feel his still rock hard, " + eCockDescript(0) + " poking at your nether regions.");
 				
-				outputText("\n\nYou grin, getting a wicked idea likely due to the pleasurable haze breastfeeding has given you.  You wrap your lower body around the imp's toned hips.  He looks up questioningly, unsure of your intentions.  You simple smirk and nod at him. The little demon's eyes lit up like Christmas, and he immediately thrusts his " + eCockDescript(0) + " into your [asshole] with no hesitation.  The sudden stretching would've been painful; luckily the breastfeeding euphoria numbed much of the pain.");
-				player.buttChange(monster.cockArea(0),true,true,false);
+				var orifice:String = player.assholeOffLimits() ? "vagina" : "asshole";
+				
+				outputText("\n\nYou grin, getting a wicked idea likely due to the pleasurable haze breastfeeding has given you.  You wrap your lower body around the imp's toned hips.  He looks up questioningly, unsure of your intentions.  You simple smirk and nod at him. The little demon's eyes lit up like Christmas, and he immediately thrusts his " + eCockDescript(0) + " into your [" + orifice + "] with no hesitation.  The sudden stretching would've been painful; luckily the breastfeeding euphoria numbed much of the pain.");
+				if(player.assholeOffLimits()) {
+					player.cuntChange(monster.cockArea(0),true,true,false);
+				}
+				else {
+					player.buttChange(monster.cockArea(0),true,true,false);
+				}
 				
 				outputText("\n\nThe imp wildly thrusts in and out of you, while simultaneously suckling your [nipple].  He uses both his hands to simultaneously massage your [chest], as well as keep himself steady.  He's making the massage a little rougher then you'd have liked, but you really can't complain about all the stimulation.  It's truly like nothing you've experienced before.");
 				
 				//if(player has a penis)
 				if(player.hasCock()) {
-					outputText("  [EachCock] twitches violently from the stimulation of your [asshole].  Pre-cum begins to dribble out of your " + cockDescript(0) + ".  You can't help but pant desperately as the warm pleasurable sensation of arousal fills your whole being.");
+					outputText("  [EachCock] twitches violently from the stimulation of your [" + orifice + "].  Pre-cum begins to dribble out of your " + cockDescript(0) + ".  You can't help but pant desperately as the warm pleasurable sensation of arousal fills your whole being.");
 				}
 				if(player.hasVagina()) {
-					outputText("  The intense stimulation of your [chest] is causing your [vagina] to become wet with girl juice... so much so that your femcum has started to seep down your taint towards your ass.  It's probably a good thing, as it's now become a lubricant for the greater imp's " + eCockDescript(0) + ".");
+					if(player.assholeOffLimits()) {
+						outputText("  The simultaneous fucking and sucking is causing your [vagina] to become wet with girl juice, soaking the greater imp's " + eCockDescript(0) + ".");
+					}
+					else {
+						outputText("  The intense stimulation of your [chest] is causing your [vagina] to become wet with girl juice... so much so that your femcum has started to seep down your taint towards your ass.  It's probably a good thing, as it's now become a lubricant for the greater imp's " + eCockDescript(0) + ".");
+					}
 				}
 				
-				outputText("\n\nAs the little demon suckles your second breast dry, you notice he's picked up the pace significantly.  You know what that means, and gently pull his head towards your [chest].  Cradling and petting his head, you clench your [asshole] encouragingly.  It only takes a few more thrusts for the imp to cum.  He floods your insides with his hot boy cream, and moans into your [chest].");
+				outputText("\n\nAs the little demon suckles your second breast dry, you notice he's picked up the pace significantly.  You know what that means, and gently pull his head towards your [chest].  Cradling and petting his head, you clench your [" + orifice + "] encouragingly.  It only takes a few more thrusts for the imp to cum.  He floods your insides with his hot boy cream, and moans into your [chest].");
 				
 				outputText("\n\nAfter riding out his orgasm, the imp flops backwards onto the ground, his cock now semi hard and coated in his juices.  He gives his slightly bloated belly a gentle, content rub.  You chuckle at him as he falls asleep contentedly.");
 				

@@ -208,12 +208,16 @@ private function helDefeatedCorrupt():void {
 	outputText("By the way she's huffing and puffing, you figure you've got a minute or so to take advantage of her while she's vulnerable...  Do you?", false);
 	//(Display Options: [Rape her Ass(for wangs)] [Get Rimjob] and [Wait])
 	var ass:Function = null;
+	var rim:Function = null;
 	if(player.hasCock() && player.cockThatFits(85) >= 0 && player.lust >= 33) ass = rapingHelsAssMeansYourCorruptCauseAnalIsEvil;
 	if(player.hasCock()) {
 		if(player.lust < 33) outputText("\n\nYou aren't turned on enough to fuck her right now.", false);
 		if(player.cockThatFits(85) == -1) outputText("\n\nYour dick is too big to fuck her anally.", false);
 	}
-	simpleChoices("Rape Ass",ass,"Get Rimjob",receiveCorruptRimjobsFromHel,"",0,"",0,"Wait",createCallBackFunction(helDefeatedNormal,true));
+	if(!player.assholeOffLimits()) {
+		rim = receiveCorruptRimjobsFromHel;
+	}
+	simpleChoices("Rape Ass",ass,"Get Rimjob",rim,"",0,"",0,"Wait",createCallBackFunction(helDefeatedNormal,true));
 	//(Wait takes you to \"<i>normal</i>\" post-victory, below)
 }
 //COMBAT – PLAYER WINS w/ LESS THAN 85 CORRUPTION
@@ -269,6 +273,9 @@ private function helFuckMenu():void {
 		getBlown = helBlowsYou;
 	}
 	var tailFuck:Function = helTailPegging;
+	if(player.assholeOffLimits()) {
+		tailFuck = null;
+	}
 	//ALTERNATE BODY BUTTONS
 	var bodyText:String = "";
 	var bodyButt:Function = null;
@@ -287,7 +294,7 @@ private function helFuckMenu():void {
 			bodyButt = nagaCoilsUpHel;
 			bodyText = "CoilFuck";
 		}
-		else {
+		else if(!player.assholeOffLimits()) {
 			bodyText2 = "TailsInButts";
 			bodyButt2 = nagaCoilsUpAnalNaga;
 		}
@@ -476,14 +483,16 @@ internal function getLickedByHel():void {
 
 	outputText("The salamander grips your " + buttDescript() + " with her smooth, scaly hands as she slips her wonderfully long tongue into your " + vaginaDescript(0) + ", flicking and tickling every inch of your sensitive cunt as she forces in inch after inch, until all eight are pushed inside you, driving you wild with lust as she lustily tonguefucks you.  Gripped by building pleasure, you push her onto her back and smash your cunt against her mouth, bucking your hips as she continues her skilled assault, making you shudder and writhe with pleasure.\n\n", false);
 
-	outputText("Even as she licks your " + vaginaDescript(0) + ", you feel a sudden pressure on your own back door. Looking over your shoulder, you see the very tip of her tail pressing against your " + assholeDescript() + ", seeking to double your pleasure.  You try and relax your sphincter, letting just a few inches into your ass, and even that is enough to make you gasp as her dexterous tip works in conjunction with her long tongue.\n\n", false);
+	if(!player.assholeOffLimits()) {
+		outputText("Even as she licks your " + vaginaDescript(0) + ", you feel a sudden pressure on your own back door. Looking over your shoulder, you see the very tip of her tail pressing against your " + assholeDescript() + ", seeking to double your pleasure.  You try and relax your sphincter, letting just a few inches into your ass, and even that is enough to make you gasp as her dexterous tip works in conjunction with her long tongue.\n\n", false);
+	}
 	
 	outputText("You can only endure a minute or so of this treatment before you come, screaming your pleasure as you thrust into her face, soaking her with girl cum", false);
 	if(player.hasCock()) {
 		outputText(" while " + sMultiCockDesc() + " shoots its load into her red hair", false);
 		if(player.cumQ() >= 500) outputText(", bathing her in streams of jism", false);
 	}
-	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, as does her tail, and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
+	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, " + (player.assholeOffLimits() ? "" : "as does her tail, ") + "and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
 
 	outputText("She gives a little laugh and strokes your cheek as you drift off into a contented, peaceful sleep.", false);
 	//(reduce lust, increment Helgate flag by 1)

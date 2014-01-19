@@ -189,7 +189,9 @@ package classes.Scenes.NPCs
 			//Scenes that require Ember to have a dick
 			if (flags[kFLAGS.EMBER_GENDER] == 1 || flags[kFLAGS.EMBER_GENDER] == 3) {
 				blowEmber = suckEmberCock;
-				catchAnal_ = catchAnal;
+				if(!player.assholeOffLimits()) {
+					catchAnal_ = catchAnal;
+				}
 				if (player.lust >= 33 && player.hasVagina()) {
 					getPenetrated = getPenetratedByEmberLastSexSceneWoooo;
 				}

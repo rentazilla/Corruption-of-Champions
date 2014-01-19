@@ -467,9 +467,14 @@ private function tailFuckGargoyleScene():void {
 	
 	outputText("\n\nNow firmly inside your depths, " + flags[kFLAGS.GAR_NAME] + " begins to wiggle her tail inside you, slithering a few inches in and out of your [vagina].  Encouraging her, you grasp her shoulders for support and push your cunt a little closer to her face.  Taking the hint, she snakes out her long tongue and gives your clitty a little flick, eliciting an immediate gasp of pleasure from you.  She's soon engaging in a double-assault on you, suckling on your [clit] one moment, and ramming her tail into your [vagina] the next.");
 	
-	outputText("\n\nJust as you feel your body begin to tense up in preparation for orgasm, the gargoyle slips her hands around your waist.  You're about to ask what she's doing when you feel a finger pressing up against your [asshole].  With her oral ministrations, it's hard to relax your sphincter to allow her entrance, but when she does finally get in, the feeling of her cold, smooth finger traveling up your rectal passage is incredible.");
+	if(player.assholeOffLimits()) {
+		outputText("\n\nBefore long, your eyes have rolled back in your head with pleasure.  Girlcum spurts from your cunt, splattering " + flags[kFLAGS.GAR_NAME] + "'s face with your juices as you cum.  Your cunt squeezes down on her appendage, trapping it inside you as your ride out the orgasm, bouncing on her rigid, rapidly-moistening tail until your body settles down.");
+	}
+	else {
+		outputText("\n\nJust as you feel your body begin to tense up in preparation for orgasm, the gargoyle slips her hands around your waist.  You're about to ask what she's doing when you feel a finger pressing up against your [asshole].  With her oral ministrations, it's hard to relax your sphincter to allow her entrance, but when she does finally get in, the feeling of her cold, smooth finger traveling up your rectal passage is incredible.");
 	
-	outputText("\n\nBefore you can get used to the anal intruder, your eyes have rolled back in your head with pleasure.  Girlcum spurts from your cunt, splattering " + flags[kFLAGS.GAR_NAME] + "'s face with your juices as you cum.  Your holes squeeze down on her appendages, trapping them inside you as your ride out the orgasm, bouncing on her rigid, rapidly-moistening tail until your body settles down.");
+		outputText("\n\nBefore you can get used to the anal intruder, your eyes have rolled back in your head with pleasure.  Girlcum spurts from your cunt, splattering " + flags[kFLAGS.GAR_NAME] + "'s face with your juices as you cum.  Your holes squeeze down on her appendages, trapping them inside you as your ride out the orgasm, bouncing on her rigid, rapidly-moistening tail until your body settles down.");
+	}
 	
 	outputText("\n\nWhen you've finished, you carefully extricate yourself from the gargoyle's tail and, a bit bow-legged, gather up your [armor].  By the time you're dressed, " + flags[kFLAGS.GAR_NAME] + "'s cleaned herself off and is eagerly awaiting some token of your approval.");
 	

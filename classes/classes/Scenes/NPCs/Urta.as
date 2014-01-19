@@ -314,9 +314,11 @@ public function urtaBarApproach():void {
 			}
 			//As per normal drunk-fawks
 			//simpleChoices("Jerkoff",getAPublicFacialFromUrta,"Anal Ride",takeUrtaInTheButtPublically,"Lay Eggs",temp,"Spank Her",spank,"Leave",barTelAdre);
+			var publicAnal:Function = null;
+			if(!player.assholeOffLimits()) publicAnal = takeUrtaInTheButtPublically;
 			menu();
 			addButton(0,"Jerkoff",getAPublicFacialFromUrta);
-			addButton(1,"Anal Ride",takeUrtaInTheButtPublically);
+			addButton(1,"Anal Ride",publicAnal);
 			addButton(2,"Lay Eggs",temp);
 			addButton(3,"Spank Her",spank);
 			if(flags[kFLAGS.RAPHEAL_COUNTDOWN_TIMER] == -2 && RaphaelLikes() && flags[kFLAGS.URTA_X_RAPHAEL_HAPPENED] == 0) {
@@ -1069,13 +1071,15 @@ internal function goBackToUrtasForLuvinzII():void {
 	//[M: VAGINAL] [F: RIDE] [GENDERLESS/M: RIDE ANAL]
 	var vaginal:Function = null;
 	var femaleRides:Function = null;
+	var analRides:Function = null;
 	if(player.totalCocks() > 0) vaginal = dudeFuckingUrtasCooch;
 	if(player.hasVagina()) femaleRides = rideUrtaTenderFemale;
+	if(!player.assholeOffLimits()) analRides = tenderTakeItUpTheAssFromUrta;
 	//simpleChoices("Fuck Vagina",vaginal,"Ride (Vaginal)",femaleRides,"Ride (Anal)",tenderTakeItUpTheAssFromUrta,"No Condoms",condomlessUrtaInHouseSmex,"",0);
 	menu();
 	addButton(0,"Fuck Vagina",vaginal);
 	addButton(1,"Ride(Vaginal)",femaleRides);
-	addButton(2,"Ride(Anal)",tenderTakeItUpTheAssFromUrta);
+	addButton(2,"Ride(Anal)",analRides);
 	addButton(3,"No Condoms",condomlessUrtaInHouseSmex);
 	if(player.isGoo() && player.skinType == SKIN_TYPE_GOO) addButton(4,"Goo (Weird)",urtaGooTesticleVoreRuinedOrgasms);
 }
@@ -1950,8 +1954,10 @@ internal function urtaHomeLuvLuvinsMenu():void {
 		outputText("  She could ride your vagina.");
 		addButton(0,"Ride Vag",rideUrtasCoochLoveyDovey);
 	}
-	outputText("  She could fuck your ass.");
-	addButton(1,"Ride Ass",rideUrtaInButtAtHomeLove);
+	if(!player.assholeOffLimits()) {
+		outputText("  She could fuck your ass.");
+		addButton(1,"Ride Ass",rideUrtaInButtAtHomeLove);
+	}
 	if(player.hasCock()) {
 		outputText("  Urta could 69 with you, let you fuck her pussy, or you could even fuck her cunt full of jizz and then lick her to a second cum.");
 		addButton(2,"69",oralFiestyUberExplosionUrta);
@@ -1963,7 +1969,7 @@ internal function urtaHomeLuvLuvinsMenu():void {
 		addButton(4,"No Condoms",condomlessUrtaInHouseSmex);
 	}
 	if(player.isGoo() && player.skinType == SKIN_TYPE_GOO) addButton(6,"Goo (Weird)",urtaGooTesticleVoreRuinedOrgasms);
-	if(flags[kFLAGS.URTA_PETPLAY_DONE] >= 0 && player.gender > 0) addButton(7,"Collar",urtaPetPlayDeletedForeverBecauseThirdProovedMeWrongAboutDice);
+	if(flags[kFLAGS.URTA_PETPLAY_DONE] >= 0 && player.gender > 0 && !player.assholeOffLimits()) addButton(7,"Collar",urtaPetPlayDeletedForeverBecauseThirdProovedMeWrongAboutDice);
 }
 
 private function urtasCoochiNeedsFuckedLove():void {

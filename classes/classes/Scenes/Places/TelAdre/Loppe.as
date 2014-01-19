@@ -877,8 +877,8 @@ private function loppeSexChoice(bakery:Boolean = false):void {
 		addButton(2,"TakeVaginal",getFuckedInYerTwatYaCunt);
 	if(player.biggestTitSize() >= 4) addButton(3,"Boob-job",boobjobLoppe);
 	if(flags[kFLAGS.LOPPE_TIMES_SEXED] > 0) addButton(4,"SqueezeJob",loppeSqueezedickWhateverThatIs);
-	if(player.isTaur() && player.lust >= 33) addButton(5,"TakeAnal",getAssFuckedByLoppeAsACentaur);
-	else if(player.lust >= 33) addButton(5,"TakeAnal",getButtFuckedNonHoarseByLoppe);
+	if(player.isTaur() && player.lust >= 33 && !player.assholeOffLimits()) addButton(5,"TakeAnal",getAssFuckedByLoppeAsACentaur);
+	else if(player.lust >= 33 && !player.assholeOffLimits()) addButton(5,"TakeAnal",getButtFuckedNonHoarseByLoppe);
 	addButton(9,"Leave",beATeaseAndLeaveLoppeAfterSexInvite);
 }
 

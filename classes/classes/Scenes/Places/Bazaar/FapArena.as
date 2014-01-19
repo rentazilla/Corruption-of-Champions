@@ -67,11 +67,20 @@ public function fapArenaGOOOO():void {
 		outputText("\"<i>Once everyone has come, the loser will place himself at the center of the circle, bending over, buttocks exposed.  The player who came second will place himself right behind him in fucking position, the player who came third will place himself behind him, and so on.  The winner will place himself behind everyone else.  He will give the first thrust and everyone will follow.  The winner dictates the thrusting pace.  I strongly advise you to respect the fucking rhythm.  Do you studs understand?</i>\"\n\n", false);
 
 		outputText("Everyone nods in agreement, hands and genitalia quivering in excitement.  ", false);
-		//[if Corr >40]
-		if(player.cor > 66) outputText("Sounds fun!", false);
-		//[else]
-		else outputText("By gods, what are you doing here?", false);
-		//end of condition about PC's corr
+		
+		if(player.assholeOffLimits()) {
+			outputText("Everyone except you, that is.  ");
+			if(player.cor > 66) outputText("The game itself sounds fun enough, but you");
+			else outputText("You");
+			outputText("'re not sure you could keep your [asshole] intact.")
+		}
+		else {
+			//[if Corr >40]
+			if(player.cor > 66) outputText("Sounds fun!", false);
+			//[else]
+			else outputText("By gods, what are you doing here?", false);
+			//end of condition about PC's corr		
+		}
 		outputText("\n\nDo you stay?", false);
 		doYesNo(fapArenaPageII,2855);
 	}

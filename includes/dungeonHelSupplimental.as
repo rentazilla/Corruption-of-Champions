@@ -731,7 +731,7 @@ public function checkOutDemBirdBitches():void {
 		if(player.hasVagina()) rideVaginal = 11115;
 		//If Female: [Ride Vaginal] [Ride Anal]
 		//If Genderless: [Ride Anal]
-		rideAnal = 11114;
+		if(!player.assholeOffLimits()) rideAnal = 11114;
 	}
 	choices("Missionary",missionary,"Get Wanked",wanked,"Ride Anal",rideAnal,"Ride Vaginal",rideVaginal,"",0,"",0,"",0,"",0,"",0,"Back",1);
 }

@@ -1365,9 +1365,15 @@ package classes.Scenes.NPCs
 			outputText("find yourself up to the hilt inside the strangely-textured orifice, while her tongue slides along the underside of your cock.  It curls along underneath you, ", false);
 			if (player.balls > 0) outputText("slithering across your " + ballsDescriptLight() + ", ", false);
 			else if (player.hasVagina()) outputText("gently licking the outer edges of your labia, ", false);
-			outputText("moving along to the back, ", false);
-			if (player.balls > 0 || player.hasVagina()) outputText("and ", false);
-			outputText("teasing your " + assholeDescript() + " gently.  You gather up a mound of her soft tit flesh in each hand and begin squeezing along them lustfully, pushing on her pierced nipples with your thumbs gently while her tongue continues to lick and pleasure everything within its reach.\n\n", false);
+			if(player.assholeOffLimits()) {
+				outputText("before diving between them.  ")
+			}
+			else {
+				outputText("moving along to the back, ", false);
+				if (player.balls > 0 || player.hasVagina()) outputText("and ", false);
+				outputText("teasing your " + assholeDescript() + " gently.  ");
+			}
+			outputText("You gather up a mound of her soft tit flesh in each hand and begin squeezing along them lustfully, pushing on her pierced nipples with your thumbs gently while her tongue continues to lick and pleasure everything within its reach.\n\n", false);
 
 			outputText("\"<i>Ooo-oohh! " + player.mf("Master's", "Mistress's") + " cock tastes so good in Zetsuko's pussy!</i>\" she moans, rolling her eyes back as you feel her begin to \"<i>suck</i>\" on your " + cockDescript(x) + " deeply, rocking her hips back and forth.  The suction inside her drooling cunt feels like one of the most intense deepthroats you've ever felt, and you forget for a moment that it's coming from her vagina until Zetsuko's loudest moan yet snaps you back to reality.\n\n", false);
 
@@ -1827,7 +1833,8 @@ package classes.Scenes.NPCs
 			outputText("\n\nCeraph casually pulls her panties a bit lower to ");
 			if (flags[kFLAGS.CERAPH_HIDING_DICK] == 0) outputText("ease the pressure on her tightly-contained phallus");
 			else outputText("allow a penis to grow, fully-formed from where her clit was");
-			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph eyes your backside, you realize that you're going to be feeling it before long.");
+			// XXX assholeOffLimits: Revise when we know what this actually looks like
+			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph " + (player.assholeOffLimits() ? "reaches the plug in" : "eyes") + " your backside, you realize that you're going to be feeling it before long.");
 
 			outputText("\n\n\"<i>");
 			if (dog) outputText("ARF!  ARF!");
@@ -1838,9 +1845,21 @@ package classes.Scenes.NPCs
 			outputText(" in distress, trying to crawl away.  You didn't mean to get ");
 			if (player.hasCock()) outputText("milked ");
 			else outputText("fucked ");
-			outputText("like... like that!  Her whip snaps taut before dragging you back.  You scrabble in the dirt for a half-second, choking yourself before you give up and sag limply down at her feet.  Slowly, you lift your [butt] up into the air to allow Ceraph access, regretfully yielding to her like you should have initially.");
+			outputText("like... like that!  Her whip snaps taut before dragging you back.  You scrabble in the dirt for a half-second, choking yourself before you give up and sag limply down at her feet.");
+			
+			menu();
+			addButton(0, "Submit", reallyLetCeraphPegHerPet, dog);
+			addButton(1, "Apple", sayAppleToCeraph);
+		}
+		
+		private function reallyLetCeraphPegHerPet(dog:Boolean = true):void
+		{
+			clearOutput();
+			spriteSelect(87);
+			
+			outputText("Slowly, you lift your [butt] up into the air to allow Ceraph access, regretfully yielding to her like you should have initially.");
 
-			outputText("\n\nSWAT!  Her hand claps against a cheek, lingering to squeeze the raw flesh after the spank.  She explains, \"<i>That was for resisting, and this...</i>\"  You feel a slick, wet warmth at your tender, rear opening.  \"<i>...is for being my obedient, playful little ");
+			outputText("\n\nSWAT!  Her hand claps against a cheek, lingering to squeeze the raw flesh after the spank.  She explains, \"<i>That was for resisting, and this...</i>\"  You feel " + (player.assholeOffLimits() ? "the plug slip out of your [butt], followed by " : "") + "a slick, wet warmth at your tender, rear opening.  \"<i>...is for being my obedient, playful little ");
 			if (dog) outputText("doggie");
 			else outputText("kitty-cat");
 			outputText(".</i>\"  Her hips press the hot spear harder against your [asshole].  ");

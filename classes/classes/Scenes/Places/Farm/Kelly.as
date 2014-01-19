@@ -1019,7 +1019,7 @@ private function punishKelly():void {
 		outputText("You'd like to take Kelly for a ride, but you don't have any good ideas for public places to humiliate her.");
 	}
 	else addButton(1,"Ride",rideKellyForPunishment);
-	addButton(0,"Rimjob",getARimjobFromKelly);
+	if(!player.assholeOffLimits()) addButton(0,"Rimjob",getARimjobFromKelly);
 	addButton(4,"Back",approachKelly);
 	
 }

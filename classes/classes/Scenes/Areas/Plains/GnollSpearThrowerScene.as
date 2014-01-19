@@ -112,14 +112,18 @@ package classes.Scenes.Areas.Plains
 
 			outputText("Sharp talons press against your back, leaving eight lines of sensation as they trace down your body and along your " + hipDescript() + ".  You feel the heat of her breath just above your ear.  \"<i>The queens of the savanna demand submission.  You are only welcome in these lands so long as you pay tribute to us in the most primal of ways.</i>\"  ", false);
 			//<For characters with non-naga tails>
-			if (player.tailType > TAIL_TYPE_NONE) outputText("One furred paw wraps around your tail before pulling up sharply, exposing your " + assholeDescript() + " to the hot, savanna air.  Sharp fangs clamp onto the tail, holding it up to rob you of any remaining modesty.", false);
+			if (player.tailType > TAIL_TYPE_NONE) outputText("One furred paw wraps around your tail before pulling up sharply, exposing your " + (player.assholeOffLimits() ? vaginaDescript() : assholeDescript()) + " to the hot, savanna air.  Sharp fangs clamp onto the tail, holding it up to rob you of any remaining modesty.", false);
 			//<For characters without tails>
-			else outputText("One furred paw disappears before a single claw presses roughly against your " + assholeDescript() + " until she hears your breath catch in your throat.", false);
-			outputText("  A soft whimper escapes your lips when something hard and damp slides firmly along your rump.  You can hear lust-filled panting from the hyena as she grinds her massive clit against your trapped form, letting you feel the warmth of her body.\n\n", false);
+			else outputText("One furred paw disappears before a single claw presses roughly against your " + (player.assholeOffLimits() ? vaginaDescript() : assholeDescript()) + " until she hears your breath catch in your throat.", false);
+			outputText("  A soft whimper escapes your lips when something hard and damp slides firmly along your " + (player.assholeOffLimits() ? "mound" : "rump") + ".  You can hear lust-filled panting from the hyena as she grinds her massive clit against your trapped form, letting you feel the warmth of her body.\n\n", false);
 
 			outputText("Clawed hands slide around your sides to roughly squeeze your " + chestDesc() + ", using the painful hold to brace her body.  The hardened shaft vanishes as her hips pull back suddenly.  The barest touches against your entrance is all the warning you have before she shoves the two inch thick hyena meat roughly forward, stretching your poor hole wide around the sudden intruder.", false);
-			player.buttChange(30, true, true, false);
-			outputText("  The air fills with the sound of mocking laughter as the warrior forces herself deep into your passage.  Your ass is forced wide as your body tries desperately to cope with the sudden intrusion until her hips finally press against your " + buttDescript() + ".\n\n", false);
+			if(player.assholeOffLimits()) {
+			}
+			else {
+				player.buttChange(30, true, true, false);
+				outputText("  The air fills with the sound of mocking laughter as the warrior forces herself deep into your passage.  Your ass is forced wide as your body tries desperately to cope with the sudden intrusion until her hips finally press against your " + buttDescript() + ".\n\n", false);
+			}
 
 			outputText("Coarse fur and a muscled form press against your trapped body.  Hot breath slides along your skin moments before dozens of sharp teeth clamp on the nape of your neck.  The gnoll's muzzle holds you still, sharp teeth almost breaking your skin.  Slowly, you feel her hips pull back, her shaft leaving behind a slick coating of her body's own lubrication.  Her hard cunt slides out of your passage until all but the barrel-like tip of her remains, leaving your body to feel suddenly empty.  You can feel her lips slide along you in a smirk as she notices how much your body has surrendered to her will before she violently slams forward, filling you suddenly with her womanhood.\n\n", false);
 
@@ -133,13 +137,21 @@ package classes.Scenes.Areas.Plains
 			outputText("The sound of her powerful body slapping against your bound form echoes through the grassy hills.  The gnoll's muzzle finally vanishes from your neck, leaving behind a perfect imprint of her sharp teeth.  Her breath moans out along the sweat of your skin in time to the thrusting of her hips as she fills your now-willing body.  Clawed hands clamp tight around your waist, pulling your hips back in time with her powerful motions.\n\n", false);
 
 			outputText("A warm weight starts to grow deep within your abused core.  A soft, needy whimpering fills the air and it takes some time before you realize it is being dragged from your mouth each time the thick shaft plows into you.  Suddenly, pleasure crashes through your body and mind as orgasm suddenly explodes within you.  ", false);
-			//<Male> 
-			if (player.hasCock()) outputText("Your cum spurts from your " + multiCockDescriptLight() + ", spraying your seed over the dry ground, giving life to the savanna.", false);
-			//<Females>
-			else if (player.hasVagina()) outputText("Your own juices flow freely from your " + vaginaDescript() + ", coating your thighs and dripping onto the dry grass below you.", false);
-			outputText("  Muscles deep within you ripple, spasming around the strange intruder buried deep within you.  The hyena roars her pleasure, slamming deep into your " + assholeDescript() + " as your body milks her hard cunt for the juices flowing from her.\n\n", false);
+			
+			if(player.assholeOffLimits()) {
+				outputText("Your juices gush around her, coating your thighs and dripping onto the dry grass below you, as your " + vaginaDescript() + " grips the strange intruder buried deep within you. The hyena roars her pleasure, slamming deep into you as your body milks her hard cunt for the juices flowing from her.\n\n", false);
 
-			outputText("With a grunt, the hyena pulls away from your trapped form, filling the air with the scent of the hyena musk that now drips from your abused hole.  With one deft motion of her paw, the bindings on your hands suddenly slip free, ", false);
+				outputText("With a grunt, the hyena pulls away from your trapped form, filling the air with the scent of the hyena musk that now mixes with your own as it drips from your fuckhole.  With one deft motion of her paw, the bindings on your hands suddenly slip free, ", false);
+			}
+			else {
+				//<Male> 
+				if (player.hasCock()) outputText("Your cum spurts from your " + multiCockDescriptLight() + ", spraying your seed over the dry ground, giving life to the savanna.", false);
+				//<Females>
+				else if (player.hasVagina()) outputText("Your own juices flow freely from your " + vaginaDescript() + ", coating your thighs and dripping onto the dry grass below you.", false);
+				outputText("  Muscles deep within you ripple, spasming around the strange intruder buried deep within you.  The hyena roars her pleasure, slamming deep into your " + assholeDescript() + " as your body milks her hard cunt for the juices flowing from her.\n\n", false);
+
+				outputText("With a grunt, the hyena pulls away from your trapped form, filling the air with the scent of the hyena musk that now drips from your abused hole.  With one deft motion of her paw, the bindings on your hands suddenly slip free, ", false);
+			}
 			//<All non neuters> 
 			if (player.gender > 0) outputText("letting you fall hard into the mess you made on the grass.", false);
 			//<neuters>

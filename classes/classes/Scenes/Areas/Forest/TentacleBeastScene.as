@@ -272,7 +272,7 @@ public function tentacleLossRape():void {
 			player.boostLactation(1.5);
 		}
 		// Anus == gaping: 
-		if(player.ass.analLooseness >= 4) {
+		if(player.ass.analLooseness >= 4 && !player.assholeOffLimits()) {
 			outputText("Your " + assholeDescript() + " makes an inviting target for the squirming mass and it's quick to capitalize.  A particularly bulbous appendage slides deep inside, roiling about in a way that not even your well-trained hole has been treated to.", false);
 			if(player.hasCock()) outputText("  A series of undulating lumps pass over your prostate, pushing out a splash of pre-cum.", false);
 			outputText("  You moan into the tentacle in your mouth appreciatevely at the beast's spectacular skill.\n\n", false);
@@ -314,7 +314,7 @@ public function tentacleLossRape():void {
 			outputText("Your " + vaginaDescript(0) + " ripples about the coiled intruder as you climax; fem-cum drips down the tentacle and fills the area with your musky scent.  You rear up as a surge of euphoria races through you, managing to overpower the tentacles holding your forelegs down for the briefest of moments.  But even with your forelegs free, the tentacle in your " + vaginaDescript(0) + " remains, rippling with waves of seed that spray inside you in massive, hot globules.  The sticky substance flooding your love canal pushes you over the edge and you orgasm again, spraying more as you cry out in pleasure.\n\n", false);
 		}
 		// has cock, normal cum amount, anus < gaping: 
-		if(player.hasCock() && player.cumQ() < 1500 && player.ass.analLooseness < 4) {
+		if(player.hasCock() && player.cumQ() < 1500 && player.ass.analLooseness < 4 && !player.assholeOffLimits()) {
 			outputText("Just as you think it's over, another tentacle rams into your " + assholeDescript() + " and begins roughly massaging your prostate as it swells massively, causing another surge of cum to leave you, and another, and another.", false);
 			player.buttChange(40,true,true,false);
 			outputText("  It continues to violate your ass until you black out from exhaustion, the number of loads you've released no longer countable.", false);
@@ -326,7 +326,7 @@ public function tentacleLossRape():void {
 			return;
 		}
 		// has cock, normal cum amount, anus == gaping: 
-		if(player.hasCock() && player.cumQ() < 1500 && player.ass.analLooseness >= 0) {
+		if(player.hasCock() && player.cumQ() < 1500 && player.ass.analLooseness >= 0 && !player.assholeOffLimits()) {
 			outputText("Just as you think it's over, the tentacle inside your " + assholeDescript() + " begins to swell massively, causing another surge of cum to leave you, and another, and another.  It continues to violate your ass until you black out from exhaustion, the number of loads you've released no longer countable.", false);
 			//end (loss)
 			player.orgasm();
@@ -337,9 +337,16 @@ public function tentacleLossRape():void {
 		}		
 		//{ has vagina, anus < gaping: 
 		if(player.hasVagina()) {
-			outputText("Just as you think it's over, a tentacle rams into your " + assholeDescript() + " and begins to swell massively, causing another surge of girlcum to leave you, and another, and another.", false);
-			player.buttChange(40,true,true,false);
-			outputText("  It continues to violate your ass until you black out from exhaustion, the number of times you've orgasmed no longer countable.", false);
+			if(player.assholeOffLimits()) {
+				outputText("Just as you think it's over, the tentacle in your " + vaginaDescript() + " swells massively and starts fucking you again, causing another surge of girlcum to leave you, and another, and another.", false);
+				player.cuntChange(40,true,true,false);
+				outputText("  It continues to violate your cunt until you black out from exhaustion, the number of times you've orgasmed no longer countable.");
+			}
+			else {
+				outputText("Just as you think it's over, a tentacle rams into your " + assholeDescript() + " and begins to swell massively, causing another surge of girlcum to leave you, and another, and another.", false);
+				player.buttChange(40,true,true,false);
+				outputText("  It continues to violate your ass until you black out from exhaustion, the number of times you've orgasmed no longer countable.", false);
+			}
 			//end (loss)
 			player.orgasm();
 			dynStats("tou", 1, "int", -.5, "lib", 2, "sen", 1, "cor", .5);

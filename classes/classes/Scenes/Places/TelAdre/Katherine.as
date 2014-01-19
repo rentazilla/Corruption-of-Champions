@@ -743,10 +743,12 @@ private function letKatKnotYou():void {
 	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina()) dubs = getDoublePennedByKat;
 	var sukn:Function = null;
 	var vag:Function = null;
+	var pen:Function = null;
 	if(player.hasVagina()) vag = letKatKnotYourCuntPussyFuck;
+	if(!player.assholeOffLimits()) pen = getPenetrated;
 	//This scene requires the PC has a penis and has fucked Kat at least once since moving her
 	if(player.hasCock() && flags[kFLAGS.KATHERINE_TIMES_SEXED] > 0) sukn = suckedNFuckedByKat;
-	simpleChoices("Vagina",vag,"Anus",getPenetrated,"DblPenetr",dubs,"SuckNFuckd",sukn,"",0);
+	simpleChoices("Vagina",vag,"Anus",pen,"DblPenetr",dubs,"SuckNFuckd",sukn,"",0);
 }
 
 //Get Penetrated (Vaginal)

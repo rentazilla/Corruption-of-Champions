@@ -134,10 +134,16 @@ internal function oasisSexing():void {
 	}
 	//Buttbutt buuuuuttt
 	if(player.gender > 0) outputText("But the demons are interested in every part of you, not just your crotch.  ");
-	outputText("Soon you feel hands and dicks grabbing and jabbing at your " + buttDescript() + ", edging inwards bit by bit and jostling for position as a slippery cock positions itself at the opening of your " + assholeDescript() + ". It pauses for a second and then dives straight into your waiting asshole.  ", false);
-	if(player.vaginas.length > 0) outputText("You feel the cocks in your ass and pussy rubbing into each other as your lower body becomes a temple of friction. The feeling of so much demon stuffing you as full as possible is almost unbearable, and you are inches away from blacking out as you come again.  ", false);
-	outputText("The cock fucks you hard and fast for a dozen strokes and then you feel it begin to pump its cum into your stuffed ass until it can't come any more. It slips out of your " + buttDescript() + " and is quickly replaced by another which comes and then is itself replaced in what becomes a seemingly endless cycle.  ", false);
-	player.buttChange(monster.cockArea(0), true);
+	if(player.assholeOffLimits()) {
+		// XXX assholeOffLimits: Adjust to actual manifestation of this feature
+		outputText("You feel hands and dicks grabbing and jabbing at your " + buttDescript() + ", but they quickly lose interest.")
+	}
+	else {
+		outputText("Soon you feel hands and dicks grabbing and jabbing at your " + buttDescript() + ", edging inwards bit by bit and jostling for position as a slippery cock positions itself at the opening of your " + assholeDescript() + ". It pauses for a second and then dives straight into your waiting asshole.  ", false);
+		if(player.vaginas.length > 0) outputText("You feel the cocks in your ass and pussy rubbing into each other as your lower body becomes a temple of friction. The feeling of so much demon stuffing you as full as possible is almost unbearable, and you are inches away from blacking out as you come again.  ", false);
+		outputText("The cock fucks you hard and fast for a dozen strokes and then you feel it begin to pump its cum into your stuffed ass until it can't come any more. It slips out of your " + buttDescript() + " and is quickly replaced by another which comes and then is itself replaced in what becomes a seemingly endless cycle.  ", false);
+		player.buttChange(monster.cockArea(0), true);
+	}
 	//More fucking!
 	outputText("Around you you see the demons wrapped up in the frenzy of fucking that they've fallen into. No hole is unfilled and not a single cock isn't sunk into some being's flesh. The moans and screams are almost contagious and you feel them clouding your brain making you want more, harder.", false);
 	dynStats("int", -1, "lib", 1);

@@ -47,6 +47,7 @@ public function bunnbunbunMeet():void {
 		dynStats("lus", 5+player.lib/20);
 		var DickInV:Function = null;
 		var Vagina:Function = null;
+		var DickInA:Function = null;
 		var sixtyNine:Function = null;
 		var eggs:Number = 0;
 		if(player.cockThatFits(40) >= 0) {
@@ -69,10 +70,15 @@ public function bunnbunbunMeet():void {
 			eggs = 3951;
 		}
 		
-		outputText("  Her dick in your ass?)", false);
+		if(!player.assholeOffLimits()) {
+			DickInA = bunbunFucksPCInAss;
+			outputText("  Her dick in your ass?", false);
+		}
+		
+		outputText(")", false);
 		//var Ass:Number = 0;
 		//Dick In V] [Dick in A] [Vagina] [Ass] [Leave]
-		choices("DickInVag",DickInV,"Vagina",Vagina,"69",sixtyNine,"LayYourEggs",eggs,"BeAssFucked",bunbunFucksPCInAss,"",0,"",0,"",0,"",0,"Leave",13);		
+		choices("DickInVag",DickInV,"Vagina",Vagina,"69",sixtyNine,"LayYourEggs",eggs,"BeAssFucked",DickInA,"",0,"",0,"",0,"",0,"Leave",13);		
 	}
 }
 //[Talk]

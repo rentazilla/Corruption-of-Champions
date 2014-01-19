@@ -268,7 +268,7 @@ public function approachKamiTheChristmasRoo():void {
 		//Double-Dick Fuck (requires at least 2 cocks)
 		menu();
 		if(player.hasCock() && player.cockThatFits(70) >= 0) addButton(0,"Give Anal",giveKamiTheChristmasRooAnal);
-		addButton(1,"Receive Anal",takeItRooButtStyle);
+		if(!player.assholeOffLimits()) addButton(1,"Receive Anal",takeItRooButtStyle);
 		addButton(2,"Give BJ",KamiBlowJob);
 		if(player.cockTotal() > 1 && player.cockThatFits(70) >= 0 && player.cockThatFits2(70) >= 0) addButton(3,"Doube-Fuck",KamiDoubleDickFuck);
 	}
@@ -522,19 +522,35 @@ public function unwrapPolarPete():void {
 
 	outputText("\n\n\"<i>Oh ho ho ho, seems like you're really enjoying your gift.  Let ol' Polar Pete lend you a hand,</i>\" he says with a twinkle in his eyes as he lays you down in the snow, his free hand stripping you of your [armor].  Despite the cold you can only sigh in relief, your skin so hot it feels like you could melt the ice and snow with ease.  Pete begins to thrust the massive candy cane into your mouth, the flexible treat dipping down inside your throat with ease.");
 	
-	outputText("\n\n\"<i>Looks like I missed a spot to cram in my Holiday cheer,</i>\" Pete snickers as his free hand pulls apart your [legs] and feels up your [butt].  His fingers rubbing over your [asshole].  He brings his hand to his spit and cum slick cock, and smears the slurry all over his fingers before loosening up your [asshole].  He thrusts his digits in time with the giant candy cane jammed down your throat.  You groan in pleasure helplessly, the addictive candy melting in your mouth and glazing your throat in sweet, arousing goodness.");
+	if (player.assholeOffLimits()) {
+		outputText("\n\n\"<i>Looks like I missed a spot to cram in my Holiday cheer,</i>\" Pete snickers as his free hand pulls apart your [legs] and feels up your [vagina].  He thrusts his digits into its sopping depths, moving them in time with the giant candy cane jammed down your throat.  You groan in pleasure helplessly, the addictive candy melting in your mouth and glazing your throat in sweet, arousing goodness.");
+		
+		outputText("\n\nYou shut your eyes in bliss, and before you know it, Polar Pete slips between your [legs].  His south pole is pushing into your loosened quim.  \"<i>Oh ho ho..</i>\" he groans as his smooth ebony length slips past your inner walls and sinks into you.  He leaves the candy cane stuffed in your mouth as he begins to slap his hips against your [butt].  You moan and squirm as Polar Pete goes to town on your [vagina], the warm sticky precum dripping into you as he sinks in further.");
+		
+		outputText("\n\nHis entire length hilting in you again and again, both your holes stuffed with Polar Pete's gifts.  He rubs his south pole all over your inner confines, angling his thrusts to grind and smear his warm seed against every inch of your chimney.  Your ass cheeks jiggle as his hips ram into them, coaxing muffled moans from your gagged mouth.");
+		player.cuntChange(25,true,true,false);
+		
+		outputText("\n\n\"<i>Mmm, I'll definitely have to go down your chimney every year.  You're so very good,</i>\" he pants, clouds of mist fogging his face as he exhales deep breaths in the cold air.  He suddenly takes on a brutal pace, the sound of flesh slapping flesh filling your ears as he leans forward and begins to pound away at you with refocused intent.");
+		//[(if cock) 
+		if(player.hasCock()) outputText("  His continued ramming of your prostate mixed with the addictive candy crammed in your mouth sends you over the edge, [eachCock] shooting out ropes of snow white all over your chest.  Pete eyes you over with a lurid gaze, your face covered in his cum and your body covered in your own.");
+		
+		outputText("\n\nWatching you writhe in pleasure filled bliss, Pete pounds away at you with a few sharp thrusts.  His ballsack nestles in between your ass cheeks as he buries as much of his south pole into you as possible.  With his ebony cock twitching and unloading into you, he groans loudly, and he pumps your womb full of his creamy Holiday cheer.  You feel a bit bloated as your belly bulges.  Pete pulls out as his hot minty spunk spills from your abused [vagina].");
+	}
+	else {
+		outputText("\n\n\"<i>Looks like I missed a spot to cram in my Holiday cheer,</i>\" Pete snickers as his free hand pulls apart your [legs] and feels up your [butt].  His fingers rubbing over your [asshole].  He brings his hand to his spit and cum slick cock, and smears the slurry all over his fingers before loosening up your [asshole].  He thrusts his digits in time with the giant candy cane jammed down your throat.  You groan in pleasure helplessly, the addictive candy melting in your mouth and glazing your throat in sweet, arousing goodness.");
 	
-	outputText("\n\nYou shut your eyes in bliss, and before you know it, Polar Pete slips between your [legs].  His south pole is pushing into your loosened pucker.  \"<i>Oh ho ho..</i>\" he groans as his smooth ebony length slips past your rim and stretches your inner walls.  He leaves the candy cane stuffed in your mouth as he begins to slap his hips against your [butt].  You moan and squirm as Polar Pete goes to town on your [asshole], the warm sticky precum lubing you up as he sinks in further.");
+		outputText("\n\nYou shut your eyes in bliss, and before you know it, Polar Pete slips between your [legs].  His south pole is pushing into your loosened pucker.  \"<i>Oh ho ho..</i>\" he groans as his smooth ebony length slips past your rim and stretches your inner walls.  He leaves the candy cane stuffed in your mouth as he begins to slap his hips against your [butt].  You moan and squirm as Polar Pete goes to town on your [asshole], the warm sticky precum lubing you up as he sinks in further.");
 	
-	outputText("\n\nHis entire length hilting in you again and again, both your holes stuffed with Polar Pete's gifts.  He rubs his south pole all over your inner confines, angling his thrusts to grind and smear his warm seed against every inch of your chimney.  Your ass cheeks jiggle as his hips ram into them, coaxing muffled moans from your gagged mouth.");
-	player.buttChange(25,true,true,false);
+		outputText("\n\nHis entire length hilting in you again and again, both your holes stuffed with Polar Pete's gifts.  He rubs his south pole all over your inner confines, angling his thrusts to grind and smear his warm seed against every inch of your chimney.  Your ass cheeks jiggle as his hips ram into them, coaxing muffled moans from your gagged mouth.");
+		player.buttChange(25,true,true,false);
 	
-	outputText("\n\n\"<i>Mmm, I'll definitely have to go down your chimney every year.  You're so very good,</i>\" he pants, clouds of mist fogging his face as he exhales deep breaths in the cold air.  He suddenly takes on a brutal pace, the sound of flesh slapping flesh filling your ears as he leans forward and begins to pound away at you with refocused intent.");
-	//[(if cock) 
-	if(player.hasCock()) outputText("  His continued ramming of your prostate mixed with the addictive candy crammed in your mouth sends you over the edge, [eachCock] shooting out ropes of snow white all over your chest.  Pete eyes you over with a lurid gaze, your face covered in his cum and your body covered in your own.");
-	else if(player.hasVagina()) outputText("  Your [vagina] quivers, the rough thrusting into your [asshole] mixed with the addictive candy in your mouth sending you over the edge.  With a low muffled moan your mound spills your lust over your groin, dripping down to lube Pete's thrusts as well as your [legs].  Pete gives you a lurid gaze.");
+		outputText("\n\n\"<i>Mmm, I'll definitely have to go down your chimney every year.  You're so very good,</i>\" he pants, clouds of mist fogging his face as he exhales deep breaths in the cold air.  He suddenly takes on a brutal pace, the sound of flesh slapping flesh filling your ears as he leans forward and begins to pound away at you with refocused intent.");
+		//[(if cock) 
+		if(player.hasCock()) outputText("  His continued ramming of your prostate mixed with the addictive candy crammed in your mouth sends you over the edge, [eachCock] shooting out ropes of snow white all over your chest.  Pete eyes you over with a lurid gaze, your face covered in his cum and your body covered in your own.");
+		else if(player.hasVagina()) outputText("  Your [vagina] quivers, the rough thrusting into your [asshole] mixed with the addictive candy in your mouth sending you over the edge.  With a low muffled moan your mound spills your lust over your groin, dripping down to lube Pete's thrusts as well as your [legs].  Pete gives you a lurid gaze.");
 	
-	outputText("\n\nWatching you writhe in pleasure filled bliss, Pete pounds away at you with a few sharp thrusts.  His ballsack nestles in between your ass cheeks as he buries as much of his south pole into you as possible.  With his ebony cock twitching and unloading into you, he groans loudly, and he pumps your stomach full of his creamy Holiday cheer.  You feel a bit bloated as your stomach bulges.  Pete pulls out as his hot minty spunk spills from your abused [asshole].");
+		outputText("\n\nWatching you writhe in pleasure filled bliss, Pete pounds away at you with a few sharp thrusts.  His ballsack nestles in between your ass cheeks as he buries as much of his south pole into you as possible.  With his ebony cock twitching and unloading into you, he groans loudly, and he pumps your stomach full of his creamy Holiday cheer.  You feel a bit bloated as your stomach bulges.  Pete pulls out as his hot minty spunk spills from your abused [asshole].");
+	}
 	
 	outputText("\n\n\"<i>You've been very good, but it's time for me to go.  Many more people I need to see, so many gifts to hand out,</i>\" Pete chuckles as he pulls the candy cane from your mouth.  He lets you slowly get up and get dressed as he zips up his pants and tucks away the massive candy cane in his pack.  You finish dressing as Pete rummages through his large leather sack for a few moments before producing a box wrapped in brightly colored paper.");
 	
@@ -1099,7 +1115,7 @@ public function nieveFucksYou():void {
 	//[(if PC has vagina or large enough tits) \"<i>So [master],</i>\" He says pulling back slightly, \"<i>Where would you like me to put this?</i>\"][(if anal is the only option, automatically selected) \"<i>Well I guess I know where to put this huh?</i>\" He says coyly.]
 	//[Anal][Vaginal][(tits >3) Tit-Fuck]
 	menu();
-	addButton(0,"Anal",takeNieveAnal);
+	if(!player.assholeOffLimits()) addButton(0,"Anal",takeNieveAnal);
 	if(player.hasVagina()) addButton(1,"Vaginal",takeNieveVaginal);
 }
 //Anal

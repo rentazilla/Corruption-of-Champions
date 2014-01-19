@@ -778,9 +778,10 @@ private function drunkUrtaRidesARutPCsCock():void {
 
 	outputText("\n\nYou try to announce that you're done and that's about it, but the horny nymphomaniac that seems intent on keeping your rutting " + cockDescript(x) + " all to herself feels differently.  She allows your member to slide out of her for a moment, but only to let out some of the spunk that's filling her and to stimulate you in a different way.  Urta moves down your body, stroking your [chest] and your [nipples] before lowering her face and arms to your [hips].  She licks your sensitive head for a while before delivering a couple of noisy, strong sucks to your " + cockDescript(x) + ".  Afterwards, she licks your ");
 	if(player.balls > 0) outputText("[balls]");
+	else if(player.assholeOffLimits()) outputText(""); // do nothing so we can do something later
 	else if(player.hasVagina()) outputText("[vagina] and [clit]");
 	else outputText("taint");
-	outputText(" before finally running her tongue over your [asshole], and all the way up again, swallowing your member once again as she squeezes your [butt].  You alternate before moaning, groaning, and whimpering as blood seems to leave your head and entire body, surging into your " + cockDescript(x) + " and making it hard to think or move, much less resist.");
+	outputText(" before finally running her tongue over your " + (player.assholeOffLimits() ? "[vagina] and [clit]" : "[asshole]") + ", and all the way up again, swallowing your member once again as she squeezes your [butt].  You alternate before moaning, groaning, and whimpering as blood seems to leave your head and entire body, surging into your " + cockDescript(x) + " and making it hard to think or move, much less resist.");
 
 	outputText("\n\n\"<i>We've already agreed that it's fine for me to take everything, so stop being so lazy!  I want to fuck more!  I'll keep fucking you until we break the table and dig a hole in the floor!");
 	if(urtaLove()) outputText("  You can rest later!  I'll even give you a massage, so keep giving it to me!");
