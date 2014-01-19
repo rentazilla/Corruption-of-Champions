@@ -66,7 +66,7 @@ package classes.Scenes.Areas.Plains
 		{
 			spriteSelect(54);
 			//Oh shit get anal raped.
-			if (player.hasItem(consumables.S_DREAM)) {
+			if (player.hasItem(consumables.S_DREAM) && !player.assholeOffLimits()) {
 				kGAMECLASS.plains.gnollScene.yoDawgIHeardULiekGNollBallzzzdahdakjldh();
 				return;
 			}
@@ -119,6 +119,8 @@ package classes.Scenes.Areas.Plains
 
 			outputText("Clawed hands slide around your sides to roughly squeeze your " + chestDesc() + ", using the painful hold to brace her body.  The hardened shaft vanishes as her hips pull back suddenly.  The barest touches against your entrance is all the warning you have before she shoves the two inch thick hyena meat roughly forward, stretching your poor hole wide around the sudden intruder.", false);
 			if(player.assholeOffLimits()) {
+				player.cuntChange(30, true, true, false);
+				outputText("  The air fills with the sound of mocking laughter as the warrior forces a moan from your throat.  Your cunt is forced wide as your body stretches to accommodate the intrusion until her hips finally press against your " + buttDescript() + ".\n\n", false);
 			}
 			else {
 				player.buttChange(30, true, true, false);
