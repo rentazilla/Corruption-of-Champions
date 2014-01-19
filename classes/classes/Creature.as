@@ -3888,6 +3888,11 @@ import classes.PerkType;
 		{
 			return Appearance.breastSize(val);
 		}
+		
+		public function assholeOffLimits():Boolean
+		{
+			return this.hasVagina();
+		}
 	}
 }
 
