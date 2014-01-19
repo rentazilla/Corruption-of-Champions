@@ -2877,7 +2877,7 @@ private function getKnockedUpWithGodChild():void {
 	}
 	else if(choice == 3) {
 		outputText("\n\nUrta gasps when a slithering tongue winds its way around her balls.  Looking back, she sees a scaley visage you'd recognize anywhere - the salamander berserker, Hel.   Hel chuckles around the black, slime-slicked folds in her mouth.  \"<i>Didja thfwink joo could, mmmm, get thwis fwox all to yerself, " + player2.short + "?</i>\" she says through the mouthful of vixensack.   The salamander-slut releases the musky black skin from her oral grip and continues, \"<i>You know I'm always up to get dirty with you and your friends, lover mine.</i>\"  She returns her attentions to the cum-bloated orbs before her, licking every bit of mixed cum from Urta's sack, replacing the thick sludge with a veneer of shining spit.");
-		if(player.balls > 0) outputText("  She does the same to your own [balls]" + (player.assholeOffLimits() ? "" : ", even giving your [asshole] a happy, sloppy kiss before returning to") + " polishing the supple, skin-shrouded spheres just ahead.");
+		if(player.balls > 0) outputText("  She does the same to your own [balls]" + player.assholeOffLimits("", ", even giving your [asshole] a happy, sloppy kiss before returning to") + " polishing the supple, skin-shrouded spheres just ahead.");
 		outputText("  Helia seems thrilled to be egging you both on to new heights of pleasure, and when Urta turns back to you with a blissful smile on her face, you realize she's enjoying it too.");
 	}
 	//{Latexy}

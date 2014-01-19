@@ -781,7 +781,7 @@ private function drunkUrtaRidesARutPCsCock():void {
 	else if(player.assholeOffLimits()) outputText(""); // do nothing so we can do something later
 	else if(player.hasVagina()) outputText("[vagina] and [clit]");
 	else outputText("taint");
-	outputText(" before finally running her tongue over your " + (player.assholeOffLimits() ? "[vagina] and [clit]" : "[asshole]") + ", and all the way up again, swallowing your member once again as she squeezes your [butt].  You alternate before moaning, groaning, and whimpering as blood seems to leave your head and entire body, surging into your " + cockDescript(x) + " and making it hard to think or move, much less resist.");
+	outputText(" before finally running her tongue over your " + player.assholeOffLimits("[vagina] and [clit]", "[asshole]") + ", and all the way up again, swallowing your member once again as she squeezes your [butt].  You alternate before moaning, groaning, and whimpering as blood seems to leave your head and entire body, surging into your " + cockDescript(x) + " and making it hard to think or move, much less resist.");
 
 	outputText("\n\n\"<i>We've already agreed that it's fine for me to take everything, so stop being so lazy!  I want to fuck more!  I'll keep fucking you until we break the table and dig a hole in the floor!");
 	if(urtaLove()) outputText("  You can rest later!  I'll even give you a massage, so keep giving it to me!");

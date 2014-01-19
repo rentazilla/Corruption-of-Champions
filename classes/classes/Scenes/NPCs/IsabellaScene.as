@@ -421,7 +421,7 @@ public function izzyGivesSmallWangsFreeOral():void {
 			outputText("She runs one finger from the ", false);
 			if(player.hasSheath()) outputText("sheath", false);
 			else outputText("base", false);
-			outputText(" of your " + cockDescript(x) + " to your " + (player.assholeOffLimits() ? vaginaDescript() : assholeDescript()) + ", teasing the sensitive skin with light touches of her fingernail.", false);
+			outputText(" of your " + cockDescript(x) + " to your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ", teasing the sensitive skin with light touches of her fingernail.", false);
 		}
 		outputText("  You latch onto her horns again and pull her back into position, and the sultry cow-maid wastes no time adding the suction of her puckered lips back to the mix.\n\n", false);
 		

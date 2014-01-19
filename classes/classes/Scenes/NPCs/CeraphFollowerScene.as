@@ -1834,7 +1834,7 @@ package classes.Scenes.NPCs
 			if (flags[kFLAGS.CERAPH_HIDING_DICK] == 0) outputText("ease the pressure on her tightly-contained phallus");
 			else outputText("allow a penis to grow, fully-formed from where her clit was");
 			// XXX assholeOffLimits: Revise when we know what this actually looks like
-			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph " + (player.assholeOffLimits() ? "reaches the plug in" : "eyes") + " your backside, you realize that you're going to be feeling it before long.");
+			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph " + player.assholeOffLimits("reaches the plug in", "eyes") + " your backside, you realize that you're going to be feeling it before long.");
 
 			outputText("\n\n\"<i>");
 			if (dog) outputText("ARF!  ARF!");
@@ -1859,7 +1859,7 @@ package classes.Scenes.NPCs
 			
 			outputText("Slowly, you lift your [butt] up into the air to allow Ceraph access, regretfully yielding to her like you should have initially.");
 
-			outputText("\n\nSWAT!  Her hand claps against a cheek, lingering to squeeze the raw flesh after the spank.  She explains, \"<i>That was for resisting, and this...</i>\"  You feel " + (player.assholeOffLimits() ? "the plug slip out of your [butt], followed by " : "") + "a slick, wet warmth at your tender, rear opening.  \"<i>...is for being my obedient, playful little ");
+			outputText("\n\nSWAT!  Her hand claps against a cheek, lingering to squeeze the raw flesh after the spank.  She explains, \"<i>That was for resisting, and this...</i>\"  You feel " + player.assholeOffLimits("the plug slip out of your [butt], followed by ") + "a slick, wet warmth at your tender, rear opening.  \"<i>...is for being my obedient, playful little ");
 			if (dog) outputText("doggie");
 			else outputText("kitty-cat");
 			outputText(".</i>\"  Her hips press the hot spear harder against your [asshole].  ");

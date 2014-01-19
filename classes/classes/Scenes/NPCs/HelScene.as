@@ -492,7 +492,7 @@ internal function getLickedByHel():void {
 		outputText(" while " + sMultiCockDesc() + " shoots its load into her red hair", false);
 		if(player.cumQ() >= 500) outputText(", bathing her in streams of jism", false);
 	}
-	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, " + (player.assholeOffLimits() ? "" : "as does her tail, ") + "and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
+	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, " + player.assholeOffLimits("", "as does her tail, ") + "and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
 
 	outputText("She gives a little laugh and strokes your cheek as you drift off into a contented, peaceful sleep.", false);
 	//(reduce lust, increment Helgate flag by 1)

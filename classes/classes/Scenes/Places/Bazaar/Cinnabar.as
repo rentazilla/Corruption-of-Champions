@@ -307,7 +307,7 @@ private function fuckCinnabarHugerAndCorruptedEr():void {
 	
 	outputText("Cinnabar's head looks absurdly tiny, perched as it is above her bloated belly.  She moans, \"<i>F-fucking asshole!  You went t-too f-ah-ahhh-st...</i>\"  Her voice trails off as her eyes narrow.  Somehow, even with her broken body, she's managed to get it together enough to yell at you.\n\n", false);
 	
-	outputText("\"<i>Fuck you!  You can't wait to get inside and then you sit there smirking?  Fuck that.  If you won't fill me right, I'll make you!</i>\" screams the red rat.  Her already-crimson eyes glow with eldritch light and her hand lifts, radiating with the same unholy power.  Cinnabar's hand punches through one of the mirrors on the wall, disappearing for the tiniest fraction of a second before " + (player.assholeOffLimits() ? "shoving deep into your" + vaginaDescript() : "punching through the ring of your " + assholeDescript()) + ", HARD.  You scream, completely and utterly violated, just like Cinnabar.", false);
+	outputText("\"<i>Fuck you!  You can't wait to get inside and then you sit there smirking?  Fuck that.  If you won't fill me right, I'll make you!</i>\" screams the red rat.  Her already-crimson eyes glow with eldritch light and her hand lifts, radiating with the same unholy power.  Cinnabar's hand punches through one of the mirrors on the wall, disappearing for the tiniest fraction of a second before " + player.assholeOffLimits("shoving deep into your" + vaginaDescript(), "punching through the ring of your " + assholeDescript()) + ", HARD.  You scream, completely and utterly violated, just like Cinnabar.", false);
 	if(player.assholeOffLimits()) {
 		player.cuntChange(30,true,true,false);
 	}
@@ -366,7 +366,7 @@ private function cinnabarHuger():void {
 	outputText("True to her words, she starts squeezing you through her fur, massaging your " + cockDescript(x) + " by dragging her stretchy puss along your length with her fingertips.  It's too much, her body is fucking perfect for your " + cockDescript(x) + ", and you feel warmth building inside you.  Her tail twists around your ", false);
 	if(player.balls > 0) outputText(ballsDescriptLight(), false);
 	else outputText("base", false);
-	outputText(" to prod at your " + (player.assholeOffLimits() ? vaginaDescript() : assholeDescript()) + ", sliding in to push your prostate.  She hits it hard enough to make you pump cum with enough force to distort her already-ballooned body, and you go into an orgasmic frenzy, dragging your " + cockDescript(x) + " back to her entrance before jamming in all ", false);
+	outputText(" to prod at your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ", sliding in to push your prostate.  She hits it hard enough to make you pump cum with enough force to distort her already-ballooned body, and you go into an orgasmic frenzy, dragging your " + cockDescript(x) + " back to her entrance before jamming in all ", false);
 	if(player.cocks[x].cockLength < 24) outputText(num2Text(Math.round(player.cocks[x].cockLength)) + " inches", false);
 	else outputText(num2Text(Math.round(player.cocks[x].cockLength/12)) + " feet", false);
 	outputText(" all over again.", false);
@@ -421,7 +421,7 @@ private function cinnabarHuge():void {
 	if(player.balls > 0) outputText(ballsDescriptLight(), false);
 	else if(player.hasSheath()) outputText("sheath", false);
 	else outputText("shaft", false);
-	outputText(" to prod at your " + (player.assholeOffLimits() ? vaginaDescript() : assholeDescript()) + ", sliding in to push your prostate, pressing on it hard enough to make you pump a jet of cum past the rat's relaxing cervix and into her womb.  You go into an orgasmic frenzy, utterly, completely dominating the size-queen with your massive, cum-bloated fuck-stick.  Her ass shakes and wobbles as you pull back roughly, dragging your cock through that over-tightened velvet cunt-sleeve, but before you can slip out, you push back in, fucking her hard enough to make a loud slap from your hips slamming into one another.\n\n", false);
+	outputText(" to prod at your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ", sliding in to push your prostate, pressing on it hard enough to make you pump a jet of cum past the rat's relaxing cervix and into her womb.  You go into an orgasmic frenzy, utterly, completely dominating the size-queen with your massive, cum-bloated fuck-stick.  Her ass shakes and wobbles as you pull back roughly, dragging your cock through that over-tightened velvet cunt-sleeve, but before you can slip out, you push back in, fucking her hard enough to make a loud slap from your hips slamming into one another.\n\n", false);
 	
 	outputText("Her juices fall like rain, soaking the sheets, ", false);
 	if(player.balls > 0) outputText("your balls, ", false);
