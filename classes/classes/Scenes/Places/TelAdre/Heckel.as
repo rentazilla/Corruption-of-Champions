@@ -118,10 +118,15 @@ private function heckelTraining():void {
 }
 
 //oral
-private function heckelOrallyFixated():void {
+private function heckelOrallyFixated(loss:Boolean = false):void {
 	outputText("", true);
 	if(flags[kFLAGS.TIMES_FUCKED_HECKEL_BLOWJOB] == 0) {
-		outputText("You walk over to Heckel and fall to your knees, already licking your lips. Heckel throws her head back in a barking laugh as she scoots forward, one paw coming around the back of your head. Without needing further encouragement, you grab the flaccid dog cock and give it an experimental pump.\n\n", false);
+		if(loss) {
+			outputText("Heckel's eyes flash as her grin splits her face, and for just a moment you wonder if this might have been a bad idea. Before you can object, however, she's pushing you down onto your knees, one paw on the back of your head. Without needing further encouragement, you grab the semi-hard dog cock and give it an experimental pump.\n\n", false);
+		}
+		else {
+			outputText("You walk over to Heckel and fall to your knees, already licking your lips. Heckel throws her head back in a barking laugh as she scoots forward, one paw coming around the back of your head. Without needing further encouragement, you grab the flaccid dog cock and give it an experimental pump.\n\n", false);
+		}
 
 		outputText("You can feel the blood flowing beneath your fingers as your hand works, the black shaft growing firmer and bigger in your grasp. You lean in for a lick from base to tip, and it feels unexpectedly rough on your tongue with the smell of the savanna. Before you can fall into another staring trance with it, you open your mouth and take the head in.\n\n", false);
 	
@@ -136,7 +141,12 @@ private function heckelOrallyFixated():void {
 	}
 	//Repeat
 	else {
-		outputText("You lick your lips as you eye her swelling member. It pulses softly with her heartbeat, each jump leaving it slightly bigger than it was before. As you watch, it slowly stands to attention at around ten inches in length, Heckel's heavy balls drawing up beneath it. Her canine dick almost looks shiny with the skin taught like this, though it might also be the moisture from her shower. You make up your mind when you see a dribble of pre form at the tip, and you bend over to lick it up before it can drip down and escape.\n\n", false);
+		if(loss) {
+			outputText("Heckel's eyes flash as her grin splits her face, and for just a moment you wonder if this might have been a bad idea. Before you can object, however, she's pushing you down onto your knees, one paw on the back of your head. Her swelling member pulses softly with her heartbeat, each jump leaving it slightly bigger than it was before. As you watch, it slowly stands to attention at around ten inches in length, Heckel's heavy balls drawing up beneath it. Her canine dick almost looks shiny with the skin taught like this, though it might also be the moisture from her shower. You make up your mind when you see a dribble of pre form at the tip, and you bend over to lick it up before it can drip down and escape.\n\n", false);
+		}
+		else {
+			outputText("You lick your lips as you eye her swelling member. It pulses softly with her heartbeat, each jump leaving it slightly bigger than it was before. As you watch, it slowly stands to attention at around ten inches in length, Heckel's heavy balls drawing up beneath it. Her canine dick almost looks shiny with the skin taught like this, though it might also be the moisture from her shower. You make up your mind when you see a dribble of pre form at the tip, and you bend over to lick it up before it can drip down and escape.\n\n", false);
+		}
 
 		outputText("Heckel leans back to give you more room, and you wrap your hand around her hardening member. Even with her shower you still catch her light musk coming from her groin.  Whether this is from her workout or her arousal you can't tell, but it's a scent you are quickly coming to recognize as hers. You inhale deeply through your nose as you lick her cock from base to tip, pausing over her crown before letting your head fall down.\n\n", false);
 	
@@ -296,21 +306,26 @@ public function dominateHeckel():void {
 	else outputText("I'm always on top");
 	outputText(".  If you want a squealing submissive to ride, the Wet Bitch is that way,</i>\" pointing towards the exit.  Her flaccid dog-dong twitches a little but remains defiantly soft.");
 	outputText("\n\nYou step closer her body, admiring the shapely curve of her muscles beneath her sweat-matted fur.  Heckel's nipples perk up at your close proximity and gently come to rest against your [chest] once you invade her personal space.  She doesn't take a single step back, and you suggest, \"<i>Some top dog.  Wanna bet your ass?</i>\"");
-	outputText("\n\nHeckel retorts, \"<i>You gonna bet yours");
+	outputText("\n\nHeckel retorts, \"<i>You gonna bet " + assholeOffLimits("your mouth", "yours"));
 	if(flags[kFLAGS.TIMES_LOST_HECKEL_DOM_CHALLENGE] > 0) outputText(" again");
 	outputText("?</i>\"  Her tough finger-tip slams into your solar plexus for emphasis");
 	if(player.tou < 60) outputText(", pushing you back a bit");
 	outputText(".");
-	outputText("\n\nOf course, with Heckel around you knew you'd be risking your ass, but at least now you're going to get a shot at hers.  You nod at the surprised hyena herm in acceptance of her wager and suggest the most obvious way to settle just who runs this gym - an arm wrestling contest.");
-	outputText("\n\nThe spotted muscle-girl snarls, \"<i>You're on!</i>\"  She knocks some water bottles off a nearby table and positions herself to one side, slamming her elbow down carelessly.  \"<i>This is going to make pounding your ass that much sweeter, [name].</i>\"  Breathing heavily now, Heckel looks to you expectantly.  Her mighty she-cock, half-hidden by the table begins to strain upward, hardening with eager anticipation.");
+	outputText("\n\nOf course, with Heckel around you knew you'd be risking your " + assholeOffLimits("mouth", "ass") + ", but at least now you're going to get a shot at " + assholeOffLimits("her ass", "hers") + ".  You nod at the surprised hyena herm in acceptance of her wager and suggest the most obvious way to settle just who runs this gym - an arm wrestling contest.");
+	outputText("\n\nThe spotted muscle-girl snarls, \"<i>You're on!</i>\"  She knocks some water bottles off a nearby table and positions herself to one side, slamming her elbow down carelessly.  \"<i>This is going to make pounding your " + assholeOffLimits("mouth", "ass") + " that much sweeter, [name].</i>\"  Breathing heavily now, Heckel looks to you expectantly.  Her mighty she-cock, half-hidden by the table begins to strain upward, hardening with eager anticipation.");
 	outputText("\n\nYou flash a cocky grin of your own and seat yourself across from her, making sure to flash your " + multiCockDescriptLight() + " in her direction as you sit down.  \"<i>Just making sure you know what you're getting yourself into,</i>\" you taunt.  The tabletop is made from thick, lacquered wood that squeaks when your elbow comes to rest on the polished surface.  You clench your fist and flex your arm, displaying your muscles to your foe, and Heckel does likewise, her powerful body rippling beneath her furry skin, tendons taut and visible.  \"<i>Is my little bitch afraid?</i>\" you ask.");
 	outputText("\n\n\"<i>Never!</i>\" the powerful hyena retorts, clasping your palm with hers.  You can feel the barely restrained potential energy in her grip.  She says, \"<i>On three.  One, two... THREE!</i>\"  An avalanche of tension comes down across your forearm, but you throw your own considerable might into it, stopping your knuckles a half-inch off the table's surface.  Matched muscle to muscle, you look the hyena in the eye.  On each side of the table your free hands grab the edge for stability, squeezing so hard you swear you can hear the wood splintering.  ");
 	//{Lose}
 	if(player.str < 75) {
 		outputText("Even with your mighty struggling, you cannot overcome the relentless hyena, and your shaking hand is forced down, eventually pressed flat into the wood.");
-		outputText("\n\nHeckel proudly declares, \"<i>Your ass is mine, bitch.  Bend over.</i>\"  You sigh, ashamed to have lost and more than a little emasculated.  Well, you made a wager.  Time to live up to it...");
+		outputText("\n\nHeckel proudly declares, \"<i>" + assholeOffLimits("Your mouth is mine, bitch.  On your knees.", "Your ass is mine, bitch.  Bend over.") + "</i>\"  You sigh, ashamed to have lost and more than a little emasculated.  Well, you made a wager.  Time to live up to it...");
 		menu();
-		addButton(0,"Next",heckelLovesDaAnal,1);
+		if(assholeOffLimits()) {
+			addButton(0,"Next",heckelOrallyFixated,1);
+		}
+		else {
+			addButton(0,"Next",heckelLovesDaAnal,1);
+		}
 		flags[kFLAGS.TIMES_LOST_HECKEL_DOM_CHALLENGE]++;
 	}
 	//{Win}
