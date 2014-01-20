@@ -54,7 +54,6 @@ public function greetHeckel():void {
 //First time Sex
 private function heckelTraining():void {
 	outputText("", true);
-	var dom:int = 0;
 	//Rejection
 	//Tone not high enough or fat too high
 	if(player.tone < 60) {
@@ -72,6 +71,15 @@ private function heckelTraining():void {
 		doNext(telAdre.gymDesc);
 		return;
 	}
+	
+	var oral:Function = heckelOrallyFixated;
+	var anal:Function = heckelLovesDaAnal;
+	var dom:int = 0;
+	
+	if(assholeOffLimits()) {
+		anal = null;
+	}
+	
 	if(flags[kFLAGS.TIMES_FUCKED_HECKEL_BLOWJOB] + flags[kFLAGS.TIMES_FUCKED_HECKEL_ANAL] == 0) {
 		outputText("You tell Heckel that you're looking for a training partner, and she makes no attempt to hide her gaze as she looks you up and down.  When she's finished, her unsettling grin returns.  \"<i>Excellent!  Let me just get cleaned up and we'll start with some stretches.</i>\"\n\n", false);
 		
@@ -89,12 +97,9 @@ private function heckelTraining():void {
 		outputText("A black cock hangs half erect between her legs, a pair of fist-sized testes underneath.  Fully erect, you estimate her dong would be around ten inches long; large, but fitting for her lithe body.  It grows a little stiffer as you stare down at it, and it isn't until Heckel starts cackling that you realize how long you've been staring.\n\n", false);
 	
 		outputText("\"<i>Like what you see?</i>\" she asks, looking you up and down.  \"<i>'Cause I like what I see.  It's not every day I get someone as fit as you brave enough to partner up with me.  Come on then fresh meat, every newbie has to start at the bottom.</i>\"  She tilts her head towards her hardening member and raises an eyebrow.", false);
-		if(player.str > 50 && player.hasCock()) {
-			outputText("\n\nYou feel pretty strong yourself, and you realize you could probably arm wrestle this hyena-bitch down to size.");
-			dom = 3966;
-		}
-		//ORAL or LEAVE
-		simpleChoices("Oral",heckelOrallyFixated,"Anal",0,"Be Top Dog",dom,"",0,"Leave",13);
+		
+		// No anal offer the first time
+		anal = null;
 	}
 	//FOLLOWUP SECKZ
 	else {
@@ -108,13 +113,14 @@ private function heckelTraining():void {
 		outputText("By the time she comes back into the locker room, you're completely naked. She doesn't bother to cover herself as she towels her fur off, making the coarse hair stand on end in more than a few places. She tosses the towel aside as she passes you, her black cock already bobbing between her legs. She sits down on one of the simple wooden benches and pats the spot next to her, beckoning you over.\n\n", false);
 
 		outputText("\"<i>I'm not gonna mince words,</i>\" she says with a snicker. \"<i>I need a good fuck and I need it right now. I promise, this is going to be as much of a workout as hitting the track.</i>\" As you sit down next to her, she runs a paw up your back and along your neck, eventually draping it over your shoulders. \"<i>Now then partner, how are you gonna take this?</i>\"\n\n", false);
-		if(player.str > 50 && player.hasCock()) {
-			outputText("You feel pretty strong yourself, and you realize you could probably arm wrestle this hyena-bitch down to size.");
-			dom = 3966;
-		}
-		//ORAL or LEAVE
-		simpleChoices("Oral",heckelOrallyFixated,"Anal",heckelLovesDaAnal,"Be Top Dog",dom,"",0,"Leave",13);
 	}
+	
+	if(player.str > 50 && player.hasCock()) {
+		outputText("\n\nYou feel pretty strong yourself, and you realize you could probably arm wrestle this hyena-bitch down to size.");
+		dom = 3966;
+	}
+	
+	simpleChoices("Oral",oral,"Anal",anal,"Be Top Dog",dom,"",0,"Leave",13);
 }
 
 //oral
