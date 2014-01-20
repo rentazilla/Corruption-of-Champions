@@ -131,7 +131,7 @@ package classes.Scenes.Areas.HighMountains
 				if (player.skinType == SKIN_TYPE_PLAIN) outputText(" across your reddening skin", false);
 				outputText(". Her little black tongue feels divine as it bumps up against your " + clitDescript() + ". WHen you let out a small, alleviated coo, the other harpies once again follow suit. The two previously holding your arms, bend down and put their stiff lips on top of your antagonized nipples, rewarding them after having brushed past by so many times.\n\n", false);
 				
-				if(!player.assholeOffLimits()) {
+				if(!assholeOffLimits()) {
 					outputText("You feel your " + player.legs() + " being lifted up and out of the way. Feathered arms curl around either side of your thighs to keep them in place as the harpy teasing and suckling your " + clitDescript() + " gives the last harpy enough room to scoot in below her. A teasing of soft harpy hair feathers against your " + buttDescript() + " is the only warning you receive before you feel the wet warmth of that final black tongue pressing against your " + assholeDescript() + ".\n\n", false);
 				}
 

@@ -561,7 +561,7 @@ package classes.Scenes.Areas.HighMountains
 		
 			outputText("You hear a deep, rumbling, snuffling sound from behind you, and the earth shakes as something big approaches you from behind.  <i>Please not a minotaur,</i> you think.  <i>Anything but a minotaur.  Please not a minotaur...</i>  Hands roughly grab your sides and a brutally powerful musk fills your nostrils as you groan in despair.\n\n", false);
 		
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("The huge bull-man is not one to look a gift fuck in the mouth.  Without bothering to take you in, bar a long wet sniff of your " + hairDescript() + ", he sticks his cock between your legs.  He grunts as he forces his head past your entrance, squirting pre-cum into your passage as he does so.  Your body is incapable of clenching instinctively against the invasion, but there is no escaping how huge the dong feels as he impatiently forces your cunt open.", false);
 				player.cuntChange(60,true,true,false);
 				//(Tight: 

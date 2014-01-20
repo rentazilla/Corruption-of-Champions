@@ -745,7 +745,7 @@ private function letKatKnotYou():void {
 	var vag:Function = null;
 	var pen:Function = null;
 	if(player.hasVagina()) vag = letKatKnotYourCuntPussyFuck;
-	if(!player.assholeOffLimits()) pen = getPenetrated;
+	if(!assholeOffLimits()) pen = getPenetrated;
 	//This scene requires the PC has a penis and has fucked Kat at least once since moving her
 	if(player.hasCock() && flags[kFLAGS.KATHERINE_TIMES_SEXED] > 0) sukn = suckedNFuckedByKat;
 	simpleChoices("Vagina",vag,"Anus",pen,"DblPenetr",dubs,"SuckNFuckd",sukn,"",0);

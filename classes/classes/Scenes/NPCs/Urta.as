@@ -315,7 +315,7 @@ public function urtaBarApproach():void {
 			//As per normal drunk-fawks
 			//simpleChoices("Jerkoff",getAPublicFacialFromUrta,"Anal Ride",takeUrtaInTheButtPublically,"Lay Eggs",temp,"Spank Her",spank,"Leave",barTelAdre);
 			var publicAnal:Function = null;
-			if(!player.assholeOffLimits()) publicAnal = takeUrtaInTheButtPublically;
+			if(!assholeOffLimits()) publicAnal = takeUrtaInTheButtPublically;
 			menu();
 			addButton(0,"Jerkoff",getAPublicFacialFromUrta);
 			addButton(1,"Anal Ride",publicAnal);
@@ -1074,7 +1074,7 @@ internal function goBackToUrtasForLuvinzII():void {
 	var analRides:Function = null;
 	if(player.totalCocks() > 0) vaginal = dudeFuckingUrtasCooch;
 	if(player.hasVagina()) femaleRides = rideUrtaTenderFemale;
-	if(!player.assholeOffLimits()) analRides = tenderTakeItUpTheAssFromUrta;
+	if(!assholeOffLimits()) analRides = tenderTakeItUpTheAssFromUrta;
 	//simpleChoices("Fuck Vagina",vaginal,"Ride (Vaginal)",femaleRides,"Ride (Anal)",tenderTakeItUpTheAssFromUrta,"No Condoms",condomlessUrtaInHouseSmex,"",0);
 	menu();
 	addButton(0,"Fuck Vagina",vaginal);
@@ -1954,7 +1954,7 @@ internal function urtaHomeLuvLuvinsMenu():void {
 		outputText("  She could ride your vagina.");
 		addButton(0,"Ride Vag",rideUrtasCoochLoveyDovey);
 	}
-	if(!player.assholeOffLimits()) {
+	if(!assholeOffLimits()) {
 		outputText("  She could fuck your ass.");
 		addButton(1,"Ride Ass",rideUrtaInButtAtHomeLove);
 	}
@@ -1969,7 +1969,7 @@ internal function urtaHomeLuvLuvinsMenu():void {
 		addButton(4,"No Condoms",condomlessUrtaInHouseSmex);
 	}
 	if(player.isGoo() && player.skinType == SKIN_TYPE_GOO) addButton(6,"Goo (Weird)",urtaGooTesticleVoreRuinedOrgasms);
-	if(flags[kFLAGS.URTA_PETPLAY_DONE] >= 0 && player.gender > 0 && !player.assholeOffLimits()) addButton(7,"Collar",urtaPetPlayDeletedForeverBecauseThirdProovedMeWrongAboutDice);
+	if(flags[kFLAGS.URTA_PETPLAY_DONE] >= 0 && player.gender > 0 && !assholeOffLimits()) addButton(7,"Collar",urtaPetPlayDeletedForeverBecauseThirdProovedMeWrongAboutDice);
 }
 
 private function urtasCoochiNeedsFuckedLove():void {

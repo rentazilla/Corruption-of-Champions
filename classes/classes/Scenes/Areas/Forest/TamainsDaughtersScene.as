@@ -268,25 +268,25 @@ private function fuckYoDaughtersHomie():void {
 		if(tamani) {
 			outputText("Tamani steps up and reaches into a pouch.  As she withdraws her hand, you get your first glimpse of her cargo.  It appears to be a massive double-ended dildo, pink and floppy.  One end is shaped like a canine, with a huge knot, while the other ends in the flared tip of a horse-cock.  Tamani grunts as she spears herself with the pointed canine side, even forcing the massive dildo's knot inside.  She releases the dildo and the horse-half bobbles imposingly in front of her, dripping pink fluids.  She grins up at you saying, \"<i>If my daughters are going to claim all your cream, I'm going to make sure you don't hold back.  You saw the knot on this, thing didn't you?  Well, it's filled with aphrodisiacs, so when I cum and clamp down on it, you'll be forced to squirt every ounce of seed into my girls.</i>\"\n\n", false);
 		
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("She disappears behind you and you shiver in anticipation, your [vagina] moistening.  ", false);
 			}
 			else {
 				outputText("She disappears behind you and you cringe, knowing this will probably be at least slightly uncomfortable.  ", false);
 			}
 			if(player.tallness > 48) outputText("You can hear her climbing up on something behind you, in order to get to the right height.  ", false);
-			outputText("Your expression of " + player.assholeOffLimits("excitement", "disdain") + " is ruined when one of the sluts stretches wide and slurps your " + cockHead(0) + " into her mouth.  Her tongue feels like heaven as it slides over your tip, and her sister works the shaft, jerking the spit-lubed monster off with fast strokes.   Your enjoyment is interrupted by a sudden intrusion at your " + player.assholeOffLimits("entrance", "backdoor") + ".  The rubbery flared horse-toy presses against your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ", dribbling a little bit of its strange lubricants into your " + player.assholeOffLimits("entrance", "backdoor") + " as Tamani pushes it forward.   Tiny hands grab your " + assDescript() + " as it's pushed forward, and you "  + player.assholeOffLimits("whimper with desire as it parts your folds", "have no choice but to relax and allow it inside") +  ".\n\n", false);
+			outputText("Your expression of " + assholeOffLimits("excitement", "disdain") + " is ruined when one of the sluts stretches wide and slurps your " + cockHead(0) + " into her mouth.  Her tongue feels like heaven as it slides over your tip, and her sister works the shaft, jerking the spit-lubed monster off with fast strokes.   Your enjoyment is interrupted by a sudden intrusion at your " + assholeOffLimits("entrance", "backdoor") + ".  The rubbery flared horse-toy presses against your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ", dribbling a little bit of its strange lubricants into your " + assholeOffLimits("entrance", "backdoor") + " as Tamani pushes it forward.   Tiny hands grab your " + assDescript() + " as it's pushed forward, and you "  + assholeOffLimits("whimper with desire as it parts your folds", "have no choice but to relax and allow it inside") +  ".\n\n", false);
 			
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("Tamani thrusts her hips forward, forcing it inside you.  You buck your hips, and the goblin on your cock nearly chokes from the sudden change, though her sister gives you a wicked grin and strokes harder.  A flash of warmth squirts inside you in time with a moan from Tamani, and suddenly your body is exploding with pleasure.\n\n", false);
 			}
 			else {
 				outputText("Half the head slips inside you, then the other, and in no time Tamani is slowly forcing it inside you.  It hurts just a little, enough to make your hips swivel forwards in a futile attempt at escape.  The goblin on your cock nearly chokes from the sudden change, though her sister gives you a wicked grin and strokes harder.  A flash of warmth squirts inside you in time with a moan from Tamani, and suddenly your body is exploding with pleasure.\n\n", false);
 			}
 			
-			outputText("Cum bubbles from the first goblin's nose as she falls off you, getting a massive facial in the process.  Her twin sister happily jacks you off, aiming your tool down at the row of cunts below you.  The sticky spooge splatters into their holes, painting their toned midriffs and ample thighs with sticky whiteness as your used like some kind of fertility sprinkler. Tamani shoves her artificial dong further into your " + player.assholeOffLimits("cunt", "backdoor") + " and somehow you manage to squeeze out a few more splattering drops of whiteness for her daughters.\n\n", false);
+			outputText("Cum bubbles from the first goblin's nose as she falls off you, getting a massive facial in the process.  Her twin sister happily jacks you off, aiming your tool down at the row of cunts below you.  The sticky spooge splatters into their holes, painting their toned midriffs and ample thighs with sticky whiteness as your used like some kind of fertility sprinkler. Tamani shoves her artificial dong further into your " + assholeOffLimits("cunt", "backdoor") + " and somehow you manage to squeeze out a few more splattering drops of whiteness for her daughters.\n\n", false);
 			
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("Spent, your " + cockDescript(0) + " wilts, drooping downward as it drips the last of its seed.  Tamani seems oblivious to that fact though, and continues to fuck you from behind.  You moan whorishly when another squirt of aphrodisiacs releases inside you.  A torrent of blood rushes to your " + cockDescript(0) + " and you're suddenly achingly hard again.", false);
 			}
 			else {
@@ -302,7 +302,7 @@ private function fuckYoDaughtersHomie():void {
 		outputText(" as she presses her hard nipples up against your " + player.legs() + ". ", false);
 		//(No Tamani:
 		if(!tamani) {
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("She presses something against your cunt and before you have a chance to react, something hot and wet is filling your " + vaginaDescript() + ".  You look down as she pulls out a tube of pink residue, and sway with burning desire.\n\n", false);
 			}
 			else {
@@ -311,12 +311,12 @@ private function fuckYoDaughtersHomie():void {
 		}
 		else outputText("The feeling of the ridges and flare of Tamani's fake cock as it slides inside you makes you sway on your feet, drunk with the lust its fluids have induced.   You sway back and forth with burning desire as the both twins caress and stroke your meat, coaxing as much pleasure from it as possible.\n\n", false);
 			
-		outputText("You explode, coming harder than ever from the pressure and drugs" + player.assholeOffLimits(" flooding your womb", " buried against your prostate") + ".  One of the twins, tired of waiting, pulls your " + cockDescript(0) + " over and shoves your tip against her slickened folds.  You manage to pump a thick blob of cum deep inside her before her sister snatches it away, grinding her own hungry twat against you until her entire groin is stained white.  They glare at each other, but after seemingly being sated, they return to fondling your " + cockDescript(0) + " together, using it like a hose to drench their smiling sisters with the remaining cum.\n\n", false);
+		outputText("You explode, coming harder than ever from the pressure and drugs" + assholeOffLimits(" flooding your womb", " buried against your prostate") + ".  One of the twins, tired of waiting, pulls your " + cockDescript(0) + " over and shoves your tip against her slickened folds.  You manage to pump a thick blob of cum deep inside her before her sister snatches it away, grinding her own hungry twat against you until her entire groin is stained white.  They glare at each other, but after seemingly being sated, they return to fondling your " + cockDescript(0) + " together, using it like a hose to drench their smiling sisters with the remaining cum.\n\n", false);
 		
 		if(tamani) {
 			outputText("Tamani pushes hard and screams behind you, \"<i>OH FUCK YES KNOCK THEIR LITTLE CUNTS UP!  Oooooohh...</i>\"\n\n", false);
 			
-			outputText("Her voice trails off into indecipherable gibberish as her orgasm takes her.  You can feel the horse-dick shaped dildo in your " + player.assholeOffLimits("pussy", "ass") + " squirting its tainted fluids into you as Tamani's cunt clenches down on its other side.  Abruptly, the entire thing slides out, and you hear Tamani collapse in the grass.  You turn around as your cock responds to the drugs again, and note that she's totally out of it, mashing her tits with both hands and trembling with short involuntary muscle spasms.\n\n", false);
+			outputText("Her voice trails off into indecipherable gibberish as her orgasm takes her.  You can feel the horse-dick shaped dildo in your " + assholeOffLimits("pussy", "ass") + " squirting its tainted fluids into you as Tamani's cunt clenches down on its other side.  Abruptly, the entire thing slides out, and you hear Tamani collapse in the grass.  You turn around as your cock responds to the drugs again, and note that she's totally out of it, mashing her tits with both hands and trembling with short involuntary muscle spasms.\n\n", false);
 		}
 		if(!tamani) outputText("You're handed another bottle as t", false);
 		else outputText("T", false);
@@ -769,7 +769,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 	else outputText(allBreastsDescript(), false);
 	outputText(" and shoves a lactating nipple into your mouth, commanding, \"<i>Drink up, the more fluid you have the more baby batter you can cook up for us!</i>\"\n\n", false);
 	
-	outputText("Unable to fight back in any way, you shrug and begin suckling the purplish nipple, tasting the creamy goblin milk as it easily fills your mouth.  You gulp it down, slowly relaxing between the mechanized cock-sucking and gentle breast-feeding.  Your daughter was right, it's almost like paradise. Unfortunately, the pleasure is interrupted by something probing at your backside.  Unable to look with your mouth full of delicious tit, you can only gurgle and dribble in protest as a lubricated tube is inserted into your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ".\n\n", false);
+	outputText("Unable to fight back in any way, you shrug and begin suckling the purplish nipple, tasting the creamy goblin milk as it easily fills your mouth.  You gulp it down, slowly relaxing between the mechanized cock-sucking and gentle breast-feeding.  Your daughter was right, it's almost like paradise. Unfortunately, the pleasure is interrupted by something probing at your backside.  Unable to look with your mouth full of delicious tit, you can only gurgle and dribble in protest as a lubricated tube is inserted into your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ".\n\n", false);
 	
 	outputText("The familiar voice of the machine's inventor whispers, \"<i>", false);
 	if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00058] == 0) outputText("Time for your medicine!  We need you to cum enough for each of us, and maybe have a little left over to play with, so suck up the medicine, okay?  Just relax and let it fill you so that you give us all that yummy cummy!</i>\"\n\n", false);
@@ -784,7 +784,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 	
 	outputText("A trickle of warm fluid flows into you, and immediately your skin tingles, burning with heat and need.  ", false);
 	if(player.balls > 0) outputText("Your balls tighten inside your sack and swell up like sponges, slowly increasing in size in time with your desire.", false);
-	else outputText("Your body feels tight and needy, your gut clenching as your body adjusts to the drugs it's absorbing so readily through your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ".", false);
+	else outputText("Your body feels tight and needy, your gut clenching as your body adjusts to the drugs it's absorbing so readily through your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ".", false);
 	outputText("  The suckling pleasure around ", false);
 	if(cocks > 1) outputText("each of ", false);
 	outputText("your " + multiCockDescriptLight() + " seems to slowly increase as more of the drugs are absorbed by your body, until escaping the straps for your freedom is longer a concern.   Now all that matters is getting free so that you can fuck ");
@@ -796,7 +796,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 	
 	outputText("The goblins, upon seeing your change in demeanor, begin smiling to one another and congratulating each other on their hard work.  The girl at the console twists a few more levers and the warmth inside you seems to double as more drugs are forced into your captive frame.  You start " + player.mf("laughing","giggling") + ", the narcotics and pleasure overwhelming your thought processes, leaving you feeling like you're floating in heaven.  To anyone watching, you're panting and moaning in between the laughter, slobbering all over the milky goblin-tit in your mouth as your body begins squirting pre-cum into the cock-milker.\n\n", false);
 	
-	outputText("A few seconds away from your orgasm, the goblin running the machinery makes a few adjustments, and you feel the flow into your " + player.assholeOffLimits("pussy growing stronger until you feel it burst through your cervix and flood into your womb", "rectum growing stronger until you start to feel full and bloated") + ".  Your body caves in to the pleasure, every inch of your skin tingling as you're forced to climax.  ", false);
+	outputText("A few seconds away from your orgasm, the goblin running the machinery makes a few adjustments, and you feel the flow into your " + assholeOffLimits("pussy growing stronger until you feel it burst through your cervix and flood into your womb", "rectum growing stronger until you start to feel full and bloated") + ".  Your body caves in to the pleasure, every inch of your skin tingling as you're forced to climax.  ", false);
 	if(player.balls > 0) outputText("Straining and shaking, your " + ballsDescriptLight() + " clench against you, feeling tight as your body struggles to pump out the spooge they're producing.", false);
 	else outputText("Straining and shaking , your body struggles through the orgasm as it tries to deal with all the cum your prostate and glands are putting out.", false);
 	outputText("  The drugs and milking machines squish, suck, and whirr noisily as you cum, flooding the tubes above the mechanical cunt-bulb with white.\n\n", false);
@@ -811,7 +811,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 	
 	//// Chance of tamani saving you
 	if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00058] < 4) {
-		outputText("You lose consciousness a few hours into the ordeal, still cumming with no sign of stopping, your body sustained by the fluids pouring into your " + player.assholeOffLimits("snatch", "backside") + ".  The dreams are a constant barrage of sexual situations, flitting between various incongruous orgasmic acts.  Were you capable of comprehending your situation, you probably wouldn't even want to wake up.  Alas, the pleasure does end, and you settle into a deeper slumber.  A gentle rocking and the exhaustion of your crotch keep you snoring soundly for hours.\n\n", false);
+		outputText("You lose consciousness a few hours into the ordeal, still cumming with no sign of stopping, your body sustained by the fluids pouring into your " + assholeOffLimits("snatch", "backside") + ".  The dreams are a constant barrage of sexual situations, flitting between various incongruous orgasmic acts.  Were you capable of comprehending your situation, you probably wouldn't even want to wake up.  Alas, the pleasure does end, and you settle into a deeper slumber.  A gentle rocking and the exhaustion of your crotch keep you snoring soundly for hours.\n\n", false);
 		
 		outputText("When you do wake, you'll find yourself alone in a forest clearing, with a note taped to your face:\n\n", false);
 		if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00058] == 0) {
@@ -829,7 +829,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 	}
 	//(ALT – BAD END GATEWAY)
 	else {
-		outputText("You lose consciousness a few hours into the ordeal, still cumming with no sign of stopping, your body sustained by the fluids pouring into your " + player.assholeOffLimits("snatch", "backside") + ".  The dreams you have are a constant barrage of sexual situations, flitting between various incongruous orgasmic acts.  Were you capable of comprehending your situation, you probably wouldn't even want to wake up.  Thankfully, your unwished desires become reality.", false);
+		outputText("You lose consciousness a few hours into the ordeal, still cumming with no sign of stopping, your body sustained by the fluids pouring into your " + assholeOffLimits("snatch", "backside") + ".  The dreams you have are a constant barrage of sexual situations, flitting between various incongruous orgasmic acts.  Were you capable of comprehending your situation, you probably wouldn't even want to wake up.  Thankfully, your unwished desires become reality.", false);
 		//[NEXT]
 		doNext(tamaniDaughtersBadEndChoice);
 	}
@@ -846,7 +846,7 @@ private function tamaniDaughtersCombatLossDrain():void {
 
 private function tamaniDaughtersBadEndChoice():void {
 	spriteSelect(57);
-	outputText("The next morning your unfocused eyes blink open, and you find yourself in the same situation as before.  Thankfully your orgasm has been allowed to end, though you still feel dopey and unfocused from whatever is flowing into you.  You manage to twist your head around to get a better look at the situation and discover a pair of IV's lodged in your arms.  Twisting your body, you realize you can still feel the drug-" + player.assholeOffLimits("pumping", "enema") + " tube lodged in your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ".  Oddly, it's hard to feel worried or concerned about the situation.\n\n", false);
+	outputText("The next morning your unfocused eyes blink open, and you find yourself in the same situation as before.  Thankfully your orgasm has been allowed to end, though you still feel dopey and unfocused from whatever is flowing into you.  You manage to twist your head around to get a better look at the situation and discover a pair of IV's lodged in your arms.  Twisting your body, you realize you can still feel the drug-" + assholeOffLimits("pumping", "enema") + " tube lodged in your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ".  Oddly, it's hard to feel worried or concerned about the situation.\n\n", false);
 	
 	outputText("A goblin leans over your face and hugs her jiggling breasts against you as she gushes, \"<i>Thank you so much daddy!   You probably can't see with all the straps holding you down, but you got me and my sisters totally pregnant.  There's even enough of your spunk left over to knock us up a few more times!  We decided that even though we don't need you to cum right now, we'd let you keep coming forever.  Do you want that?</i>\"\n\n", false);
 	
@@ -859,7 +859,7 @@ private function tamaniDaughtersBadEndChoice():void {
 private function tamaniDaughtersYesBadEndMePlease():void {
 	spriteSelect(57);
 	outputText("", true);
-	outputText("\"<i>Wonderful!</i>\" cries the excited pregnant slut.   She gives you a quick peck on the cheek as she prances back over to the machine.  You brace yourself in anticipation, eager to lose yourself to an eternal orgasm.  A switch clicks, and a dial whirs as it's turned up to the maximum.  The fluids pumping into your " + player.assholeOffLimits("cunt", "backside") + " and directly into your veins suddenly jump in pressure, stinging painfully for a moment before the pleasure returns.  Your eyes slowly roll back, your jaw goes slack, and your " + multiCockDescriptLight() + " spew", false);
+	outputText("\"<i>Wonderful!</i>\" cries the excited pregnant slut.   She gives you a quick peck on the cheek as she prances back over to the machine.  You brace yourself in anticipation, eager to lose yourself to an eternal orgasm.  A switch clicks, and a dial whirs as it's turned up to the maximum.  The fluids pumping into your " + assholeOffLimits("cunt", "backside") + " and directly into your veins suddenly jump in pressure, stinging painfully for a moment before the pleasure returns.  Your eyes slowly roll back, your jaw goes slack, and your " + multiCockDescriptLight() + " spew", false);
 	if(player.totalCocks() == 1) outputText("s", false);
 	outputText(" cum into the tubes.\n\n", false);
 	if(player.statusAffectv1(StatusAffects.Exgartuan) == 1) outputText("Exgartuan moans, \"<i>Ohhhhhh yeeeeaaaaahhhh...</i>\" before slipping into silence.\n\n", false);
@@ -876,7 +876,7 @@ private function tamaniDaughtersDeclineBadEnd():void {
 	
 	outputText("She sighs, \"<i>Whatever, Dad.  Next time we need you I'm sure you'll remember how much fun this was and come running home.</i>\"\n\n", false);
 	
-	outputText("The restraints pop off you at once, and you pull the tubes and IV's from your skin.  You grunt with discomfort and remove the final tube from your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + ".  Climbing off the table, your " + player.legs() + " wobble unsteadily as you try to get your balance.   The goblin says, \"<i>Go on home dad before I strap you back down and teach you to enjoy my gifts!</i>\"\n\n", false);
+	outputText("The restraints pop off you at once, and you pull the tubes and IV's from your skin.  You grunt with discomfort and remove the final tube from your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ".  Climbing off the table, your " + player.legs() + " wobble unsteadily as you try to get your balance.   The goblin says, \"<i>Go on home dad before I strap you back down and teach you to enjoy my gifts!</i>\"\n\n", false);
 	
 	outputText("You sheepishly leave the cave and head home, glad to be out of there before your growing tribe of daughters decides to milk you forever.\n\n", false);
 	cleanupAfterCombat();

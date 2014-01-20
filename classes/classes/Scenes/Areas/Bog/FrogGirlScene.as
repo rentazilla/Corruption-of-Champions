@@ -52,7 +52,7 @@ private function followDatFrog():void {
 	outputText("\n\nShe pulls away from the kiss, leaving a long strand of saliva between her lips and yours.  The frog girl smirks, and you giggle, wanting to ask her what’s so funny.  Before you can, though, an intense wave of shuddering pleasure roars through you.  Beginning in your [feet], it thunders up through your body, feeling like an orgasm for every nerve ending.  It could be seconds or hours before it reaches your drug-addled brain, but you’re so far beyond counting or caring.");
 	outputText("\n\nYou lay back, shuddering in the water, mouth agape as your eyes focus loosely on the frog girl over you.  Your vision is full of colors and as she opens her mouth to sing again, nebulas of colors and sounds saturating the very air.");
 	outputText("\n\n\"<i>Feeling better now?</i>\" she asks, as the world dissolves into colors with no name.  Her bizarrely echoes across the surface of the pool.");
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		outputText("\n\nCompletely lost in sensation, you pant as you feel slick fingers trailing over your [asshole] under the water before suddenly slipping to your [vagina] instead.  Lovely, fluttery sensations accent your high as the frog girl takes a position between your legs.  A cool softness presses against your pussy, and some kind of thick goo adheres it to your twitching hole.");
 		outputText("\n\nYou cross and uncross your eyes, trying to focus on the frog girl as she grips your hips adjusting herself.  She’s in some kind of scissoring pose, her pussy glued to yours.  With a grunt, she wraps her arms around her pale belly, hugging herself.  You feel her soft pussy twitching against you as something gooey and large pushes against your hole.");
 		outputText("\n\n\"<i>Anh!  Unnnh!</i>\" she moans, shuddering and bearing down on her pregnant belly.  A round, gooey mass oozes from her cunt, stretching your cunt as it moves into you.");
@@ -81,7 +81,7 @@ private function getFrogButtFilled():void {
 	outputText("\n\nWrapping your arms under your heavy belly, you clamber out of the pool.  Water sluices down your naked body, leaving the last of the slime behind you in the no-longer pristine water.");
 	outputText("\n\nYou don your [armor] with some difficulty over your massive stomach, and venture back towards your camp, a little sore, but wiser for the ordeal.");
 	dynStats("int", 1);
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		player.knockUp(23,30,1,1);
 	}
 	else {
@@ -129,7 +129,7 @@ private function questDatFrogGirl():void {
 	menu();
 	addButton(4,"Leave",continueOnYourWay);
 	if(player.hasVagina()) addButton(0,"Vaginally",superBonusFrogEggsInYerCooch);
-	if(!player.assholeOffLimits()) addButton(1,"Carry",carryBeeGirlsEggsVoluntarilyYouButtSlut);
+	if(!assholeOffLimits()) addButton(1,"Carry",carryBeeGirlsEggsVoluntarilyYouButtSlut);
 }
 
 //Continue on your way:

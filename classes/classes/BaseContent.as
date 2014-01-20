@@ -526,6 +526,22 @@
 			kGAMECLASS.fatigue(mod,type);
 		}
 
+		// This has a few different functions:
+		// * If it's handed two arguments, it'll return the first if the asshole is off limits, and the second otherwise.
+		// * If it's handed one argument, it'll return the first if off limits, or an empty string otherwise.
+		// * If it's handed no arguments, it returns true if off limits, false otherwise.
+		protected function assholeOffLimits(offLimitsAnswer:Object = null, allowedAnswer:Object = null):Object
+		{
+			if(offLimitsAnswer == null && allowedAnswer == null) {
+				offLimitsAnswer = true;
+				allowedAnswer = false;
+			}
+			else if(allowedAnswer == null) {
+				allowedAnswer = "";
+			}
+			
+			return player.assholeOffLimits() ? offLimitsAnswer : allowedAnswer;
+		}
 
 		protected function get eventParser():Function
 		{

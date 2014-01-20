@@ -317,9 +317,9 @@ private function auntNancyPoonPartII():void {
 
 		outputText("Such thoughts are interrupted when you suddenly feel Aunt Nancy's fingers on the lower half of your body again, caressing your ", false);
 		if(player.tailType > TAIL_TYPE_NONE) outputText("tail before rising to your ", false);
-		outputText(vaginaDescript(0) + " and " + buttDescript() + ".  Aunt Nancy turns your head to face hers, and rises up onto her legs again as her fingers begin to sink deep into your " + vaginaDescript(0) + player.assholeOffLimits("", " and your " + assholeDescript()) + ".  You moan, loudly and long at the sensation, and Aunt Nancy smiles lewdly, her other hands still exploring and squeezing your " + chestDesc() + ", rubbing and kneading them softly and occasionally pinching and pulling at your " + nippleDescript(0) + "s.\n\n", false);
+		outputText(vaginaDescript(0) + " and " + buttDescript() + ".  Aunt Nancy turns your head to face hers, and rises up onto her legs again as her fingers begin to sink deep into your " + vaginaDescript(0) + assholeOffLimits("", " and your " + assholeDescript()) + ".  You moan, loudly and long at the sensation, and Aunt Nancy smiles lewdly, her other hands still exploring and squeezing your " + chestDesc() + ", rubbing and kneading them softly and occasionally pinching and pulling at your " + nippleDescript(0) + "s.\n\n", false);
 		
-		outputText("Suddenly, you realize that your left hand is now free, courtesy of one of Aunt Nancy's smooth, gentle arms.  She whispers, quietly, \"<i>A little for me too, please.</i>\"  Realizing exactly what she means, you press the " + player.skinFurScales() + " of your hand against her pussy.  Its entrance, two parted shell-plates dripping wet fluid, would almost be scary if you weren't so very relaxed.  Gently, your press your fingers into her body, and hear her moan, loudly, feel her own hands scrabbling inside of your " + vaginaDescript(0) + player.assholeOffLimits("", " and " + assholeDescript()) + ", pawing your chest and " + buttDescript() + ", trailing through your " + hairDescript() + ".\n\n", false);
+		outputText("Suddenly, you realize that your left hand is now free, courtesy of one of Aunt Nancy's smooth, gentle arms.  She whispers, quietly, \"<i>A little for me too, please.</i>\"  Realizing exactly what she means, you press the " + player.skinFurScales() + " of your hand against her pussy.  Its entrance, two parted shell-plates dripping wet fluid, would almost be scary if you weren't so very relaxed.  Gently, your press your fingers into her body, and hear her moan, loudly, feel her own hands scrabbling inside of your " + vaginaDescript(0) + assholeOffLimits("", " and " + assholeDescript()) + ", pawing your chest and " + buttDescript() + ", trailing through your " + hairDescript() + ".\n\n", false);
 
 		outputText("It feels wonderful.  You lie back and moan, enjoying the smooth, silky insides of her pussy, feeling tiny feelers occasionally caress and pull at your fingers inside of her.\n\n", false);
 		//[If PC is lactating:]
@@ -415,7 +415,7 @@ private function auntNancyPoonPartIII():void {
 	else {
 		outputText("You can feel it when the spider-lady's pussy begins to quiver in delight.  Aunt Nancy soon moans, then cries out in incredible pleasure.  The lower half of her eyes all close, while the others all roll up into her head in ecstasy.  \"<i>Yes!  YEEEEESSSSSSS!</i>\" she hisses with throaty, feminine indulgence.  The tiny feelers in her otherwise silky-smooth vagina suddenly begin to squeeze and pull at your fingers, and her own fingers are soon touching sensitive places of their own inside of your ", false);
 		//[If PC has a vagina:]
-		if(player.assholeOffLimits()) {
+		if(assholeOffLimits()) {
 			outputText(vaginaDescript(0) + ".\n\n");
 		}
 		else {
@@ -432,7 +432,7 @@ private function auntNancyPoonPartIII():void {
 
 		outputText("Eventually, the sensation subsides, and she gently slides her fingers from your ", false);
 		//[If PC has a vagina:]
-		if(player.assholeOffLimits()) {
+		if(assholeOffLimits()) {
 			outputText(vaginaDescript(0), false);
 		}
 		else {

@@ -467,7 +467,7 @@ private function tailFuckGargoyleScene():void {
 	
 	outputText("\n\nNow firmly inside your depths, " + flags[kFLAGS.GAR_NAME] + " begins to wiggle her tail inside you, slithering a few inches in and out of your [vagina].  Encouraging her, you grasp her shoulders for support and push your cunt a little closer to her face.  Taking the hint, she snakes out her long tongue and gives your clitty a little flick, eliciting an immediate gasp of pleasure from you.  She's soon engaging in a double-assault on you, suckling on your [clit] one moment, and ramming her tail into your [vagina] the next.");
 	
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		outputText("\n\nBefore long, your eyes have rolled back in your head with pleasure.  Girlcum spurts from your cunt, splattering " + flags[kFLAGS.GAR_NAME] + "'s face with your juices as you cum.  Your cunt squeezes down on her appendage, trapping it inside you as your ride out the orgasm, bouncing on her rigid, rapidly-moistening tail until your body settles down.");
 	}
 	else {

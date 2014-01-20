@@ -175,7 +175,7 @@ private function plantsForMe2(BE:int = 0):void {
 		outputText("your pleasure.  In time, their pumping increases in force and tempo just as her lips and tongue do.");
 	}
 	
-	if(!player.assholeOffLimits()) {
+	if(!assholeOffLimits()) {
 		outputText("\n\nAnother tentacle momentarily rubs over her breast, growing slimy with the sap before it moves around behind you and abruptly shoves into your [asshole].  Like a professional, she takes it slow to start, letting you adjust to the unique girth and contours of the tentacle as it plunges in deep.  It smoothly pulls nearly out only to pump in deeply once more.");
 		player.buttChange(10,true,true,false);
 	}

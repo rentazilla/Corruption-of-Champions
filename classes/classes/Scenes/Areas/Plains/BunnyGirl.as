@@ -70,7 +70,7 @@ public function bunnbunbunMeet():void {
 			eggs = 3951;
 		}
 		
-		if(!player.assholeOffLimits()) {
+		if(!assholeOffLimits()) {
 			DickInA = bunbunFucksPCInAss;
 			outputText("  Her dick in your ass?", false);
 		}

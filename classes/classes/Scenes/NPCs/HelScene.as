@@ -214,7 +214,7 @@ private function helDefeatedCorrupt():void {
 		if(player.lust < 33) outputText("\n\nYou aren't turned on enough to fuck her right now.", false);
 		if(player.cockThatFits(85) == -1) outputText("\n\nYour dick is too big to fuck her anally.", false);
 	}
-	if(!player.assholeOffLimits()) {
+	if(!assholeOffLimits()) {
 		rim = receiveCorruptRimjobsFromHel;
 	}
 	simpleChoices("Rape Ass",ass,"Get Rimjob",rim,"",0,"",0,"Wait",createCallBackFunction(helDefeatedNormal,true));
@@ -273,7 +273,7 @@ private function helFuckMenu():void {
 		getBlown = helBlowsYou;
 	}
 	var tailFuck:Function = helTailPegging;
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		tailFuck = null;
 	}
 	//ALTERNATE BODY BUTTONS
@@ -294,7 +294,7 @@ private function helFuckMenu():void {
 			bodyButt = nagaCoilsUpHel;
 			bodyText = "CoilFuck";
 		}
-		else if(!player.assholeOffLimits()) {
+		else if(!assholeOffLimits()) {
 			bodyText2 = "TailsInButts";
 			bodyButt2 = nagaCoilsUpAnalNaga;
 		}
@@ -483,7 +483,7 @@ internal function getLickedByHel():void {
 
 	outputText("The salamander grips your " + buttDescript() + " with her smooth, scaly hands as she slips her wonderfully long tongue into your " + vaginaDescript(0) + ", flicking and tickling every inch of your sensitive cunt as she forces in inch after inch, until all eight are pushed inside you, driving you wild with lust as she lustily tonguefucks you.  Gripped by building pleasure, you push her onto her back and smash your cunt against her mouth, bucking your hips as she continues her skilled assault, making you shudder and writhe with pleasure.\n\n", false);
 
-	if(!player.assholeOffLimits()) {
+	if(!assholeOffLimits()) {
 		outputText("Even as she licks your " + vaginaDescript(0) + ", you feel a sudden pressure on your own back door. Looking over your shoulder, you see the very tip of her tail pressing against your " + assholeDescript() + ", seeking to double your pleasure.  You try and relax your sphincter, letting just a few inches into your ass, and even that is enough to make you gasp as her dexterous tip works in conjunction with her long tongue.\n\n", false);
 	}
 	
@@ -492,7 +492,7 @@ internal function getLickedByHel():void {
 		outputText(" while " + sMultiCockDesc() + " shoots its load into her red hair", false);
 		if(player.cumQ() >= 500) outputText(", bathing her in streams of jism", false);
 	}
-	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, " + player.assholeOffLimits("", "as does her tail, ") + "and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
+	outputText(".  You shudder and gasp as her forked tongue slowly withdraws from your depths, " + assholeOffLimits("", "as does her tail, ") + "and you can't help but collapse onto her inviting tits as exhaustion overwhelms you.\n\n", false);
 
 	outputText("She gives a little laugh and strokes your cheek as you drift off into a contented, peaceful sleep.", false);
 	//(reduce lust, increment Helgate flag by 1)

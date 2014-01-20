@@ -3889,23 +3889,9 @@ import classes.PerkType;
 			return Appearance.breastSize(val);
 		}
 		
-		// This has a few different functions:
-		// * If it's handed two arguments, it'll return the first if the asshole is off limits, and the second otherwise.
-		// * If it's handed one argument, it'll return the first if off limits, or an empty string otherwise.
-		// * If it's handed no arguments, it returns true if off limits, false otherwise.
-		public function assholeOffLimits(offLimitsAnswer:Object = null, allowedAnswer:Object = null):Object
+		public function assholeOffLimits():Boolean
 		{
-			if(offLimitsAnswer == null && allowedAnswer == null) {
-				offLimitsAnswer = true;
-				allowedAnswer = false;
-			}
-			else if(allowedAnswer == null) {
-				allowedAnswer = "";
-			}
-			
-			var isOffLimits:Boolean = this.hasVagina();
-			
-			return isOffLimits ? offLimitsAnswer : allowedAnswer;
+			return this.hasVagina();
 		}
 	}
 }

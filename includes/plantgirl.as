@@ -1075,7 +1075,7 @@ public function victoryDefeatPlantGirlGetBJMainSCREENON():void
 			outputText("\n\nDeciding to take charge, you lower your slimy mass onto the plant creature's average body, swallowing up her upper body and arms.  With a little concentration and focus, you shift your gooey mess of a lower body to push her arms behind her back, and hold them there while you take her by the back of the head and face-fuck her hard.");
 			//(Goo scene ignores the prostate massage, and goes to the End of V 1.2 & D 1.2)
 		}
-		else outputText("\n\nThe plant girl grabs you by your [butt] and begins to increase her tempo as she lowers a hand to your ["player.assholeOffLimits("vagina", "asshole")"].  With little warning, she wiggles two of her fingers through your " + player.assholeOffLimits("cunt", "sphincter") + " and edges her way to your prostate, massaging it once she reaches it.  This intensifies your pleasure, and soon you feel the need to cum.");
+		else outputText("\n\nThe plant girl grabs you by your [butt] and begins to increase her tempo as she lowers a hand to your ["assholeOffLimits("vagina", "asshole")"].  With little warning, she wiggles two of her fingers through your " + assholeOffLimits("cunt", "sphincter") + " and edges her way to your prostate, massaging it once she reaches it.  This intensifies your pleasure, and soon you feel the need to cum.");
 	}
 	//End of V 1.2 & D 1.2:
 	outputText("\n\nYou begin to moan loudly as your orgasm builds, and the plant girl responses by sucking harder, perverted but highly arousing slurping noises easing out of her craw as you roughly fuck her face.  The rush of sexual release runs through your body like electricity, and you cry out as you release your sploge in the creature's mouth");

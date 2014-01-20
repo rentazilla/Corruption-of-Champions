@@ -117,7 +117,7 @@ private function RoxanneChooseApproachOrRepeat():void {
 	}
 	else outputText("If you're reading this, something broke.", false);
 	
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		outputText("  <b>If you do, you're taking a very big risk with your [asshole]...</b>");
 	}
 	
@@ -209,7 +209,7 @@ public function roxanneDrinkingContest():void {
 		var rimjob:Function = null;
 		if(player.hasCock()) fellatio = roxanneGivesABlowjob;
 		if(player.hasVagina()) cunnilingus = roxanneCunnilingus;
-		if(!player.assholeOffLimits()) rimjob = roxanneRimjob;
+		if(!assholeOffLimits()) rimjob = roxanneRimjob;
 		simpleChoices("Cunnilingus",cunnilingus,"Fellatio",fellatio,"Rimming",rimjob,"",0,"",0);
 	}
 }

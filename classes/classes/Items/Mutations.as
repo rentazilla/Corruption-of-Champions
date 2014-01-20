@@ -2069,7 +2069,7 @@
 					}
 				}
 				else {
-					outputText("wagging your [" + player.assholeOffLimits("vagina", "asshole") + "] before a pack of horny wolves, watching their shiny red doggie-pricks practically jump out of their sheaths at you after going so long without a female in the pack.");
+					outputText("wagging your [" + assholeOffLimits("vagina", "asshole") + "] before a pack of horny wolves, watching their shiny red doggie-pricks practically jump out of their sheaths at you after going so long without a female in the pack.");
 					dynStats("lus", 5 + player.lib / 20);
 					//BREAK 1
 					if (player.cor < 33) {
@@ -2083,11 +2083,11 @@
 							outputText("\nYou blink a few times, the fantasy fading as you master yourself.  That daydream was so strange, yet so hot.", false);
 						}
 						else {
-							outputText("  The feeling of all that hot wolf-spooge spilling from your overfilled " + player.assholeOffLimits("cunt", "ass") + " and running down your thighs is heavenly, nearly making you orgasm on the spot.  You see the alpha of the pack is hard again, and his impressive member is throbbing with the need to spend his lust on you.", false);
+							outputText("  The feeling of all that hot wolf-spooge spilling from your overfilled " + assholeOffLimits("cunt", "ass") + " and running down your thighs is heavenly, nearly making you orgasm on the spot.  You see the alpha of the pack is hard again, and his impressive member is throbbing with the need to spend his lust on you.", false);
 							dynStats("lus", 5 + player.lib / 20);
 							//break3
 							if (player.cor < 80) {
-								outputText("\nYou reluctantly pry your hand from your aching " + player.assholeOffLimits("fuck", "ass") + "hole as you drag yourself out of your fantasy.", false);
+								outputText("\nYou reluctantly pry your hand from your aching " + assholeOffLimits("fuck", "ass") + "hole as you drag yourself out of your fantasy.", false);
 							}
 							else {
 								outputText("  You growl with discomfort as he pushes into your abused, wet hole, stretching you tightly, every beat of his heart vibrating through your hindquarters.  With exquisite force, he buries his knot in you and begins filling you with his potent seed, impregnating you for sure. Your knees give out as your fantasy nearly brings you to orgasm, the sudden impact with the ground jarring you from your daydream.", false);

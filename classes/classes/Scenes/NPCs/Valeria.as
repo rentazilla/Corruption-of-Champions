@@ -108,7 +108,7 @@ private function followersValeriaSex(display:Boolean = true):void {
 	if(flags[kFLAGS.VELARIA_FUTA] == 1) {
 		dickText = "Lose Dick";
 	}
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		gooFlation = null;
 	}
 	choices("PenetrateHer",penetrate,"Get Fucked",getFucked,"Gooflation",gooFlation,"GetDominated",dominated,dickText,dickToggle,"",0,"",0,"",0,"",0,"Back",valeriaFollower);

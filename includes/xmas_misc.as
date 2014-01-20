@@ -268,7 +268,7 @@ public function approachKamiTheChristmasRoo():void {
 		//Double-Dick Fuck (requires at least 2 cocks)
 		menu();
 		if(player.hasCock() && player.cockThatFits(70) >= 0) addButton(0,"Give Anal",giveKamiTheChristmasRooAnal);
-		if(!player.assholeOffLimits()) addButton(1,"Receive Anal",takeItRooButtStyle);
+		if(!assholeOffLimits()) addButton(1,"Receive Anal",takeItRooButtStyle);
 		addButton(2,"Give BJ",KamiBlowJob);
 		if(player.cockTotal() > 1 && player.cockThatFits(70) >= 0 && player.cockThatFits2(70) >= 0) addButton(3,"Doube-Fuck",KamiDoubleDickFuck);
 	}
@@ -522,7 +522,7 @@ public function unwrapPolarPete():void {
 
 	outputText("\n\n\"<i>Oh ho ho ho, seems like you're really enjoying your gift.  Let ol' Polar Pete lend you a hand,</i>\" he says with a twinkle in his eyes as he lays you down in the snow, his free hand stripping you of your [armor].  Despite the cold you can only sigh in relief, your skin so hot it feels like you could melt the ice and snow with ease.  Pete begins to thrust the massive candy cane into your mouth, the flexible treat dipping down inside your throat with ease.");
 	
-	if (player.assholeOffLimits()) {
+	if (assholeOffLimits()) {
 		outputText("\n\n\"<i>Looks like I missed a spot to cram in my Holiday cheer,</i>\" Pete snickers as his free hand pulls apart your [legs] and feels up your [vagina].  He thrusts his digits into its sopping depths, moving them in time with the giant candy cane jammed down your throat.  You groan in pleasure helplessly, the addictive candy melting in your mouth and glazing your throat in sweet, arousing goodness.");
 		
 		outputText("\n\nYou shut your eyes in bliss, and before you know it, Polar Pete slips between your [legs].  His south pole is pushing into your loosened quim.  \"<i>Oh ho ho..</i>\" he groans as his smooth ebony length slips past your inner walls and sinks into you.  He leaves the candy cane stuffed in your mouth as he begins to slap his hips against your [butt].  You moan and squirm as Polar Pete goes to town on your [vagina], the warm sticky precum dripping into you as he sinks in further.");
@@ -1115,7 +1115,7 @@ public function nieveFucksYou():void {
 	//[(if PC has vagina or large enough tits) \"<i>So [master],</i>\" He says pulling back slightly, \"<i>Where would you like me to put this?</i>\"][(if anal is the only option, automatically selected) \"<i>Well I guess I know where to put this huh?</i>\" He says coyly.]
 	//[Anal][Vaginal][(tits >3) Tit-Fuck]
 	menu();
-	if(!player.assholeOffLimits()) addButton(0,"Anal",takeNieveAnal);
+	if(!assholeOffLimits()) addButton(0,"Anal",takeNieveAnal);
 	if(player.hasVagina()) addButton(1,"Vaginal",takeNieveVaginal);
 }
 //Anal

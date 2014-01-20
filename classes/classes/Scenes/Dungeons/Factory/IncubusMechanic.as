@@ -18,7 +18,7 @@ package classes.Scenes.Dungeons.Factory
 			}
 			else {
 				var buttRape:Object = null;
-				if(!player.assholeOffLimits()) buttRape = 11063;
+				if(!assholeOffLimits()) buttRape = 11063;
 				
 				if (hpVictory) {
 					outputText("You smile in satisfaction as the " + short + " collapses, unable to continue fighting.  Now would be the perfect opportunity to put his tool to use...\n\nWhat do you do, rape him, service him, or let him take you anally?", true);

@@ -134,7 +134,7 @@ internal function oasisSexing():void {
 	}
 	//Buttbutt buuuuuttt
 	if(player.gender > 0) outputText("But the demons are interested in every part of you, not just your crotch.  ");
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		// XXX assholeOffLimits: Adjust to actual manifestation of this feature
 		outputText("You feel hands and dicks grabbing and jabbing at your " + buttDescript() + ", but they quickly lose interest.")
 	}

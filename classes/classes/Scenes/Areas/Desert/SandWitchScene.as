@@ -399,7 +399,7 @@ private function SWCentaurMore(argument:Number):Boolean {
 				//[cunt size is large] 
 				else outputText("a fist ", false);
 				outputText("pushing deep into your " + vaginaDescript(0));
-				if(!player.assholeOffLimits()) {
+				if(!assholeOffLimits()) {
 					outputText(", and you're surprised as ", false);
 					//[anus size is small]
 					if(player.analCapacity() < 10) outputText("her tongue ", false);
@@ -878,7 +878,7 @@ private function sandwitchSpanking():void {
 	else outputText("What the hell is she on about?  Does she actually think her little torture session is going change your attitude?");
 	outputText("\n\nPicking up the pieces of her tattered robe, the sand witch makes to leave.  She stops after a few paces and turns back your way, \"<i>Perhaps this will ease the wait.</i>\"  Your eyes widen in anger when she makes familiar motions, but there's nothing you can do.");
 	
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		outputText("Soon, smooth stone orbs are sliding into through your cheeks.  They bounce off the plug in your [butt], but slip into your [vagina] instead.  All of them are vibrating to slightly different tempos, and you get so focused on the oscillating vaginal symphony, that you miss the enchantress's departure.  You ride the vibrating stones to so many orgasms that you lose count.  Eventually, the magic column fades, receding into the sand.  At the same time, the lifeless stone orbs roll out of your [vagina]");
 	}
 	else {

@@ -99,7 +99,7 @@ package classes.Scenes.Areas.Swamp
 				outputText("\nYou could ride the drider's retractible demon-cock or her ovipositor.", false);
 			}
 			var rideOviAss:Function =null;
-			if (player.lust >= 33 && !player.assholeOffLimits()) {
+			if (player.lust >= 33 && !assholeOffLimits()) {
 				outputText("\nYou could always ride her ovipositor anally...", false);
 				rideOviAss = victoryVSDriderRideOviAnal;
 			}
@@ -118,10 +118,10 @@ package classes.Scenes.Areas.Swamp
 			spriteSelect(77);
 			//Build array of choices
 			var select:Array = [];
-			if (player.hasCock() && !player.assholeOffLimits()) select[select.length] = 0;
+			if (player.hasCock() && !assholeOffLimits()) select[select.length] = 0;
 			if (player.hasVagina()) select[select.length] = 1;
 			//Genderless scene has low chance for gendered folks
-			if (player.gender == 0 || (player.gender > 0 && !player.assholeOffLimits() && rand(3) == 0)) select[select.length] = 2;
+			if (player.gender == 0 || (player.gender > 0 && !assholeOffLimits() && rand(3) == 0)) select[select.length] = 2;
 
 			//SELECT SCENE HERE
 			var choice:Number = select[rand(select.length)];

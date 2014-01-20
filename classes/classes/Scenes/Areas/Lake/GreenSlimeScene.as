@@ -791,7 +791,7 @@ internal function rapeOozeWithMilk():void {
 			outputText("", true);
 			doNext(1);
 			if (player.gender == 2 || (player.gender == 3 && rand(2) == 0)) {
-				temp = rand(player.assholeOffLimits(2, 3));
+				temp = rand(assholeOffLimits(2, 3));
 				if (temp == 0) oozeRapesYouVaginally();
 				if (temp == 1) oozeRapesYouOrally();
 				if (temp == 2) oozeButtRapesYou();

@@ -112,13 +112,13 @@ package classes.Scenes.Areas.Plains
 
 			outputText("Sharp talons press against your back, leaving eight lines of sensation as they trace down your body and along your " + hipDescript() + ".  You feel the heat of her breath just above your ear.  \"<i>The queens of the savanna demand submission.  You are only welcome in these lands so long as you pay tribute to us in the most primal of ways.</i>\"  ", false);
 			//<For characters with non-naga tails>
-			if (player.tailType > TAIL_TYPE_NONE) outputText("One furred paw wraps around your tail before pulling up sharply, exposing your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + " to the hot, savanna air.  Sharp fangs clamp onto the tail, holding it up to rob you of any remaining modesty.", false);
+			if (player.tailType > TAIL_TYPE_NONE) outputText("One furred paw wraps around your tail before pulling up sharply, exposing your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " to the hot, savanna air.  Sharp fangs clamp onto the tail, holding it up to rob you of any remaining modesty.", false);
 			//<For characters without tails>
-			else outputText("One furred paw disappears before a single claw presses roughly against your " + player.assholeOffLimits(vaginaDescript(), assholeDescript()) + " until she hears your breath catch in your throat.", false);
-			outputText("  A soft whimper escapes your lips when something hard and damp slides firmly along your " + player.assholeOffLimits("mound", "rump") + ".  You can hear lust-filled panting from the hyena as she grinds her massive clit against your trapped form, letting you feel the warmth of her body.\n\n", false);
+			else outputText("One furred paw disappears before a single claw presses roughly against your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " until she hears your breath catch in your throat.", false);
+			outputText("  A soft whimper escapes your lips when something hard and damp slides firmly along your " + assholeOffLimits("mound", "rump") + ".  You can hear lust-filled panting from the hyena as she grinds her massive clit against your trapped form, letting you feel the warmth of her body.\n\n", false);
 
 			outputText("Clawed hands slide around your sides to roughly squeeze your " + chestDesc() + ", using the painful hold to brace her body.  The hardened shaft vanishes as her hips pull back suddenly.  The barest touches against your entrance is all the warning you have before she shoves the two inch thick hyena meat roughly forward, stretching your poor hole wide around the sudden intruder.", false);
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				player.cuntChange(30, true, true, false);
 				outputText("  The air fills with the sound of mocking laughter as the warrior forces a moan from your throat.  Your cunt is forced wide as your body stretches to accommodate the intrusion until her hips finally press against your " + buttDescript() + ".\n\n", false);
 			}
@@ -140,7 +140,7 @@ package classes.Scenes.Areas.Plains
 
 			outputText("A warm weight starts to grow deep within your abused core.  A soft, needy whimpering fills the air and it takes some time before you realize it is being dragged from your mouth each time the thick shaft plows into you.  Suddenly, pleasure crashes through your body and mind as orgasm suddenly explodes within you.  ", false);
 			
-			if(player.assholeOffLimits()) {
+			if(assholeOffLimits()) {
 				outputText("Your juices gush around her, coating your thighs and dripping onto the dry grass below you, as your " + vaginaDescript() + " grips the strange intruder buried deep within you. The hyena roars her pleasure, slamming deep into you as your body milks her hard cunt for the juices flowing from her.\n\n", false);
 
 				outputText("With a grunt, the hyena pulls away from your trapped form, filling the air with the scent of the hyena musk that now mixes with your own as it drips from your fuckhole.  With one deft motion of her paw, the bindings on your hands suddenly slip free, ", false);

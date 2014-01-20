@@ -68,7 +68,7 @@ public function fapArenaGOOOO():void {
 
 		outputText("Everyone nods in agreement, hands and genitalia quivering in excitement.  ", false);
 		
-		if(player.assholeOffLimits()) {
+		if(assholeOffLimits()) {
 			outputText("Everyone except you, that is.  ");
 			if(player.cor > 66) outputText("The game itself sounds fun enough, but you");
 			else outputText("You");

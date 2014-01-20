@@ -988,7 +988,7 @@ public function succubusLossRape():void {
 		}
 		outputText("\n\n", false);
 		//[[Cum]]
-		if(player.assholeOffLimits()) {
+		if(assholeOffLimits()) {
 			outputText("The succubus licks her lips in anticipation as she curls her silk-clad toes tighter around you, making you bulge and twitch in obscene pleasure.  With a naughty smile, she caresses your quim with her bulbous demonic tail.  Before you can react, it plunges inside you, easily slipping into your " + vaginaDescript());
 		}
 		else {

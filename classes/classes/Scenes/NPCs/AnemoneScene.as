@@ -125,7 +125,7 @@ package classes.Scenes.NPCs
 				//Normal male: -requires dick of area < 36
 				if (player.cockTotal() > 0) cockRape = rapeAnemoneWithDick;
 				if (player.hasVagina()) vaginaRape = rapeAnemoneWithPussy;
-				if (!player.assholeOffLimits()) yourButtRape = victoryButtholeRape;
+				if (!assholeOffLimits()) yourButtRape = victoryButtholeRape;
 				var bikiniTits:Function =null;
 				if (player.hasVagina() && player.biggestTitSize() >= 4 && player.armor is LustyMaidensArmor) bikiniTits = (player.armor as LustyMaidensArmor).lustyMaidenPaizuri;
 				choices("Your Ass", yourButtRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "Her Butt", anal, "Lay Egg", eggs, "", 0, "", 0, "", 0, "B.Titfuck", bikiniTits, "Leave", cleanupAfterCombat);
@@ -391,7 +391,7 @@ package classes.Scenes.NPCs
 				return;
 			}
 			//loss, male:
-			if (player.cockTotal() > 0 && (player.cockThatFits(36) >= 0 || !player.assholeOffLimits())) {
+			if (player.cockTotal() > 0 && (player.cockThatFits(36) >= 0 || !assholeOffLimits())) {
 				outputText(images.showImage("anemone-male-fuck"), false);
 				if (player.cockThatFits(36) >= 0) {
 					outputText("Shivering, you slump before the anemone and begin trying to remove your " + player.armorName + ".  She claps and peals happily, splashing over to you.  Pushing your trembling hands out of the way, she unfastens your garments and pulls them free of you, taking the opportunity to run a hand up your " + cockDescript(x) + ".  ", false);
@@ -634,7 +634,7 @@ package classes.Scenes.NPCs
 				//Normal male: -requires dick of area < 36
 				if (player.cockTotal() > 0) cockRape = rapeAnemoneWithDick;
 				if (player.hasVagina()) vaginaRape = rapeAnemoneWithPussy;
-				if (!player.assholeOffLimits()) buttRape = victoryButtholeRape;
+				if (!assholeOffLimits()) buttRape = victoryButtholeRape;
 				simpleChoices("Your ass", buttRape, "Your Cock", cockRape, "Your Vagina", vaginaRape, "", 0, "Leave", 13);
 				return;
 			}

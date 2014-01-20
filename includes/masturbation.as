@@ -31,7 +31,7 @@ public function masturbateMenu():void {
 		addButton(button,"Tentapussy",tentacleSelfFuck);
 		button++;
 	}
-	if(player.tentacleCocks() > 0 && !player.assholeOffLimits()) {
+	if(player.tentacleCocks() > 0 && !assholeOffLimits()) {
 		addButton(button,"Tentabutt",tentacleGoesUpYerPooperNewsAtEleven);
 		button++;
 	}

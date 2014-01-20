@@ -201,7 +201,7 @@ private function dickwieldersLoseToSandTarps():void {
 	
 	outputText("\n\nThe sandtrap finally releases you, humming and fluttering sounds of pleasure as it draws its unseen cunt away and retracts its prong from your mouth and back into its slit, trailing oil and saliva as it goes.  You don't really notice these things or even if it is trying to say anything to you in that bizarre voice it has, still deep within the encasing sand and deep within your muddling daze, and your limbs feel like any returning strength has been sucked right back out of you by the creature's milking cunt.  ");
 	
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		cuntFuckedAfterLoss(true);
 	}
 	else {
@@ -273,7 +273,7 @@ private function cuntFuckedAfterLoss(seenCock:Boolean = false):void {
 	else outputText("  The creature sighs with pleasure, pressing you upon it as it begins to pick up the pace.  Although its tip sends darts of sensation up your spine, its narrow length cannot satisfy your vast cunt - that is, until it begins to take you to its wide base, spreading your outer lips wide.  You coo with delight and every time it thrusts you long for its peak, when it slides you wide open and plugs you fully with its dripping mass.");
 	outputText("  The prong base rubs against your [clit] rhythmically and suddenly you find yourself orgasming in tandem with it, crying out as the creature groans and ejaculates its delicious ooze deliriously into you.");
 
-	if(player.assholeOffLimits()) {
+	if(assholeOffLimits()) {
 		outputText("  The oil-induced serenity and the sexual marathon the sandtrap has put you through are too much and, even with the creature still pumping its come into you, you pass out.");
 		outputText("\n\nYou awaken a while later, wearily getting to your feet and looking around.  You are standing in a featureless stretch of desert... there is no suggestion of the sandtrap, or indeed that you are in the same place where it caught you.  A fair amount of time has passed though, judging by the sky above you.  Perhaps it was all a particularly lucid mirage?  As you set off for the camp, the oily patches on your thighs suggest otherwise.");
 	}
