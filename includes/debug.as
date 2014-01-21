@@ -199,6 +199,7 @@ public function doThatTestingThang():void
 * \\\[cockhead\\\] - [cockhead]
 * \\\[vagorass\\\] - [vagorass]
 * \\\[hairorfur\\\] - [hairorfur]
+* \\\[hennatone\\\] - [hennatone]
 * \\\[pg\\\] - [pg] (This is a shortcut to two newlines. This should be two lines below the \\\[pg\\\])
 
 

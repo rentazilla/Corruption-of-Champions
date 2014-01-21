@@ -105,6 +105,7 @@ package classes.content
 			outputText("\nvagorass [vagorass]");
 			outputText("\nweapon [weapon]");
 			outputText("\nweaponname [weaponname]");
+			outputText("\nhennatone [hennatone]");
 			
 			trace("Spammed!");
 			doNext(13);

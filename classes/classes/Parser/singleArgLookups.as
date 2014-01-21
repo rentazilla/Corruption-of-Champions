@@ -74,6 +74,7 @@
 				"vagorass"					: function(thisPtr:*):* { return (thisPtr.player.hasVagina() ? thisPtr.vaginaDescript() : thisPtr.assholeDescript()); },
 				"weapon"					: function(thisPtr:*):* { return thisPtr.player.weaponName;},
 				"weaponname"				: function(thisPtr:*):* { return thisPtr.player.weaponName; },
+				"hennatone"				: function(thisPtr:*):* { return thisPtr.player.hennaTone; },
 				
 				"latexyname"				: function(thisPtr:*):* { return thisPtr.flags[kFLAGS.GOO_NAME]; },
 				"bathgirlname"				: function(thisPtr:*):* { return thisPtr.flags[kFLAGS.MILK_NAME]; },

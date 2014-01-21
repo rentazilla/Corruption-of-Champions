@@ -1019,11 +1019,11 @@ public function finishedHenna():void {
 	
 	outputText("A few hours later, you're awakened by Yara's soft call of \"<i>Wake up, cutie.</i>\"\n\n", true);
 		
-	outputText("As you slowly return to consciousness, she unbuckles the straps holding you to the bench. You stretch your cramped limbs and look over your shoulder at your ass. The paste is gone--Yara must have removed it before she woke you--and you can see a few [brown|red] lines on the skin, but not the overall effect.\n\n");
+	outputText("As you slowly return to consciousness, she unbuckles the straps holding you to the bench. You stretch your cramped limbs and look over your shoulder at your ass. The paste is gone--Yara must have removed it before she woke you--and you can see a few [hennatone] lines on the skin, but not the overall effect.\n\n");
 	
 	outputText("Yara sees what you're trying to do. \"<i>Here, let me get a mirror,</i>\" she says. A moment later she returns with one and holds it so you can see.\n\n");
 	
-	outputText("Beautiful, feminine curls run from the small of your back all the way down between your legs. You see leaves, flowers, abstract swirls and arcs, all meshing into a stunning pattern that compliments the shape of your [ass]. All of it is in gorgeous shades of [brown|red] that stand out against your [skin], and as you watch you can see the color subtly shift in a way that puts you in mind of the swirls and curves the lines describe.\n\n");
+	outputText("Beautiful, feminine curls run from the small of your back all the way down between your legs. You see leaves, flowers, abstract swirls and arcs, all meshing into a stunning pattern that compliments the shape of your [ass]. All of it is in gorgeous shades of [hennatone] that stand out against your [skin], and as you watch you can see the color subtly shift in a way that puts you in mind of the swirls and curves the lines describe.\n\n");
 	
 	outputText("And as you think about the sort of acts Yara said it would protect you from, you somehow just can't imagine them happening.\n\n");
 	

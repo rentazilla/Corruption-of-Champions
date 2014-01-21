@@ -3891,7 +3891,21 @@ import classes.PerkType;
 		
 		public function assholeOffLimits():Boolean
 		{
-			return this.hasVagina();
+			return this.hasAssHenna && this.hasVagina();
+		}
+		
+		public function get hennaTone():String
+		{
+			if(this.skinTone == "red") {
+				return "brown";
+			}
+			else {
+				return "red";
+			}
+		}
+		
+		public function get hasAssHenna():Boolean {
+			return true;
 		}
 	}
 }
