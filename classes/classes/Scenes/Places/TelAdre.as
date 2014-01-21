@@ -987,6 +987,7 @@ She picks up a cone and sets to work. You gasp at the feel of the first dribbles
 
 "<i>And that does it,</i>" she says. "<i>Now we just have to wait for it to dry.</i>" She seems to suddenly realize where she is you feel her eyes on your most private parts, and hear her take a slow, deep sniff. "<i>Mmm...if you'd like, I could help you pass the time...</i>"]]>, true); /* " */
 	
+	player.hasAssHenna = true;
 	dynStats("lus", 50 + player.sens, "sen", 5);
 	fatigue(50);
 	

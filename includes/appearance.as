@@ -1200,10 +1200,17 @@
 	if(player.ass) 
 	{
 		outputText("\n", false);
-		outputText("You have one " + assholeDescript() + ", placed between your butt-cheeks where it belongs.\n", false);
-		if(assholeOffLimits()) {
-			outputText("A tiny, mesmerizing gem shines from the flared end of a small buttplug in your asshole; somehow, it's easy to overlook both the plug and the orifice it's in.\n");
-		}
+		outputText("You have one " + assholeDescript() + ", placed between your butt-cheeks where it belongs.", false);
+		if(player.hasAssHenna) {
+			outputText("  A beautifully feminine swirly pattern runs from the small of your back down, disappearing between your legs.");
+			if(player.assholeOffLimits()) {
+				outputText("  The shade of the [hennatone] henna slowly shifts in a mesmerizing pattern.");
+			}
+			else {
+				outputText("  Though the henna used to subtly shift colors, it's settled into a dull [hennatone] ever since your endowments changed.");
+			}
+		}		
+		outputText("\n");
 	}
 	//Piercings!
 	if(player.eyebrowPierced > 0) 

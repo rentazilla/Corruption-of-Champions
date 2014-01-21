@@ -382,6 +382,7 @@ package classes
 		public static const CleansingPalm:CleansingPalmPerk = new CleansingPalmPerk();
 		public static const Enlightened:EnlightenedPerk = new EnlightenedPerk();
 		
+		public static const AssHenna:PerkType = mk("Ass Henna", "Ass Henna", "Your attractive fake tattoo also reduces the amount of anal attention you get.")
 
 		// Monster perks
 		public static const Acid:PerkType = mk("Acid", "Acid", "");

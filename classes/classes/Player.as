@@ -2037,5 +2037,26 @@ use namespace kGAMECLASS;
 			}
 			return true;
 		}
+		
+		override public function get hasAssHenna():Boolean {
+			return hasPerk(PerkLib.AssHenna) >= 0;
+		}
+		
+		public function set hasAssHenna(value:Boolean):void {
+			if(value == this.hasAssHenna) {
+				return;
+			}
+			
+			if(value) {
+				createPerk(PerkLib.AssHenna, kGAMECLASS.model.time.days, 0, 0, 0, "");
+			}
+			else {
+				removePerk(PerkLib.AssHenna);
+			}
+		}
+		
+		public function get hadAssHennaSinceDay():Number {
+			return perkv1(PerkLib.AssHenna);
+		}
 	}
 }

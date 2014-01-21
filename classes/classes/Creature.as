@@ -3891,7 +3891,8 @@ import classes.PerkType;
 		
 		public function assholeOffLimits():Boolean
 		{
-			return this.hasAssHenna && this.hasVagina();
+			if (this.hasAssHenna && this.hasVagina()) return true;
+			else return false;
 		}
 		
 		public function get hennaTone():String
@@ -3905,7 +3906,7 @@ import classes.PerkType;
 		}
 		
 		public function get hasAssHenna():Boolean {
-			return true;
+			return false;
 		}
 	}
 }
