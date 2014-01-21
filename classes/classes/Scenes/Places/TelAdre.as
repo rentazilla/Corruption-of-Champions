@@ -935,17 +935,19 @@ private function removeVulvaPierce():void {
 private function askAboutAssHenna():void {
 	spriteSelect(63);
 	
-	outputText("You ask about the henna.\n\n", true);
-	
-	outputText("\"<i>Well,</i>\" Yara says, \"<i>it is a bit intimate. First I have to prepare you by getting your blood flowing properly. That ensures the design sinks deeply into your skin and doesn't wear down. Once that's done, I paint a pattern with a special, magical paste that stains your skin. The design runs from about here</i>\"—she steps close and presses a finger on one of the cheeks of your clothed [butt]—\"<i>down to about</i>\"—she runs her finger lower, reaching a spot just short of your [vagina]—\"<i>here.</i>\" You squirm a little at her touch. \"<i>Then we wait for it to set in and we're done!</i>\"\n\n");
-	
-	outputText("Ignoring her lingering touch—and the way it's making your pussy moisten just a bit—you ask about the magic in the paste.\n\n");
-	
-	outputText("\"<i>Well, it makes the stain shimmer beautifully, but it's not just for looks,</i>\" Yara says. \"<i>It also tends to distract people from the area it's applied to. Sometimes folks who are intending to give that area a little...um...<b>attention</b> will find themselves doing something else—but usually only if there's something else convenient nearby.</i>\"\n\n");
-	
-	outputText("\"Convenient nearby\"? That sounds like it'll get some cocks out of your ass and into your cunt instead.\n\n");
-	
-	outputText("You ask her, and she grins. \"<i>Yeah,</i>\" she says. \"<i>I have one myself—the stain has mostly faded, but the effect lingers. It's kept a couple guys from asking me for things I didn't want to give. Well worth 500 gems if you're not into that sort of thing.</i>\"\n\n");
+	outputText(<![CDATA[You ask about the henna.
+			
+"<i>Well,</i>" Yara says, "<i>it is a bit intimate. First I have to prepare you by getting your blood flowing properly. That ensures the design sinks deeply into your skin and doesn't wear down. Once that's done, I paint a pattern with a special, magical paste that stains your skin. The design runs from about here</i>"—she steps close and presses a finger on one of the cheeks of your clothed [butt]—"<i>down to about</i>"—she runs her finger lower, reaching a spot just short of your [vagina]—"<i>here.</i>" You squirm a little at her touch. "<i>Then we wait for it to set in and we're done!</i>"
+
+Ignoring her lingering touch—and the way it's making your pussy moisten just a bit—you ask about the magic in the paste.
+
+"<i>Well, it makes the stain shimmer beautifully, but it's not just for looks,</i>" Yara says. "<i>It also tends to distract people from the area it's applied to. Sometimes folks who are intending to give that area a little...um...<b>attention</b> will find themselves doing something else—but usually only if there's something else convenient nearby.</i>"
+
+"Convenient nearby"? That sounds like it'll get some cocks out of your ass and into your cunt instead.
+
+You ask her, and she grins. "<i>Yeah,</i>" she says. "<i>I have one myself—the stain has mostly faded, but the effect lingers. It's kept a couple guys from asking me for things I didn't want to give. Well worth 500 gems if you're not into that sort of thing.</i>"
+
+]]>, true); /* ' */
 	
 	if(!debug && player.gems < 500) {
 		outputText("You realize you don't have enough gems to get the henna.");
@@ -963,27 +965,27 @@ public function getAssHenna():void {
 	if(!debug) player.gems -= 500;
 	statScreenRefresh();
 	
-	outputText("\"<i>Great!</i>\" Yara chirps. \"<i>I'm sure you'll love it. This way, please!</i>\"\n\n", true);
-	
-	outputText("She leads you into a back room, where a strange sort of two-level padded bench is set up. You [if (corruption < 40) blush|smirk] as you disrobe, then clamber onto it, resting your knees on the lower part and your chest on the upper. Your ass juts up high in the air, completely exposed to her.\n\n");
-	
-	outputText("\"<i>Okay, cutie, that's good,</i>\" she says, standing near your head and bending down. \"<i>Just stay right there.</i>\" She grasps your wrist and tugs it down, wrapping a thick leather cuff around it. \"<i>Sorry about this, but customers tend to have a hard time staying still during the preparation.</i>\" She buckles the cuff and puts one on your other wrist. Then she walks around the table, prying your legs apart, strapping your ankles and knees down.\n\n");
-	
-	outputText("What in the world have you gotten yourself into?\n\n");
-	
-	outputText("\"<i>Alright,</i>\" Yara says, \"<i>now we can get started. Are you ready?</i>\"\n\n");
-	
-	outputText("You[if (corruption < 40) 're not so sure anymore, but you] really want this henna. With some [if (corruption < 30) trepidation|[if (corruption < 60) anticipation|excitement]], you tell her that you are. Then you yelp as her palm hits your [butt] with a loud CRACK!\n\n");
-	
-	outputText("\"<i>Don't worry,</i>\" she says, \"<i>we'll have your blood flowing nicely in no time!</i>\"\n\n");
-	
-	outputText("The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away; you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hascock) , the table under your [cocks],] or your dripping cunt.\n\n");
-	
-	outputText("\"<i>All done!</i>\" she says. \"<i>You took that very well, cutie.</i>\" She lightly caresses your tender ass, and you whimper, pressing into her touch. \"<i>Now to apply the paste...</i>\"\n\n");
-	
-	outputText("She picks up a cone and sets to work. You gasp at the feel of the first dribbles of henna paste: they're not only blessedly cool against your burning [skin], they soon begin to radiate delicious tingles, not unlike the herbal creams your mother used to apply to your burns. Yara starts at the top of your ass and works her way down, describing swirls and curves and patterns in cold patterns on your hot ass. By the time she reaches the end of her work, tracing a series of arcs that seem to lead straight to your [vagina], you're quivering and moaning with need.\n\n");
-		
-	outputText("\"<i>And that does it,</i>\" she says. \"<i>Now we just have to wait for it to dry.</i>\" She seems to suddenly realize where she is; you feel her eyes on your most private parts, and hear her take a slow, deep sniff. \"<i>Mmm...if you'd like, I could help you pass the time...</i>\"");
+	outputText(<![CDATA["<i>Great!</i>" Yara chirps. "<i>I'm sure you'll love it. This way, please!</i>"
+
+She leads you into a back room, where a strange sort of two-level padded bench is set up. You [if (corruption < 40) blush|smirk] as you disrobe, then clamber onto it, resting your knees on the lower part and your chest on the upper. Your ass juts up high in the air, completely exposed to her.
+
+"<i>Okay, cutie, that's good,</i>" she says, standing near your head and bending down. "<i>Just stay right there.</i>" She grasps your wrist and tugs it down, wrapping a thick leather cuff around it. "<i>Sorry about this, but customers tend to have a hard time staying still during the preparation.</i>" She buckles the cuff and puts one on your other wrist. Then she walks around the table, prying your legs apart, strapping your ankles and knees down.
+
+What in the world have you gotten yourself into?
+
+"<i>Alright,</i>" Yara says, "<i>now we can get started. Are you ready?</i>"
+
+You[if (corruption < 40) 're not so sure anymore, but you] really want this henna. With some [if (corruption < 30) trepidation|[if (corruption < 60) anticipation|excitement]], you tell her that you are. Then you yelp as her palm hits your [butt] with a loud CRACK!
+
+"<i>Don't worry,</i>" she says, "<i>we'll have your blood flowing nicely in no time!</i>"
+
+The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hascock) , the table under your [cocks],] or your dripping cunt.
+
+"<i>All done!</i>" she says. "<i>You took that very well, cutie.</i>" She lightly caresses your tender ass, and you whimper, pressing into her touch. "<i>Now to apply the paste...</i>"
+
+She picks up a cone and sets to work. You gasp at the feel of the first dribbles of henna paste: they're not only blessedly cool against your burning [skin], they soon begin to radiate delicious tingles, not unlike the herbal creams your mother used to apply to your burns. Yara starts at the top of your ass and works her way down, describing swirls and curves and patterns in cold patterns on your hot ass. By the time she reaches the end of her work, tracing a series of arcs that seem to lead straight to your [vagina], you're quivering and moaning with need.
+
+"<i>And that does it,</i>" she says. "<i>Now we just have to wait for it to dry.</i>" She seems to suddenly realize where she is you feel her eyes on your most private parts, and hear her take a slow, deep sniff. "<i>Mmm...if you'd like, I could help you pass the time...</i>"]]>, true); /* " */
 	
 	dynStats("lus", 50 + player.sens, "sen", 5);
 	fatigue(50);
@@ -992,9 +994,9 @@ public function getAssHenna():void {
 }
 
 public function haveRestrainedSexWithYara():void {
-	outputText("She lays down on the bench between your legs, looking up towards your sex, then grasps your hips and pulls. But strapped down as tightly as you are, she can't pull you down to her level, so instead the action lifts her head to yours.\n\n", true);
-		
-	outputText("She nuzzles your sex for a moment, then licks you from your [vagina] to your [clit], drawing a moan from you as your needy sex finally gets some stimulation. \"<i>Delicious,</i>\" she purrs, and then she dives in, tonguing your clit aggressively. You writhe under her assault, trying to buck your hips, but you're strapped down too tightly to move very much. She doesn't let up for a second, sucking your love-button roughly[if (hascock), letting go of a hip to wrap a hand around your [cock] and pump it quickly]. Before long, you're screaming as you climax, soaking her face with your cream[if (hascock)  and the floor with your cum]. She doesn't let up for a second, and after so much pain and pleasure, neither does your orgasm, rolling on and on until your vision starts to go black...");
+	outputText(<![CDATA[She lays down on the bench between your legs, looking up towards your sex, then grasps your hips and pulls. But strapped down as tightly as you are, she can't pull you down to her level, so instead the action lifts her head to yours.
+
+She nuzzles your sex for a moment, then licks you from your [vagina] to your [clit], drawing a moan from you as your needy sex finally gets some stimulation. "<i>Delicious,</i>" she purrs, and then she dives in, tonguing your clit aggressively. You writhe under her assault, trying to buck your hips, but you're strapped down too tightly to move very much. She doesn't let up for a second, sucking your love-button roughly[if (hascock), letting go of a hip to wrap a hand around your [cock] and pump it quickly]. Before long, you're screaming as you climax, soaking her face with your cream[if (hascock)  and the floor with your cum]. She doesn't let up for a second, and after so much pain and pleasure, neither does your orgasm, rolling on and on until your vision starts to go black...]]>, true); /* ' */
 	
 	dynStats("lus=", 0);
 	
@@ -1002,13 +1004,13 @@ public function haveRestrainedSexWithYara():void {
 }
 
 public function dontHaveRestrainedSexWithYara():void {
-	outputText("\"<i>Okay,</i>\" Yara says, \"<i>sorry. I just thought you might like some relief after all that, is all.</i>\"\n\n", true);
-		
-	outputText("She circles the table and grabs a tissue, carefully wiping the tears from your face, then runs a hand through your [hair].\n\n");
-		
-	outputText("\"<i>I'm going to leave you strapped in so you don't disturb the henna,</i>\" she said. \"<i>I'll be back to check on your progress later.</i>\"\n\n");
-		
-	outputText("She walks out of the room. A few minutes later, exhausted by your ordeal (and your unfulfilled need), you fall asleep.\n");
+	outputText(<![CDATA["<i>Okay,</i>" Yara says, "<i>sorry. I just thought you might like some relief after all that, is all.</i>"
+
+She circles the table and grabs a tissue, carefully wiping the tears from your face, then runs a hand through your [hair].
+
+"<i>I'm going to leave you strapped in so you don't disturb the henna,</i>" she said. "<i>I'll be back to check on your progress later.</i>"
+
+She walks out of the room. A few minutes later, exhausted by your ordeal (and your unfulfilled need), you fall asleep.]]>, true); /* ' */
 	
 	doNext(finishedHenna);
 }
@@ -1017,19 +1019,19 @@ public function finishedHenna():void {
 	model.time.hours+=3;
 	statScreenRefresh();
 	
-	outputText("A few hours later, you're awakened by Yara's soft call of \"<i>Wake up, cutie.</i>\"\n\n", true);
-		
-	outputText("As you slowly return to consciousness, she unbuckles the straps holding you to the bench. You stretch your cramped limbs and look over your shoulder at your ass. The paste is gone--Yara must have removed it before she woke you--and you can see a few [hennatone] lines on the skin, but not the overall effect.\n\n");
-	
-	outputText("Yara sees what you're trying to do. \"<i>Here, let me get a mirror,</i>\" she says. A moment later she returns with one and holds it so you can see.\n\n");
-	
-	outputText("Beautiful, feminine curls run from the small of your back all the way down between your legs. You see leaves, flowers, abstract swirls and arcs, all meshing into a stunning pattern that compliments the shape of your [ass]. All of it is in gorgeous shades of [hennatone] that stand out against your [skin], and as you watch you can see the color subtly shift in a way that puts you in mind of the swirls and curves the lines describe.\n\n");
-	
-	outputText("And as you think about the sort of acts Yara said it would protect you from, you somehow just can't imagine them happening.\n\n");
-	
-	outputText("It's perfect.\n\n");
-	
-	outputText("Smiling despite your ordeal, you thank Yara for her work and head for camp.\n");
+	outputText(<![CDATA[A few hours later, you're awakened by Yara's soft call of "<i>Wake up, cutie.</i>"
+
+As you slowly return to consciousness, she unbuckles the straps holding you to the bench. You stretch your cramped limbs and look over your shoulder at your ass. The paste is gone--Yara must have removed it before she woke you--and you can see a few [hennatone] lines on the skin, but not the overall effect.
+
+Yara sees what you're trying to do. "<i>Here, let me get a mirror,</i>" she says. A moment later she returns with one and holds it so you can see.
+
+Beautiful, feminine curls run from the small of your back all the way down between your legs. You see leaves, flowers, abstract swirls and arcs, all meshing into a stunning pattern that compliments the shape of your [ass]. All of it is in gorgeous shades of [hennatone] that stand out against your [skin], and as you watch you can see the color subtly shift in a way that puts you in mind of the swirls and curves the lines describe.
+
+And as you think about the sort of acts Yara said it would protect you from, you somehow just can't imagine them happening.
+
+It's perfect.
+
+Smiling despite your ordeal, you thank Yara for her work and head for camp.]]>, true); /* ' */
 	
 	doNext(13);
 }
