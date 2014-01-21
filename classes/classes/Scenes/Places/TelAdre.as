@@ -255,7 +255,7 @@ private function piercingStudio():void {
 	if(player.hasVagina()) henna = askAboutAssHenna;
 	outputText("", true);
 	outputText("The interior of the piercing studio is earthy, leaving the stone floors and walls uncovered, though the windows are covered with woven blankets, sewn from multicolored threads.  There are a number of cushy chairs facing a wall of mirrors, along with a shelf covered in needles, piercings, and strong alcohols.  A brunette prowls about the place, tidying it up during a lull in business.  You dully notice that unlike everyone else in this town, she's mostly human.  Perhaps she came through a portal as well?  She approaches you, and you see a cat tail waving behind her, and a pair of fuzzy feline ears, both covered in piercings, perched atop her head.  Clearly she's been here long enough to pick up some of the local flavor.\n\n", false);
-	outputText("She introduces herself, \"<i>Hello there " + player.mf("sir","cutie") + ", my name is Yara.  Would you like to get a piercing?[if (hasvagina)  Or maybe a henna for your heiny?]</i>\"", false);
+	outputText("She introduces herself, \"<i>Hello there " + player.mf("sir","cutie") + ", my name is Yara.  Would you like to get a piercing?[if (hasvagina = true)  Or maybe a henna for your heiny?]</i>\"", false);
 	if (!flags[kFLAGS.LOW_STANDARDS_FOR_ALL])
 		simpleChoices("Pierce",pierceMenu,"Remove",piercingRemove,"AssHenna",henna,"About Her",about,"Leave",telAdreMenu);
 	else
@@ -979,7 +979,7 @@ You[if (corruption < 40) 're not so sure anymore, but you] really want this henn
 
 "<i>Don't worry,</i>" she says, "<i>we'll have your blood flowing nicely in no time!</i>"
 
-The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hascock) , the table under your [cocks],] or your dripping cunt.
+The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hasCock = true) , the table under your [cocks],] or your dripping cunt.
 
 "<i>All done!</i>" she says. "<i>You took that very well, cutie.</i>" She lightly caresses your tender ass, and you whimper, pressing into her touch. "<i>Now to apply the paste...</i>"
 
@@ -996,7 +996,7 @@ She picks up a cone and sets to work. You gasp at the feel of the first dribbles
 public function haveRestrainedSexWithYara():void {
 	outputText(<![CDATA[She lays down on the bench between your legs, looking up towards your sex, then grasps your hips and pulls. But strapped down as tightly as you are, she can't pull you down to her level, so instead the action lifts her head to yours.
 
-She nuzzles your sex for a moment, then licks you from your [vagina] to your [clit], drawing a moan from you as your needy sex finally gets some stimulation. "<i>Delicious,</i>" she purrs, and then she dives in, tonguing your clit aggressively. You writhe under her assault, trying to buck your hips, but you're strapped down too tightly to move very much. She doesn't let up for a second, sucking your love-button roughly[if (hascock), letting go of a hip to wrap a hand around your [cock] and pump it quickly]. Before long, you're screaming as you climax, soaking her face with your cream[if (hascock)  and the floor with your cum]. She doesn't let up for a second, and after so much pain and pleasure, neither does your orgasm, rolling on and on until your vision starts to go black...]]>, true); /* ' */
+She nuzzles your sex for a moment, then licks you from your [vagina] to your [clit], drawing a moan from you as your needy sex finally gets some stimulation. "<i>Delicious,</i>" she purrs, and then she dives in, tonguing your clit aggressively. You writhe under her assault, trying to buck your hips, but you're strapped down too tightly to move very much. She doesn't let up for a second, sucking your love-button roughly[if (hasCock = true), letting go of a hip to wrap a hand around your [cock] and pump it quickly]. Before long, you're screaming as you climax, soaking her face with your cream[if (hasCock = true)  and the floor with your cum]. She doesn't let up for a second, and after so much pain and pleasure, neither does your orgasm, rolling on and on until your vision starts to go black...]]>, true); /* ' */
 	
 	dynStats("lus=", 0);
 	
