@@ -51,6 +51,7 @@
 				"hasnipplecunts"	: function(thisPtr:*):* {return  thisPtr.player.hasFuckableNipples();},
 				"canfly"			: function(thisPtr:*):* {return  thisPtr.player.canFly();},
 				"islactating"		: function(thisPtr:*):* {return  (thisPtr.player.lactationQ() > 0);},
+				"assholeofflimits": function(thisPtr:*):* {return thisPtr.player.assholeOffLimits();},
 				"true"				: function(thisPtr:*):* {return  true;},
 				"false"				: function(thisPtr:*):* {return  false;}
 			}
