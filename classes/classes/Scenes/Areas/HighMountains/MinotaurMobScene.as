@@ -285,11 +285,6 @@ private function nonAddictMinotaurGangBang():void {
 		outputText(".  ", false);
 	}
 	
-	if(assholeOffLimits()) {
-		// XXX assholeOffLimits: Revise when we know what this actually looks like
-		outputText("The huge beast grunts with surprise as he encounters your buttplug, but fat fingers reach down and pry it out of you, tossing it aside.  ");
-	}
-	
 	outputText("The cruel, flared tip of the horse-like cock batters at the unyielding entrance for a moment, slowly stretching your rectal orifice wider and wider with each painful push.  Gasping in pain, you cry out in anguish before transitioning into a low moan.  The dripping member before you plunges into your open orifice, pre-cum lubricating its passage as the flare is pushed to the back of your throat.  Ordinarily your body might try to reject such an intrusion, but all you feel is a numb sort of acceptance as you relax your throat to let the pre-cum roll into your belly.", false);
 	outputText("\n\n", false);
 	
@@ -728,13 +723,7 @@ private function victoryAllThePenetrationsMinotaurGangBang():void {
 	
 	outputText("Within seconds a crowd has formed behind you.  Numerous hands squeeze and caress your " + buttDescript() + ", a few even daring to press at the tight ring of your " + assholeDescript() + ".  They jostle around a bit as they fight over the honor of penetrating your back door, but a winner is selected before you bore of the spectacle.  He grabs your " + buttDescript() + " in both hands to aid in his efforts to align his cock with your pucker, squeezing softly.\n\n", false);
 	
-	if(assholeOffLimits()) {
-		// XXX assholeOffLimits: Revise when we know what this actually looks like
-		outputText("The beast-man tugs the plug from your ass with fingers thicker than the plug itself.  He finally hits your anus with his tip and pushes forward.  ", false);
-	}
-	else {
-		outputText("The beast-man finally hits your anus with his tip and pushes forward.  ", false);
-	}
+	outputText("The beast-man finally hits your anus with his tip and pushes forward.  ", false);
 	
 	if(player.analCapacity() < 40) outputText("Your " + assholeDescript() + " is so tight that he's forced to push and release over and over.  The painful penetration drags on and on as he widens your hole to accept his monstrous cock.", false);
 	else if(player.analCapacity() < 60) outputText("Your " + assholeDescript() + " slowly widens to accept the cock that's being deposited into its depths.  You find yourself somewhat grateful that you've been stretched enough to prevent this from being painful.", false);

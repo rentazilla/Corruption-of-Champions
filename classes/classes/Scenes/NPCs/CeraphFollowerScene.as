@@ -1834,7 +1834,7 @@ package classes.Scenes.NPCs
 			if (flags[kFLAGS.CERAPH_HIDING_DICK] == 0) outputText("ease the pressure on her tightly-contained phallus");
 			else outputText("allow a penis to grow, fully-formed from where her clit was");
 			// XXX assholeOffLimits: Revise when we know what this actually looks like
-			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph " + assholeOffLimits("reaches the plug in", "eyes") + " your backside, you realize that you're going to be feeling it before long.");
+			outputText(".  The stalk of her cock drips with the swampy cunt-lubricant her delta exudes, and she pumps it a few times to make it stand long and erect, nine inches of pulsating, demonic horror.  Tiny nodules decorate the shaft in concentric rings to stimulated anyone lucky enough to experience her cock.  As Ceraph eyes your backside, you realize that you're going to be feeling it before long.");
 
 			outputText("\n\n\"<i>");
 			if (dog) outputText("ARF!  ARF!");
