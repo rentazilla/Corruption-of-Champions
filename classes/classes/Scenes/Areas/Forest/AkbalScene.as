@@ -598,7 +598,7 @@ package classes.Scenes.Areas.Forest
 			if(!taur) {
 				outputText(images.showImage("akbal-deepwoods-losslust-analed"));
 				outputText("You fall to your knees and begin to feverishly masturbate.  Akbal rises onto his two hind legs, his body shifting into more humanoid as he stands.  His long cock swings ominously between legs as he walks towards you.  The first thing he does is pull his massive 15-inch cock to your lips, slapping the shaft against your chin.\n\n", false);
-				outputText("Like a whore in heat, you open your mouth and lewdly lick the jaguar demon's cock head, feeling odd barbs rub against your tongue.  Your mouth opens wide, but can't even get past the head before the sheer girth of Akbal's massive sex organ halts its advance.  Akbal is content to let you orally fumble with the head for only a few moments before he pushes down onto your back. His claws tickle your thighs as he forces your " + player.legs() + " up over your head, bringing your " + assholeDescript() + " into plain view.\n\n", false);
+				outputText("Like a whore in heat, you open your mouth and lewdly lick the jaguar demon's cock head, feeling odd barbs rub against your tongue.  Your mouth opens wide, but can't even get past the head before the sheer girth of Akbal's massive sex organ halts its advance.  Akbal is content to let you orally fumble with the head for only a few moments before he pushes down onto your back. His claws tickle your thighs as he forces your " + player.legs() + " up over your head, bringing your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " into plain view.\n\n", false);
 			}
 			else {
 				outputText(images.showImage("akbal-deepwoods-losslust-taur-analed"));
@@ -609,29 +609,38 @@ package classes.Scenes.Areas.Forest
 				
 			outputText("\"<i>Defiance repaid,</i>\" is all you hear from the chorus of voices in your head as Akbal displays his massive length to you.  Your eyes widen in horror, counting a dozen wicked-looking barbs on the head of his overtly thick and over-sized cock.\n\n", false);
 
-			if (player.ass.analLooseness < 3) //[Small/virgin pucker]
+			if (player.looseness(assholeOffLimits()) < 3) //[Small/virgin pucker]
 			{
-				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to howl as your " + assholeDescript() + " is forcibly stretched.  His jaguar claws grab your " + (taur ? "sides": "shoulders") + ", and he uses your body as leverage to force his demonic erection into you.\n\n", false);
-				outputText("The strain from Akbal's shoving makes you feel like you're going to pass out, yet the pain from his spiked sex organ keeps you conscious. After a while, you realize he's not even fucking you with his entire length; his swollen member is slowly forcing less than half its massive length into your " + assholeDescript() + ".\n\n", false);
-				outputText("After what seems like hours of Akbal's long cat dick being slowly forced into your " + assholeDescript() + ", your body finally gives out. You've become so exhausted from the strain that you can barely even lift your arms.  With a triumphant growl Akbal thrusts forward, his cockhead spikes burying themselves into you.  Without your resistance, they seem to vibrate inside you like twelve little beads, massaging your innards.  The sudden change makes you croon as you " + (taur ? "paw the ground with your hooves" : "widen your " + player.legs()) + ", suddenly desperate for more.", false);
-			} else if (player.ass.analLooseness < 5) //[Medium pucker]
+				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to howl as your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " is forcibly stretched.  His jaguar claws grab your " + (taur ? "sides": "shoulders") + ", and he uses your body as leverage to force his demonic erection into you.\n\n", false);
+				outputText("The strain from Akbal's shoving makes you feel like you're going to pass out, yet the pain from his spiked sex organ keeps you conscious. After a while, you realize he's not even fucking you with his entire length; his swollen member is slowly forcing less than half its massive length into your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ".\n\n", false);
+				outputText("After what seems like hours of Akbal's long cat dick being slowly forced into your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + ", your body finally gives out. You've become so exhausted from the strain that you can barely even lift your arms.  With a triumphant growl Akbal thrusts forward, his cockhead spikes burying themselves into you.  Without your resistance, they seem to vibrate inside you like twelve little beads, massaging your innards.  The sudden change makes you croon as you " + (taur ? "paw the ground with your hooves" : "widen your " + player.legs()) + ", suddenly desperate for more.", false);
+			} else if (player.looseness() < 5) //[Medium pucker]
 			{
-				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to wince as are forcibly stretched.  Without warning, he forces the entirety of his massive length into you in with a snarl.  You almost pass out just from the initial incursion, but as he saws his length in and out, your body reacts of its own accord. You widen your " + (taur ? "stance" : player.legs()) + " in an attempt to lessen the sudden slicing pressure created by the barbed cock head.  The moment you stop resisting, the barbs start to vibrate; they start to feel more like humming sex beads than the wicked-looking barbs you know are inside you.  You can't suppress the shuddering and groaning coming from your body as you are hit with a tidal wave of ecstasy.", false);
+				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to wince as your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " is forcibly stretched.  Without warning, he forces the entirety of his massive length into you in with a snarl.  You almost pass out just from the initial incursion, but as he saws his length in and out, your body reacts of its own accord. You widen your " + (taur ? "stance" : player.legs()) + " in an attempt to lessen the sudden slicing pressure created by the barbed cock head.  The moment you stop resisting, the barbs start to vibrate; they start to feel more like humming sex beads than the wicked-looking barbs you know are inside you.  You can't suppress the shuddering and groaning coming from your body as you are hit with a tidal wave of ecstasy.", false);
 			}
 			//[Gaping pucker]
 			else
 			{
-				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to wince.  He bottoms out near-instantly, and he looks up at you with a feral grin.  Akbal begins to pump his engorged sex organ in and out of your " + assholeDescript() + " with a steadily mounting force.  You release a groan as the barbs covering Akbal's long cat-dick start to vibrate and begin to feel more like humming sex beads than anything else.  You widen your " + (taur ? "stance" : player.legs()) + " in response and Akbal snarls as he slams his hips into you, obviously happy that you're able to take his massive length.  The demon seems to forget that he's raping you; he starts giving your " + (taur ? "horse-like bottom half" : "neck") + " licks that send shivers throughout your entire body as he roughly fucks you into the forest floor.", false);
+				outputText("Akbal begins to push into you, the barbs on his massive cockhead causing you to wince.  He bottoms out near-instantly, and he looks up at you with a feral grin.  Akbal begins to pump his engorged sex organ in and out of your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " with a steadily mounting force.  You release a groan as the barbs covering Akbal's long cat-dick start to vibrate and begin to feel more like humming sex beads than anything else.  You widen your " + (taur ? "stance" : player.legs()) + " in response and Akbal snarls as he slams his hips into you, obviously happy that you're able to take his massive length.  The demon seems to forget that he's raping you; he starts giving your " + (taur ? "horse-like bottom half" : "neck") + " licks that send shivers throughout your entire body as he roughly fucks you into the forest floor.", false);
 			}
-			player.buttChange(new Akbal().cockArea(0), true);
+			if(assholeOffLimits()) {
+				player.cuntChange(new Akbal().cockArea(0), true);
+			}
+			else {
+				player.buttChange(new Akbal().cockArea(0), true);
+			}
 			outputText("\n\n", false);
 
 			outputText("The entire length of Akbal's embedded cock begins to hum inside you, causing you to cry out as he picks up the pace.  His every thrust is a hammer-like thump against your " + (taur ? "hungry haunches" : "spread " + player.legs()) + ".  Suddenly his thrusts become sloppy, and you feel his giant tool swelling inside you, stretching you out even more.\n\n")
 				
-			outputText("Akbal roars as he reaches his climax, and you feel his giant cock hosing down your insides, filling you with his corrupted demon seed as he rides out his orgasm.  His hips never stop.  You feel your own orgasm rising to the surface, only to suddenly fizzle out.  It is with horror that you realize that the corrupted seed inside you is actually stopping you from reaching climax.  Akbal, however, sprays his spunk into your " + assholeDescript() + " again and again, not slowing for even a moment.  Soon your stomach is obscenely swollen, and you even taste cat jizz in your throat.  Yet Akbal just keeps going, brutally fucking you into the ground.\n\n", false);
+			outputText("Akbal roars as he reaches his climax, and you feel his giant cock hosing down your insides, filling you with his corrupted demon seed as he rides out his orgasm.  His hips never stop.  You feel your own orgasm rising to the surface, only to suddenly fizzle out.  It is with horror that you realize that the corrupted seed inside you is actually stopping you from reaching climax.  Akbal, however, sprays his spunk into your " + assholeOffLimits(vaginaDescript(), assholeDescript()) + " again and again, not slowing for even a moment.  Soon your stomach is obscenely swollen, and you" + assholeOffLimts("r " + (taur ? "hooves" :"hands and knees") + " are soaked in cat jizz", " even taste cat jizz in your throat") + ".  Yet Akbal just keeps going, brutally fucking you into the ground.\n\n", false);
 
 			outputText("After hours of being his toy you finally pass out, never having reached your own orgasm.", false);
 			dynStats("lust+",10 + player.lib / 10,"cor+",5 + rand(10));
+			
+			if(assholeOffLimits()) {
+				player.knockUp(1, 432, 101);
+			}
 		}
 
 		//  AKBAL_TIMES_BITCHED:int = 902;
