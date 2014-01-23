@@ -252,7 +252,8 @@ private function piercingStudio():void {
 	var about:Function = null;
 	var henna:Function = null;
 	if(player.findStatusAffect(StatusAffects.Yara) < 0) about = aboutYara;
-	if(player.hasVagina()) henna = askAboutAssHenna;
+	if(player.hasAssHenna) henna = askAboutRemovingHenna;
+	else if(player.hasVagina()) henna = askAboutAssHenna;
 	outputText("", true);
 	outputText("The interior of the piercing studio is earthy, leaving the stone floors and walls uncovered, though the windows are covered with woven blankets, sewn from multicolored threads.  There are a number of cushy chairs facing a wall of mirrors, along with a shelf covered in needles, piercings, and strong alcohols.  A brunette prowls about the place, tidying it up during a lull in business.  You dully notice that unlike everyone else in this town, she's mostly human.  Perhaps she came through a portal as well?  She approaches you, and you see a cat tail waving behind her, and a pair of fuzzy feline ears, both covered in piercings, perched atop her head.  Clearly she's been here long enough to pick up some of the local flavor.\n\n", false);
 	outputText("She introduces herself, \"<i>Hello there " + player.mf("sir","cutie") + ", my name is Yara.  Would you like to get a piercing?[if (hasvagina = true)  Or maybe a henna for your heiny?]</i>\"", false);
@@ -1033,6 +1034,73 @@ And as you think about the sort of acts Yara said it would protect you from, you
 It's perfect.
 
 Smiling despite your ordeal, you thank Yara for her work and head for camp.]]>, true); /* ' */
+	
+	doNext(13);
+}
+
+public function askAboutRemovingHenna():void {
+	spriteSelect(63);
+	
+	outputText(<![CDATA[You mention the henna you got from her.
+
+"<i>How has that been working for you?</i>" she asks.
+
+]]>, true);
+	
+	if(assholeOffLimits()) {
+		outputText(<![CDATA[You say it's been working just as advertised--your [butt] has been a lot less sore of late.
+
+She must notice something in your tone of voice, because she says, "<i>Are you not happy with it? I have a cream we can use to pull it out of your skin--it'll cost 100 gems, but we can do it if you want.</i>"]]>); /* " */
+	}
+	else {
+		outputText(<![CDATA[You complain that, ever since your vagina disappeared, it hasn't been working as well as it used to.
+
+"<i>I'm sorry about that,</i>" Yara says. "<i>The suggestion it produces is pretty gentle; it won't stop someone if there isn't something else they'd like to do to you instead. It's not doing any harm like this, but if you'd like, I have a cream we can use to remove it for 100 gems.</i>"]]>); /* ' */
+	}
+
+	if(!debug && player.gems < 100) {
+		outputText("\n\nYou realize you don't have the money to get it removed, even if you wanted to.");
+		doNext(piercingStudio);
+		return;
+	}
+	
+	doYesNo(removeHenna, piercingStudio);
+}
+
+public function removeHenna():void {
+	spriteSelect(63);
+	
+	if(!debug) player.gems -= 100;
+	statScreenRefresh();
+	
+	outputText(<![CDATA[Yara leads you into the same back room where you first got the henna and gestures for you to climb onto the bench. Remembering what happened last time, you balk.
+
+"<i>Removing it isn't as </i>intimate<i> as applying it was,</i>" Yara tells you, "<i>but it's still pretty intense. You'll likely have trouble staying still.</i>"
+
+Reluctantly, you remove your [armor], then climb on and allow her to strap you down again.
+
+She snaps a glove over her hand, then pulls a jar out of a drawer. When she opens it, the jar smells strongly of mint. She carefully smears it over the area of your tattoo; it feels cold and tingly.
+
+"<i>That should do it,</i>" Yara says. "<i>I'll be back when you wake up.</i>"
+
+Wake up? you think. But your [butt] is getting colder and colder, and the tingles are getting stronger and stronger. The feelings are spreading up your torso and down your legs. It's growing overwhelming. You somehow can't pay any attention to your other senses. Sounds are trailing off, vision is fading, there's only you and the almost painful sensations sweeping through every bit of your [skin]...
+
+And then even you fade. You pass out, and know nothing more.]]>, true); /* ' */
+	
+	player.hasAssHenna = false;
+	dynStats("sen", -5);
+	fatigue(50);
+	
+	doNext(hennaRemoved);
+}
+
+public function hennaRemoved():void {
+	spriteSelect(63);
+	
+	model.time.hours+=3;
+	statScreenRefresh();
+	
+	outputText(<![CDATA[When you wake up, your bonds are undone and you can feel Yara wiping the cream off your ass. Once she's done, you stand up and look at your back in a mirror. Your [butt] is back to its original unblemished state. Still a little shaky from your unconsciousness, you head back to camp.]]>, true); /* ' */
 	
 	doNext(13);
 }
