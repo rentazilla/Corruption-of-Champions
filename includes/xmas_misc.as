@@ -1115,7 +1115,7 @@ public function nieveFucksYou():void {
 	//[(if PC has vagina or large enough tits) \"<i>So [master],</i>\" He says pulling back slightly, \"<i>Where would you like me to put this?</i>\"][(if anal is the only option, automatically selected) \"<i>Well I guess I know where to put this huh?</i>\" He says coyly.]
 	//[Anal][Vaginal][(tits >3) Tit-Fuck]
 	menu();
-	if(!assholeOffLimits()) addButton(0,"Anal",takeNieveAnal);
+	if(!player.assholeOffLimits()) addButton(0,"Anal",takeNieveAnal);
 	if(player.hasVagina()) addButton(1,"Vaginal",takeNieveVaginal);
 }
 //Anal
