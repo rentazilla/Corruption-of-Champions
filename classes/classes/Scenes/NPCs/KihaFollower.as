@@ -1446,16 +1446,9 @@ private function giveKihaIncubusDraft():void {
 	outputText("[pg]\"<i>Gaaaah!  W-what's the big idea, huh?  What're you doooing?</i>\" Kiha whines, squirming in your grasp.  You give her a little swat on the tit, leaving a red handprint on her dark flesh.  No, you're in control this time.  Kiha likes to think she's in charge, but you're going to show her exactly who calls the (cum)shots around here.");
 	outputText("[pg]You speed up your ministrations, jacking the dragon-girl off until her pre flows liberally into your grasp.  She grunts, eyes nearly crossing as she prepares to cum...  You take your hands off, leaving her prick wobbling naked and alone in the air.  Kiha whines, but you restrain her desperate efforts to touch herself, until the trickle of pre-cum leaking from her new member comes to an end.  She might have been helpless before, but the look in Kiha's eyes now says that she's positively begging you to give her release.  Well, you suppose you could oblige her...");
 	outputText("[pg]You shift on top of the dragon-girl, squatting down so that " + assholeOffLimits("the dripping entrance to your [vagina]", "the ring of your [asshole]") + " gently kisses the tip of Kiha's prick.  You both gasp, connected for a second by an electric spark of pleasure as her well-lubed tip presses into you.  \"<i>Come oooon, [name],</i>\" she pleads, misty red eyes staring into yours, \"<i>G-give it to me... please....</i>\"  Cruelly, you resist, instead shifting your hips in a wide, languid circle, slowly letting only an inch of her slip into your ");
-	if(assholeOffLimits()) {
-		if(player.vagina.vaginalLooseness < 3) outputText("tight");
-		else if(player.vagina.vaginalLooseness < 4) outputText("welcoming");
-		else outputText("loose");
-	}
-	else {
-		if(player.ass.analLooseness < 3) outputText("tight");
-		else if(player.ass.analLooseness < 4) outputText("welcoming");
-		else outputText("loose");
-	}
+	if(player.looseness(assholeOffLimits()) < 3) outputText("tight");
+	else if(player.looseness(assholeOffLimits()) < 4) outputText("welcoming");
+	else outputText("loose");
 	outputText(" passage.  Kiha whines and groans, until finally you relent and slide down, taking her thick prick into your " + assholeOffLimits("cunt", "ass") + ".");
 	if(assholeOffLimits()) {
 		player.cuntChange(14,true,true,false);
