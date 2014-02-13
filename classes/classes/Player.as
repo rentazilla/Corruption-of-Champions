@@ -2039,7 +2039,7 @@ use namespace kGAMECLASS;
 		}
 		
 		override public function get hasAssHenna():Boolean {
-			return hasPerk(PerkLib.AssHenna) >= 0;
+			return findPerk(PerkLib.AssHenna) >= 0;
 		}
 		
 		public function set hasAssHenna(value:Boolean):void {
