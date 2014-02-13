@@ -946,11 +946,11 @@ Ignoring her lingering touch—and the way it's making your pussy moisten just a
 
 "Convenient nearby"? That sounds like it'll get some cocks out of your ass and into your cunt instead.
 
-You ask her, and she grins. "<i>Yeah,</i>" she says. "<i>I have one myself—the stain has mostly faded, but the effect lingers. It's kept a couple guys from asking me for things I didn't want to give. Well worth 500 gems if you're not into that sort of thing.</i>"
+You ask her, and she grins. "<i>Yeah,</i>" she says. "<i>I have one myself—the stain has mostly faded, but the effect lingers. It's kept a couple guys from asking me for things I didn't want to give. Well worth 100 gems if you're not into that sort of thing.</i>"
 
 ]]>, true); /* ' */
 	
-	if(!debug && player.gems < 500) {
+	if(!debug && player.gems < 100) {
 		outputText("You realize you don't have enough gems to get the henna.");
 		doNext(piercingStudio);
 	}
@@ -963,7 +963,7 @@ You ask her, and she grins. "<i>Yeah,</i>" she says. "<i>I have one myself—the
 public function getAssHenna():void {
 	spriteSelect(63);
 	
-	if(!debug) player.gems -= 500;
+	if(!debug) player.gems -= 100;
 	statScreenRefresh();
 	
 	outputText(<![CDATA["<i>Great!</i>" Yara chirps. "<i>I'm sure you'll love it. This way, please!</i>"
