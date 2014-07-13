@@ -133,7 +133,7 @@ package classes.Items
 		public const PRNPKR:SimpleConsumable = mk("PrnsPkr", "PrnsPkr", "a vial of pinkish fluid", m.princessPucker, "A vial filled with a viscous pink liquid.");
 		
 		public const HRBCNT:SimpleConsumable = mk("HrblCnt", "HrblCnt", "a bundle of verdant green leaves", m.herbalContraceptive, "A small bundle of verdant green leaves.");
-		public static const LQDVIRGIN:SimpleConsumable = mk("LqdVirgin", "LqdVirgin", "a flask of liquid virgin", m.liquidVirgin, "A flask of opaque, slightly pink-tinged fluid, labeled Liquid Virgin.")
+		public const LQDVIRGIN:SimpleConsumable = mk("LqdVirgin", "LqdVirgin", "a flask of liquid virgin", m.liquidVirgin, "A flask of opaque, slightly pink-tinged fluid, labeled Liquid Virgin.")
     
 
 		public const LARGE_EGGS:Array = [L_BLKEG,L_BLUEG,L_BRNEG,L_PNKEG,L_PRPEG,L_WHTEG];
