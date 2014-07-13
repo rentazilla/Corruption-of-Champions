@@ -8908,5 +8908,55 @@
 			}
 		}
 		
+    public function liquidVirgin():void {
+    	clearOutput();
+	
+    	outputText("You pop open the flask and tip it into your mouth. The thick, pink-tinged liquid within coats your tongue and throat with a salty, metallic tang on the way down.  ");
+	
+    	if(player.hasVagina() && !player.vaginas[0].virgin) {
+    		outputText("You're soon bent double, hands pressed to your cramping pelvis, as you feel a series of unusual sensations between your legs: your [cunt] clenches hard on nothing, then ");
+		
+    		if(player.vaginas[0].vaginalLooseness > 0) {
+    			outputText("it relaxes without moving at all, ")
+    			player.vaginas[0].vaginalLooseness = 0;
+    			player.removeStatusAffect("CuntStretched");
+    		}
+    		if(player.vaginas[0].vaginalWetness > 1) {
+    			outputText("most of the moisture inside you seems to be wicked away through your inner walls, ")
+    			player.vaginas[0].vaginalWetness = 1;				
+    		}
+    		if(!player.vaginas[0].virgin) {
+    			outputText("you feel an odd sort of tug at a point a few inches inside you, ")
+    			player.vaginas[0].virgin = true;
+    		}
+		
+    		outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
+		
+    		outputText("Tentatively, you slip your hands lower, working a finger inside yourself with some effort, pressing it in until you encounter a barrier, confirming your suspicions. <b>You've regained your virginity!</b>");
+    	}
+    	else if(!player.ass.analLooseness != 0) {
+    		outputText("You're soon bent double, hands pressed to your cramping gut, as you feel a series of unusual sensations between your [butt] cheeks: your [ass] clenches hard on nothing, then ")
+		
+    		if(player.ass.analWetness > 0) {
+    			outputText("the moisture inside you seems to be wicked way through your inner walls, ")
+    			player.ass.analWetness = 0;
+    		}
+		
+    		if(player.ass.analLooseness > 0) {
+    			outputText("it relaxes without moving at all, ");
+    			player.ass.analLooseness = 0;
+    			player.removeStatusAffect("ButtStretched");
+    		}
+		
+    		outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
+		
+    		outputText("Tentatively, you slip your hands lower and around, sliding a finger over your sensitive--and unbelievably tight--rear entrance, confirming your suspicions. <b>You've regained your anal virginity!</b>");
+    	}
+    	else {
+    		outputText("Though a wave of lust washes over you, you feel no other effect.");
+    	}
+	
+    	dynStats("lus+", 10, "cor+", 2);
+    }
 	}
 }
