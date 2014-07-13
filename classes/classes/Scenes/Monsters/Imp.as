@@ -60,7 +60,8 @@
 			this.drop = new WeightedDrop().
 					add(consumables.SUCMILK,3).
 					add(consumables.INCUBID,3).
-					add(consumables.IMPFOOD,4);
+					add(consumables.IMPFOOD,4).
+					add(consumables.LQDVIRGIN,2);
 			this.special1 = 5019;
 			this.wingType = WING_TYPE_IMP;
 			checkMonster();

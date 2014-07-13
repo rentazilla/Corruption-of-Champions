@@ -120,7 +120,8 @@
 							consumables.SUCMILK,
 							consumables.INCUBID,
 							consumables.OVIELIX,
-							consumables.B__BOOK);
+							consumables.B__BOOK,
+							consumables.LQDVIRGIN);
 			this.special1 = 5043;
 			this.special2 = 5044;
 			this.tailType = TAIL_TYPE_DEMONIC;

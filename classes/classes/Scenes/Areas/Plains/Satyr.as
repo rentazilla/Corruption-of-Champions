@@ -164,7 +164,7 @@ package classes.Scenes.Areas.Plains
 			this.temperment = TEMPERMENT_LUSTY_GRAPPLES;
 			this.level = 14;
 			this.gems = rand(25) + 25;
-			this.drop = new ChainedDrop().add(consumables.INCUBID,1/2);
+			this.drop = new ChainedDrop().add(consumables.INCUBID,1/2).add(consumables.LQDVIRGIN, 1/3);
 			this.tailType = TAIL_TYPE_COW;
 			checkMonster();
 		}
