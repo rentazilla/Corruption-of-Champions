@@ -775,10 +775,13 @@ public function doEvent(eventNo:Number):void
 	{
 		spriteSelect(23);
 		outputText("Which potion or tincture will you examine?", true);
-		if (player.gender == 2)
-			simpleChoices("Vitality T.", 2019, "Scholar's T.", 2021, "Blank", 0, "", 0, "Back", 2015);
-		else
-			simpleChoices("Vitality T.", 2019, "Scholars T.", 2021, "Cerulean P.", 2023, "", 0, "Back", 2015);
+		
+		var ceruleanPotion:int = 0;
+		if(player.gender == 2) {
+			ceruleanPotion = 2023;
+		}
+		
+		simpleChoices("Vitality T.", 2019, "Scholars T.", 2021, "Cerulean P.", ceruleanPotion, "LqdVirgin", 2051, "Back", 2015);
 		statScreenRefresh();
 	}
 	//Book list!
@@ -1372,6 +1375,30 @@ public function doEvent(eventNo:Number):void
 			dynStats("sen", -1);
 		}
 		doNext(1);
+	}
+	// Liquid Virgin pitch
+	else if (eventNo == 2051)
+	{
+		spriteSelect(23);
+		outputText("Giacomo's grin edges on a leer. \"<i>Ah, yes! The perfect thing for anyone who feels they've been a tad indiscreet. One swallow of this flask of Liquid Virgin will erase all evidence of your trysts, leaving any future lovers none the wiser! You can wipe the slate clean for only <b>15 gems</b>!</i>\"", true);
+		doYesNo(2052, 2016);
+	}
+	// Liquid Virgin purchase
+	else if (eventNo == 2052)
+	{
+		spriteSelect(23);
+		if (player.gems < 15)
+		{
+			outputText("\n\nGiacomo sighs, indicating you need " + String(15 - player.gems) + " more gems to purchase this item.", true);
+			doNext(2016);
+		}
+		else
+		{
+			player.gems -= 15;
+			shortName = "LqdVirgin";
+			takeItem();
+			statScreenRefresh();
+		}
 	}
 	//You fight the bee!
 	else if (eventNo == 2060)
