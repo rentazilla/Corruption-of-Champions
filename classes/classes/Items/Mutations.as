@@ -8908,7 +8908,7 @@
 			}
 		}
 		
-    public function liquidVirgin():void {
+    public function liquidVirgin(player:Player):void {
     	clearOutput();
 	
     	outputText("You pop open the flask and tip it into your mouth. The thick, pink-tinged liquid within coats your tongue and throat with a salty, metallic tang on the way down.  ");
@@ -8919,7 +8919,7 @@
     		if(player.vaginas[0].vaginalLooseness > 0) {
     			outputText("it relaxes without moving at all, ")
     			player.vaginas[0].vaginalLooseness = 0;
-    			player.removeStatusAffect("CuntStretched");
+    			player.removeStatusAffect(StatusAffects.CuntStretched);
     		}
     		if(player.vaginas[0].vaginalWetness > 1) {
     			outputText("most of the moisture inside you seems to be wicked away through your inner walls, ")
@@ -8945,7 +8945,7 @@
     		if(player.ass.analLooseness > 0) {
     			outputText("it relaxes without moving at all, ");
     			player.ass.analLooseness = 0;
-    			player.removeStatusAffect("ButtStretched");
+    			player.removeStatusAffect(StatusAffects.ButtStretched);
     		}
 		
     		outputText("and a wave of lust radiates from your clearly altered hole.\n\n");

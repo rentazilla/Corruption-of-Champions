@@ -1395,8 +1395,7 @@ public function doEvent(eventNo:Number):void
 		else
 		{
 			player.gems -= 15;
-			shortName = "LqdVirgin";
-			takeItem();
+			inventory.takeItem(consumables.LQDVIRGIN);
 			statScreenRefresh();
 		}
 	}
