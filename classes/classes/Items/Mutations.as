@@ -8934,7 +8934,7 @@
 		
     		outputText("Tentatively, you slip your hands lower, working a finger inside yourself with some effort, pressing it in until you encounter a barrier, confirming your suspicions. <b>You've regained your virginity!</b>");
     	}
-    	else if(!player.ass.analLooseness != 0) {
+    	else if(player.ass.analLooseness != 0) {
     		outputText("You're soon bent double, hands pressed to your cramping gut, as you feel a series of unusual sensations between your [butt] cheeks: your [ass] clenches hard on nothing, then ")
 		
     		if(player.ass.analWetness > 0) {
