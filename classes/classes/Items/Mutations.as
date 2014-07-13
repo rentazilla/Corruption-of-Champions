@@ -8938,7 +8938,7 @@
     		outputText("You're soon bent double, hands pressed to your cramping gut, as you feel a series of unusual sensations between your [butt] cheeks: your [ass] clenches hard on nothing, then ")
 		
     		if(player.ass.analWetness > 0) {
-    			outputText("the moisture inside you seems to be wicked way through your inner walls, ")
+    			outputText("the moisture inside you seems to be wicked away through your inner walls, ")
     			player.ass.analWetness = 0;
     		}
 		
