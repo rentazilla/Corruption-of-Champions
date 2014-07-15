@@ -657,24 +657,8 @@
 				}
 			}
 			//Males go into rut
-			if (player.totalCocks() > 0 && rand(4) == 0) {
-				//Rut affects:
-				//v1 - bonus cum production
-				//v2 - bonus libido
-				//v3 - time remaining!
-				//Has rut, intensify it!
-				if (player.findStatusAffect(StatusAffects.Rut) >= 0) {
-					player.addStatusValue(StatusAffects.Rut, 1, 100);
-					player.addStatusValue(StatusAffects.Rut, 2, 5);
-					outputText("\n\nYour " + cockDescript(0) + " throbs and dribbles as your desire to mate intensifies.  You know that <b>you've sunken deeper into rut</b>, but all that really matters is unloading into a cum-hungry cunt.", false);
-					player.addStatusValue(StatusAffects.Rut, 3, 48);
-					dynStats("lib", 5, "resisted", false, "noBimbo", true);
-				}
-				else {
-					player.createStatusAffect(StatusAffects.Rut, 150, 5, 100, 0);
-					outputText("\n\nYou stand up a bit straighter and look around, sniffing the air and searching for a mate.  Wait, what!?  It's hard to shake the thought from your head - you really could use a nice fertile hole to impregnate.  You slap your forehead and realize <b>you've gone into rut</b>!", false);
-					dynStats("lib", 5, "resisted", false, "noBimbo", true);
-				}
+			if (rand(4) == 0) {
+				player.goIntoRut(true);
 			}
 			//Anti-masturbation status
 			if (rand(4) == 0 && changes < changeLimit && player.findStatusAffect(StatusAffects.Dysfunction) < 0) {
@@ -2021,7 +2005,7 @@
 			}
 			//Go into heat
 			if (rand(2) == 0 && changes < changeLimit) {
-        if(player.goIntoHeat(true, 1, 72)) {
+        if(player.goIntoHeat(true)) {
           changes++;
         }
 			}
@@ -3696,27 +3680,9 @@
 			//Heat/Rut for those that can have them if "fuck draft"
 			if (fuck) {
 				//Try to go into intense heat.
-        player.goIntoHeat(true, 2, 96, 20, 20);
+        player.goIntoHeat(true, 2);
 				//Males go into rut
-				if (player.totalCocks() > 0) {
-					//Rut affects:
-					//v1 - bonus cum production
-					//v2 - bonus libido
-					//v3 - time remaining!
-					//Has rut, intensify it!
-					if (player.findStatusAffect(StatusAffects.Rut) >= 0) {
-						player.addStatusValue(StatusAffects.Rut, 1, 100);
-						player.addStatusValue(StatusAffects.Rut, 2, 5);
-						player.addStatusValue(StatusAffects.Rut, 3, 48);
-						outputText("\n\nYour " + cockDescript(0) + " throbs and dribbles as your desire to mate intensifies.  You know that <b>you've sunken deeper into rut</b>, but all that really matters is unloading into a cum-hungry cunt.", false);
-						dynStats("lib", 5, "resisted", false, "noBimbo", true);
-					}
-					else {
-						player.createStatusAffect(StatusAffects.Rut, 150, 5, 100, 0);
-						dynStats("lib", 5, "resisted", false, "noBimbo", true);
-						outputText("\n\nYou stand up a bit straighter and look around, sniffing the air and searching for a mate.  Wait, what!?  It's hard to shake the thought from your head - you really could use a nice fertile hole to impregnate.  You slap your forehead and realize <b>you've gone into rut</b>!", false);
-					}
-				}
+				player.goIntoRut(true);
 			}
 			//ORGAZMO
 			if (player.lust >= 100 && gameState == 0) {
@@ -4480,36 +4446,19 @@
 			outputText("", true);
 			outputText("You handle the coal rocks experimentally and they crumble to dust in your hands!  You cough as you breathe in the cloud, sputtering and wheezing.  After a minute of terrible coughing, you recover and realize there's no remaining trace of the rocks, not even a sooty stain on your hands!", false);
 			//Try to go into intense heat
-      if(player.goIntoHeat(true, 2, 96, 20, 20)) {
+      if(player.goIntoHeat(true, 2)) {
         changes++;
       }
 			//Males go into rut
-			else if (player.totalCocks() > 0) {
-				//Rut affects:
-				//v1 - bonus cum production
-				//v2 - bonus libido
-				//v3 - time remaining!
-				//Has rut, intensify it!
-				if (player.findStatusAffect(StatusAffects.Rut) >= 0) {
-					player.addStatusValue(StatusAffects.Rut, 1, 100);
-					player.addStatusValue(StatusAffects.Rut, 2, 5);
-					player.addStatusValue(StatusAffects.Rut, 3, 48);
-					outputText("\n\nYour " + cockDescript(0) + " throbs and dribbles as your desire to mate intensifies.  You know that <b>you've sunken deeper into rut</b>, but all that really matters is unloading into a cum-hungry cunt.", false);
-					dynStats("lib", 5, "resisted", false, "noBimbo", true);
-				}
-				else {
-					player.createStatusAffect(StatusAffects.Rut, 150, 5, 100, 0);
-					outputText("\n\nYou stand up a bit straighter and look around, sniffing the air and searching for a mate.  Wait, what!?  It's hard to shake the thought from your head - you really could use a nice fertile hole to impregnate.  You slap your forehead and realize <b>you've gone into rut</b>!", false);
-					dynStats("lib", 5, "resisted", false, "noBimbo", true);
-				}
+			else if(player.goIntoRut(true)) {
 				changes++;
 			}
 			else {
-				//Boost vaginal capacity without gaping
+				//Boost anal capacity without gaping
 				if (player.statusAffectv1(StatusAffects.BonusACapacity) < 80) {
 					if (player.findStatusAffect(StatusAffects.BonusACapacity) < 0) player.createStatusAffect(StatusAffects.BonusACapacity, 0, 0, 0, 0);
 					player.addStatusValue(StatusAffects.BonusACapacity, 1, 5);
-					outputText("\n\nYou feel... more accomodating somehow.  Your " + assholeDescript() + " is tingling a bit, and though it doesn't seem to have loosened, it has grown more elastic.", false);
+					outputText("\n\nYou feel... more accommodating somehow.  Your " + assholeDescript() + " is tingling a bit, and though it doesn't seem to have loosened, it has grown more elastic.", false);
 					changes++;
 				}
 				else {
@@ -4613,7 +4562,7 @@
 			//Sexual changes would go here if I wasn't a tard.
 			//Heat
 			if (and(4) == 0 && changes < changeLimit) {
-        var intensified:Boolean = (player.findStatusAffect(StatusAffects.Heat) >= 0);
+        var intensified:Boolean = player.inHeat;
         
         if(player.goIntoHeat(false)) {
           if(intensified) {
@@ -8243,7 +8192,7 @@
 			//fem fertility up and heat (suppress if pregnant)
 			//not already in heat (add heat and lust)
 			if (player.statusAffectv2(StatusAffects.Heat) < 30 && rand(2) == 0 && changes < changeLimit) {
-        var intensified:Boolean = (player.findStatusAffect(StatusAffects.Heat) >= 0);
+        var intensified:Boolean = player.inHeat;
         if(player.goIntoHeat(false)) {
           if(intensified) {
   					outputText("\n\nYour womb feels achingly empty, and your temperature shoots up.  Try as you might, you can't stop fantasizing about being filled with semen, drenched inside and out with it, enough to make a baker's dozen offspring.  ");
