@@ -8804,6 +8804,23 @@
     	}
 	
     	dynStats("lus+", 10, "cor+", 2);
+			
+    	// One in three times, we go into heat or rut
+    	if(rand(3) == 0) {
+    		// In case this character is a herm, we'll randomize the order we try to enter heat or rut.
+    		if(rand(2) == 0) {
+    			// Try heat first
+    			if(!player.goIntoHeat(true)) {
+    				player.goIntoRut(true);
+    			}
+    		}
+    		else {
+    			// Try rut first
+    			if(!player.goIntoRut(true)) {
+    				player.goIntoHeat(true);
+    			}
+    		}
+    	}
     }
 	}
 }
