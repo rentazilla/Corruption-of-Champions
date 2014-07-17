@@ -352,7 +352,7 @@ private function nonAddictMinotaurGangBang():void {
 		if(flags[kFLAGS.UNKNOWN_FLAG_NUMBER_00326] <= 5) outputText("You open your mouth wide, licking your lips until they're shiny and inviting enough for the stud to fuck.  He does not disappoint.  The fat head pushes past your puckered cock-suckers and slides into your throat, the passage eased by the leavings of the one before him.  You sigh happily and begin to suck his cock like a lollipop, though all you want is his creamy center.  The others crowd around, touching themselves and waiting for another turn.  ", false);
 		else outputText("You open your mouth wide, licking your lips until they're shiny and inviting enough for the stud to fuck.  He does not disappoint.  The fat head pushes past your puckered cock-suckers and slides into your throat, the passage eased by the leavings of the one before him.  You sigh happily and begin to suck his cock like a lollipop, though all you want is his creamy center.  Two more swollen fuck-sticks find their way to your waiting holes, and you giggle in dizzy bliss when you're packed full of your sons spunk once again.  ", false);
 	}
-	outputText("You black out at that point, but when you wake up soaked in cum with a bottle of it" + assholeOffLimits(" and a goo-splattered plug") + " next to you, you know it was a good night.", false);
+	outputText("You black out at that point, but when you wake up soaked in cum with a bottle of it next to you, you know it was a good night.", false);
 	//Force cum bottle loot!
 	flags[kFLAGS.BONUS_ITEM_AFTER_COMBAT_ID] = consumables.MINOCUM.id;
 	//Preggers chance!
