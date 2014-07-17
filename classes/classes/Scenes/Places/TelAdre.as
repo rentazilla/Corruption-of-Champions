@@ -980,13 +980,13 @@ You[if (corruption < 40) 're not so sure anymore, but you] really want this henn
 
 "<i>Don't worry,</i>" she says, "<i>we'll have your blood flowing nicely in no time!</i>"
 
-The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hasCock = true) , the table under your [cocks],] or your dripping cunt.
+The sting in your ass builds and builds as she spanks you. You try to squirm away from her, or reach back and cover your ass with your hands, but Yara's bonds are far too secure for you to get away, and you sag down against the bench before she reaches ten. You lose count somewhere in the twenties and lose control of your tears long after that. By the time she finishes, your ass feels red-hot, and you're not sure which is wetter: your face[if (hasCock = true) , the table under your [cocks],] or your dripping cunt.
 
 "<i>All done!</i>" she says. "<i>You took that very well, cutie.</i>" She lightly caresses your tender ass, and you whimper, pressing into her touch. "<i>Now to apply the paste...</i>"
 
 She picks up a cone and sets to work. You gasp at the feel of the first dribbles of henna paste: they're not only blessedly cool against your burning [skin], they soon begin to radiate delicious tingles, not unlike the herbal creams your mother used to apply to your burns. Yara starts at the top of your ass and works her way down, describing swirls and curves and patterns in cold patterns on your hot ass. By the time she reaches the end of her work, tracing a series of arcs that seem to lead straight to your [vagina], you're quivering and moaning with need.
 
-"<i>And that does it,</i>" she says. "<i>Now we just have to wait for it to dry.</i>" She seems to suddenly realize where she is you feel her eyes on your most private parts, and hear her take a slow, deep sniff. "<i>Mmm...if you'd like, I could help you pass the time...</i>"]]>, true); /* " */
+"<i>And that does it,</i>" she says. "<i>Now we just have to wait for it to dry.</i>" She seems to suddenly realize where she is; you feel her eyes on your most private parts, and hear her take a slow, deep sniff. "<i>Mmm...if you'd like, I could help you pass the time...</i>"]]>, true); /* " */
 	
 	player.hasAssHenna = true;
 	dynStats("lus", 50 + player.sens, "sen", 5);
@@ -1000,7 +1000,7 @@ public function haveRestrainedSexWithYara():void {
 
 She nuzzles your sex for a moment, then licks you from your [vagina] to your [clit], drawing a moan from you as your needy sex finally gets some stimulation. "<i>Delicious,</i>" she purrs, and then she dives in, tonguing your clit aggressively. You writhe under her assault, trying to buck your hips, but you're strapped down too tightly to move very much. She doesn't let up for a second, sucking your love-button roughly[if (hasCock = true), letting go of a hip to wrap a hand around your [cock] and pump it quickly]. Before long, you're screaming as you climax, soaking her face with your cream[if (hasCock = true)  and the floor with your cum]. She doesn't let up for a second, and after so much pain and pleasure, neither does your orgasm, rolling on and on until your vision starts to go black...]]>, true); /* ' */
 	
-	dynStats("lus=", 0);
+	player.orgasm();
 	
 	doNext(finishedHenna);
 }

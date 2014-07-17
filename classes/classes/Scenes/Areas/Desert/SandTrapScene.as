@@ -225,7 +225,7 @@ private function dickwieldersLoseToSandTarps():void {
 		outputText("\n\nYou awaken a while later, wearily getting to your feet and looking around.  You are standing in a featureless stretch of desert... there is no suggestion of the sandtrap, or indeed that you are in the same place where it caught you.  A fair amount of time has passed though, judging by the sky above you.  Perhaps it was all a particularly lucid mirage?  A sensation of... fullness in your abdomen suggests otherwise.  Clutching your bowels uneasily, you make your way back to camp.");
 	}
 
-	monster.createStatusAffect("Fertilized",0,0,0,0);
+	monster.createStatusAffect(StatusAffects.Fertilized,0,0,0,0);
 	sandTrapPregChance();
 	player.orgasm();
 	dynStats("lib", 1);
