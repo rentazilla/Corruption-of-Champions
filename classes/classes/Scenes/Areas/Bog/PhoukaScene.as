@@ -519,7 +519,7 @@ package classes.Scenes.Areas.Bog
 				addButton(1, "Bunny", phoukaSexBunnyChoice);
 				addButton(2, "Horse", phoukaSexHorseChoice);
 			}
-			addButton(3, "Goat", phoukaSexGoatChoice);
+			if(!assholeOffLimits()) addButton(3, "Goat", phoukaSexGoatChoice);
 		}
 
 		internal function phoukaSexBunny(postCombat:Boolean, lustLoss:Boolean):void

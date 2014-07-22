@@ -362,12 +362,19 @@ package classes.Scenes.Areas.Forest
 
 			outputText("This fear doubles as the two hounds waste no time.  They are on you in the space of a heartbeat, ripping the net from around you, their powerful hands shoving you to all fours as they snarl and bark.  Their red, shiny dog cocks slip from their heavy sheaths, throbbing with thin, purple veins.  The fog has definitely done something to you, because you can’t help but lick your lips at the sight.  \n\n");
 
-			outputText("Growling, the first Hound grabs you by your [ass], his muscular fingers sinking roughly into your flesh.  He roughly rips your [armor] from you, growling.  You feel a rush of warmth as a canine mouth presses against your [ass],");
-			if (player.hasVagina()) outputText(" long tongue touching the bottom edge of your [vagina]");
-			else if (player.balls > 0) outputText(" long tongue lapping at the base of your balls");
-			else if (player.hasCock()) outputText(" long tongue lapping at the base of your cock");
-			else outputText(" long tongue slapping warmly against your taint");
-			outputText(" before running up to your [asshole].\n\n");
+			if(assholeOffLimits()) {
+				outputText("Growling, the first Hound grabs you by your [ass], his muscular fingers sinking roughly into your flesh.  He roughly rips your [armor] from you, growling.  You feel a rush of warmth as a canine mouth presses against your mound,");
+				else outputText(" long tongue slithering warmly over your [clit]");
+				outputText(" before running down to your [vagina].\n\n");
+			}
+			else {
+				outputText("Growling, the first Hound grabs you by your [ass], his muscular fingers sinking roughly into your flesh.  He roughly rips your [armor] from you, growling.  You feel a rush of warmth as a canine mouth presses against your [ass],");
+				if (player.hasVagina()) outputText(" long tongue touching the bottom edge of your [vagina]");
+				else if (player.balls > 0) outputText(" long tongue lapping at the base of your balls");
+				else if (player.hasCock()) outputText(" long tongue lapping at the base of your cock");
+				else outputText(" long tongue slapping warmly against your taint");
+				outputText(" before running up to your [asshole].\n\n");
+			}
 
 			outputText("You shiver, the fog-born fear still controlling your body.  You feel a rush of strange gratitude—the hounds don’t want to eat you, they just want to sate a different hunger.  And with the mindbending fog inside you, you want desperately to satisfy them.  Your submissive mind even hopes that if you can do a good job, they’ll spare you any further domination.  You’d be repulsed by the idea of fucking two Hounds to exhaustion if you weren’t so damn scared of them.  An errant thought at the back of your mind hopes that the effects of this fog are only temporary.\n\n");
 
@@ -381,18 +388,24 @@ package classes.Scenes.Areas.Forest
 
 			outputText("The Hound begins fucking your face roughly, leaving salty precum on your tongue, cock throbbing between your lips.  You feel grateful that the Hound has chosen to simply fuck you, and you want nothing more than to do the best job possible for the Hound.\n\n");
 
-			outputText("You groan around the Hound’s dick as you feel a pressure against your [asshole].  The beast squeezes your [ass] cheeks as he shoves his foot-long doggie cock into your rear. ");
-			player.buttChange(12 * 3, true, false, false);
+			outputText("You groan around the Hound’s dick as you feel a pressure against your [" + assholeOffLimits("vagina", "asshole") + "].  The beast squeezes your [ass] cheeks as he shoves his foot-long doggie cock into your "+ assholeOffLimits("entrance", "rear") + ". ");
+			if(assholeOffLimits()) {
+				// It'd be nice to knock up the character, but hellhound pregnancies can't be mistaken for dog-morphs...
+				player.cuntChange(12 * 3, true, false, false);
+			}
+			else {
+				player.buttChange(12 * 3, true, false, false);
+			}
 			outputText(" You yelp, realizing what’s to come, and try to wriggle away, but, pinned between the two Hounds, there’s no escape.  The Hounds growl in unison and you freeze, cowed by the two powerful males who want their way with your frightened, vulnerable body.\n\n");
 
 			outputText("After all, comes a thought in your fog-addled head, they’ve earned the right to do whatever they want to their prey.\n\n");
 
 			outputText("It doesn’t take the two dog men long.  They rock back and forth, shoving their thick cocks in and out of your submissive, helpless body.  The one in front grabs your head, burying your [face] into his crotch, so deep that your tongue licks against the throbbing bulge of his knot, your nose buried in the thick fur above his shaft.");
-			if (player.tailType != TAIL_TYPE_NONE) outputText("  The Hound behind grabs you by [onetail], using it as a handhold as he thrusts over and over into your [asshole].");
+			if (player.tailType != TAIL_TYPE_NONE) outputText("  The Hound behind grabs you by [onetail], using it as a handhold as he thrusts over and over into your [" + assholeOffLimits("vagina", "asshole") + "].");
 			else outputText("  The Hound behind grabs you by your [ass], thrusting into you again and again.");
 			outputText("  You tremble, completely dominated by the two powerful males as they make you their prey-bitch.\n\n");
 
-			outputText("They cum within moments of each other, the one in front driving his huge knot into your mouth, leaving your jaw aching.  You groan in protest as his cock shoots hot seed down your throat.  Nearly gagging on the canine dick already, there’s little you can do but swallow the Hound’s cum.  As you gurgle it down, you feel the Hound behind you painfully shove his thick knot into your ass.  You try to scream, but with a mouth full of cock and cum, there’s little you can do but take it like prey.  Your body quakes, belly swelling as you’re filled with cum at both ends leaving you warm, bloated, and strangely satisfied.\n\n");
+			outputText("They cum within moments of each other, the one in front driving his huge knot into your mouth, leaving your jaw aching.  You groan in protest as his cock shoots hot seed down your throat.  Nearly gagging on the canine dick already, there’s little you can do but swallow the Hound’s cum.  As you gurgle it down, you feel the Hound behind you painfully shove his thick knot into your " + assholeOffLimits("cunt", "ass") + ".  You try to scream, but with a mouth full of cock and cum, there’s little you can do but take it like prey.  Your body quakes, belly swelling as you’re filled with cum at both ends leaving you warm, bloated, and strangely satisfied.\n\n");
 
 			outputText("You shiver, breathing in the cold, mind-altering fog, waiting obediently for the two Hounds to tire of you.  Oddly enough, with their seeds spent, they’re strangely affectionate, and you find your back, face, and ass covered in warm, languid licks from the savage men.  Eventually their knots shrink, and the two Hounds withdraw from you, letting you slump to the ground as they pad off into the woods.  \n\n");
 
@@ -602,7 +615,7 @@ package classes.Scenes.Areas.Forest
 
 			if (!player.isTaur())
 			{
-				if (player.hasVagina() && !player.hasCock())
+				if (player.hasVagina() && (!player.hasCock() || assholeOffLimits()))
 				{
 					outputText("With your back against the tree, he guides your");
 					if (player.isBiped() || player.isDrider() || player.isGoo()) outputText(" [legs] up, letting them wrap around his back.");

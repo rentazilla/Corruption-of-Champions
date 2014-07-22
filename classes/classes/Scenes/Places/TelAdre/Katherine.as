@@ -1032,14 +1032,14 @@ private function suckedNFuckedByKat():void {
 	if(player.hasVagina()) outputText("your " + vaginaDescript(), false);
 	else outputText("between your asscheeks", false);
 	outputText(".  Taking hold of your " + hipDescript() + ", she slides her cock", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" forward until she's hovering at the entrance to your ", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina()) outputText(vaginaDescript() + " and " + assholeDescript(), false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina() && !assholeOffLimits()) outputText(vaginaDescript() + " and " + assholeDescript(), false);
 	else outputText(player.assholeOrPussy(), false);
 	outputText(".  Taking a bit of the pre-cum drooling from your prick, she slathers it over her cock", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(".  Then, without further ado, she slides herself into you.", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina()) {
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina() && !assholeOffLimits()) {
 		player.buttChange(flags[kFLAGS.KATHERINE_DICK_LENGTH] * 2, true, true, false);
 		player.cuntChange(flags[kFLAGS.KATHERINE_DICK_LENGTH] * 2, true, true, false);
 	}
@@ -1048,22 +1048,22 @@ private function suckedNFuckedByKat():void {
 	outputText("\n\n", false);
 
 	outputText("\"<i>Now, then, let's give this a shot...</i>\" she murmurs to herself, beginning to slowly rock back and forth within you, sliding her cock", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" out and then thrusting home, her knot", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" starting to swell and stretching you out in all the right ways... if only she wasn't going so slow, this would be so great.  But any complaints about the pace are lost when she bends over again and starts to lap at your " + cockDescript(x) + ", running her tongue over and around it several times before she takes it into her mouth, swallowing inch after inch of " + Appearance.cockNoun(CockTypesEnum.HUMAN) + " until her nose is pressed flat into the base of your belly.  She lets out a muffled grunt that might be \"<i>right</i>\", then tries to manage the task of picking up the pace of her thrusts while sucking and slurping on your " + cockDescript(x) + " at the same time.\n\n", false);
 
 	outputText("You're in no position to complain.  This feels... incredible!  Her mouth around your cock is so hot and wet, her tongue sliding along the underside of your shaft and stroking in a sensation that no human could ever match, greedily sucking on you and hungry for everything you have.  At the same time, she's stretching your hole", false);
-	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" so deliciously full, knot", false);
-	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" flaring inside you and anchoring you together.  You rock back and forth, thrusting your hips awkwardly in an effort to fuck and be fucked as hard as possible, and feel the oh-so-sweet sensation of release boiling away ", false);
 	if(player.balls > 0) outputText("in your " + ballsDescriptLight(), false);
 	else outputText("at the base of your spine", false);
 	outputText("...\n\n", false);
 
 	outputText("But it's Katherine who cums first.  With a muffled yowl of delight she floods your hole", false);
-	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1) outputText("s", false);
+	if(player.hasVagina() && flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && !assholeOffLimits()) outputText("s", false);
 	outputText(" with her spunk, gushing hot kitty-kum into your depths.  Your belly begins to swell from the spunk, bulging into a visible paunch", false);
 	//(balls3</i>\":
 	if(flags[kFLAGS.KATHERINE_BALL_SIZE] >= 3) outputText(" and it doesn't stop, growing and growing until you look pregnant and ready to deliver", false);
@@ -1092,7 +1092,7 @@ private function suckedNFuckedByKat():void {
 	outputText("You entwine her fingers with your own and agree that it was.\n\n", false);
 
 	outputText("Once her knot", false);
-	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina()) outputText("s", false);
+	if(flags[kFLAGS.KATHERINE_DICK_COUNT] > 1 && player.hasVagina() && !assholeOffLimits()) outputText("s", false);
 	outputText(" deflate and you detach, you clean yourself off, get dressed, and head back out into the street.", false);
 	//lust -100, slimefeed, Player returns to Tel'Adre Menu Screen or to camp, if code insists on it
 	player.slimeFeed();
