@@ -2197,8 +2197,7 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 	outputText(" bulbous, throbbing glory.");
 	
 	outputText("\n\nWith a smile, you tell [Arian em] that despite [Arian eir] initial bout of shyness, [Arian eir] body seems to know exactly what to do.  Arian simply laughs in nervousness.  You wait for a short while, until finally you tell [Arian em] that [Arian ey] should position [Arian emself] at your opening");
-	// XXX assholeOffLimits: consider doing double vaginal penetration
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("s");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0 && !assholeOffLimits()) outputText("s");
 	outputText(" and get ready to thrust in; otherwise neither of you are going to be feeling good any time soon.");
 	
 	outputText("\n\nSnapping to [Arian eir] senses, Arian quickly ");
@@ -2209,7 +2208,7 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 	outputText("shaft");
 	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("s");
 	outputText(" with your [vagina]");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText(" and [asshole]");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0 && !assholeOffLimits()) outputText(" and [asshole]");
 	outputText(".  [Arian Ey] looks at you, waiting for you to confirm that [Arian ey] should indeed get going.  You smile and nod");
 	if(player.hasLongTail()) outputText(", looping your tail around [Arian eir] waist");
 	outputText(".");
@@ -2218,18 +2217,23 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 	
 	//(if ArianDblCock == 1) //DP PC
 	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) {
-		outputText("\n\nHesitantly, the lizan tries to fit both of [Arian eir] cocks into your [vagina] and [asshole] at the same time.  You sigh at the intrusion and look at [Arian eir] face; Arian has a look of absolute bliss on [Arian eir], you can even see that the lizan is beginning to drool a bit.  The texture of Arian's twin cocks might be very similar, but they feel entirely different on both your ass and pussy.");
+		outputText("\n\nHesitantly, the lizan tries to fit both of [Arian eir] cocks into your [vagina]" + assholeOffLimits("", " and [asshole]") + " at the same time.  You sigh at the intrusion and look at [Arian eir] face; Arian has a look of absolute bliss on [Arian eir], you can even see that the lizan is beginning to drool a bit.  The texture of Arian's twin cocks " + assholeOffLimits("feels wonderful as they slide into your pussy.", "might be very similar, but they feel entirely different on both your ass and pussy."));
 		
-		outputText("\n\nThe bulbous orbs dotting the length work somewhat like beads, as they work over your resistance, each time one of them presses in, you moan and brace yourself for the next, larger bulb.  Gently but insistently Arian presses forward, quite happy to try and take both of your holes at the same time.  \"<i>This isn't hurting you? Is it?</i>\" [Arian ey] asks, still understandably nervous about your relationship.");
+		outputText("\n\nThe bulbous orbs dotting the length work somewhat like beads, as they work over your resistance, each time one of them presses in, you moan and brace yourself for the next, larger bulb.  Gently but insistently Arian presses forward, quite happy to try and take " + assholeOffLimits("your hole with both cocks", "both of your holes") + " at the same time.  \"<i>This isn't hurting you? Is it?</i>\" [Arian ey] asks, still understandably nervous about your relationship.");
 		
-		outputText("\n\nYou shake your head and tell [Arian em] that you're fine.  [Arian Eir] cocks just feel... different... from what you're used to seeing around, you remark that they seem built to rub against your most sensitive spots inside both your ass and your vagina.  Still, if [Arian ey] doesn't hurry up and fill you up, you might have to take matters into your own hands.  It's not nice to keep a girl waiting.");
+		outputText("\n\nYou shake your head and tell [Arian em] that you're fine.  [Arian Eir] cocks just feel... different... from what you're used to seeing around, you remark that they seem built to rub against your most sensitive spots inside" + assholeOffLimits("", " both your ass and") + " your vagina.  Still, if [Arian ey] doesn't hurry up and fill you up, you might have to take matters into your own hands.  It's not nice to keep a girl waiting.");
 
 		outputText("\n\nArian fumbles and begins penetrating you with more gusto.  \"<i>S-sorry, I just don't want to hurt you...</i>\"  You sigh and tell [Arian em] that you aren't made of glass.  [Arian Ey] can be a little rough, though if [Arian ey] overdoes it you'll have to stop [Arian em].  Still, you can take something like this!");
 		
 		outputText("\n\nYou take hold of [Arian eir] arms and pull [Arian em] up towards you, making the lizan lose [Arian eir] balance and fully penetrate you.");
 		//(Enlargement/Virginity loss messages)
-		player.cuntChange(arianCockSize(),true,true,false);
-		player.buttChange(arianCockSize(),true,true,false);
+        if(assholeOffLimits) {
+    		player.cuntChange(arianCockSize()*2,true,true,false);
+        }
+        else {
+    		player.cuntChange(arianCockSize(),true,true,false);
+    		player.buttChange(arianCockSize(),true,true,false);
+        }
 		
 		outputText("\n\nThe lizan moans in shock at the deed, as if [Arian ey] still can't believe this is actually happening.  [Arian Eir] fingers clutch you tightly, but [Arian ey] doesn't make any further motions - more likely [Arian ey] can't bring himself to thrust just yet, still full of that nervous virgin behavior.");
 	}
@@ -2275,11 +2279,11 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("their");
 	else outputText("its");
 	outputText(" bumps massage your entrance");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("s");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0 && !assholeOffLimits()) outputText("s");
 	outputText(" unlike anything else.  You praise the lizan on being a quick study, letting go of [Arian eir] tail and grabbing onto [Arian eir] scaly shoulders instead, giving [Arian em] a few more directions so [Arian ey] can catch your most sensitive spots.");
 	
 	outputText("\n\nArian suddenly clenches and gasps, moaning several times and arching [Arian eir] back before [Arian ey] can't hold it back anymore and climaxes inside of you, filling your [cunt] ");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("and [ass] ");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0 && !assholeOffLimits()) outputText("and [ass] ");
 	outputText("with [Arian eir] sticky wet seed.");
 	
 	outputText("\n\nYou moan as [Arian ey] fills you with [Arian eir] lizan seed, then immediately sigh in disappointment as [Arian ey] slumps down on top of you, nuzzling against you tenderly.  \"<i>That was incredible.  Hey, what's wrong?  Why didn't you cum?</i>\" Arian asks, curious yet sated.  Well, you just didn't have time to, but it's okay.  You'll find some way to relieve yourself, and it did feel good for the time it lasted.  You pat Arian's head, smiling at the lizan, despite being annoyed at not being able to climax.");
@@ -2296,12 +2300,12 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 	if(flags[kFLAGS.ARIAN_VAGINA] == 0) outputText("[Arian ey] himself ");
 	else outputText("she ");
 	outputText("is being overwhelmed by, spraying your ");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] == 0) outputText("cavity");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] == 0 || assholeOffLimits()) outputText("cavity");
 	else outputText("cavities");
 	outputText(" with a second helping of lizan spunk, dredging up every last drop of jizz left in [Arian eir] internal balls before, with a groan, [Arian ey] sinks down atop you.  Arian's orgasm pushes you over the edge, and you find your pussy ");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("and ass ");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0 && !assholeOffLimits()) outputText("and ass ");
 	outputText("contracting, trying ");
-	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] == 0) outputText("its");
+	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] == 0 || assholeOffLimits()) outputText("its");
 	else outputText("their");
 	outputText(" best to milk the poor lizan of all [Arian ey] is worth, until finally with one last spasm, you slump down and release the lizan shaft");
 	if(flags[kFLAGS.ARIAN_DOUBLE_COCK] > 0) outputText("s");
