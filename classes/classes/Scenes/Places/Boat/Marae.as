@@ -376,7 +376,7 @@ private function MaraeIIStageII():void {
 		outputText("She's easy to push down into the soft grasses of the island, and her legs part to allow you better access.  Your " + cockDescript(0) + " doesn't need to be told what to do, and it slips into her waiting wetness as if it was made for her.  ", false);
 		if(player.cocks[0].cockThickness > 5 || player.cockArea(0) > 100) outputText("With how big you are, there's no way it should be able to fit, but her body isn't even distorted by your girth.  Perhaps she changed you to fit her?  You pull back and your thickness seems unchanged.  You shake your head to clear the unwelcome thoughts and ram yourself back into her.  Fucking is what's important.  ", false);
 		else outputText("She feels perfect.  A velvet vice of hot, slippery wetness clutches tightly around your " + cockDescript(0) + ".  It almost feels like it's actually gripping you, cradling your cock in her ambrosia-slicked box.", false);
-		if(player.cockTotal() > 1) {
+		if(player.cockTotal() > 1 && !assholeOffLimits()) {
 			if(player.cockTotal() > 2) outputText("  Another ", false);
 			else outputText("Your other ", false);
 			outputText(Appearance.cockNoun(CockTypesEnum.HUMAN) + " prods at her tight pucker, and with a slight adjustment, you're able to line it up.  It's wet!  Inch after inch slides in with incredible ease, violating her slippery butthole until you've completely double-penetrated her.", false);
@@ -386,28 +386,33 @@ private function MaraeIIStageII():void {
 		if(player.vaginas[0].vaginalWetness < VAGINA_WETNESS_WET) outputText("Sticky wetness glistens between your thighs", false);
 		else if(player.vaginas[0].vaginalWetness < VAGINA_WETNESS_DROOLING) outputText("Drops of feminine arousal run down your thighs", false);
 		else outputText("Trails of viscous feminine fluid leak from your " + vaginaDescript(0), false);
-		outputText(", reminding you of your unused femsex.  Marae grunts underneath you, and while at first you assume it's from the penetration, the prodding of two cock-like protrusions at your lusty holes corrects your misguided assumptions.  You pull back and begin to fuck her in earnest, and with each long rock back, you can see she's grown tentacles from underneath her ass, like two prehensile tails.  They push forwards and spear you, arresting your movement while you try to cope with the sudden stretching of two of your orifices.  Warmth radiates from the twin intruders along with a slippery fullness.  They're pumping something inside you that tingles and makes " + sMultiCockDesc() + " bounce and drip.", false);
-		player.cuntChange(12,true,true,false);
-		player.buttChange(12,true,true,false);
+		outputText(", reminding you of your unused femsex.  Marae grunts underneath you, and while at first you assume it's from the penetration, the prodding of two cock-like protrusions at your lusty hole" + assholeOffLimits("", "s ") + "corrects your misguided assumptions.  You pull back and begin to fuck her in earnest, and with each long rock back, you can see she's grown tentacles from underneath her ass, like two prehensile tails.  They push forwards and spear you, arresting your movement while you try to cope with the sudden stretching of " + assholeOffLimits("your orifice", "two of your orifices") + ".  Warmth radiates from the twin intruders along with a slippery fullness.  They're pumping something inside you that tingles and makes " + sMultiCockDesc() + " bounce and drip.", false);
+        if(assholeOffLimits()) {
+    		player.cuntChange(12*2,true,true,false);
+        }
+        else {
+    		player.cuntChange(12,true,true,false);
+    		player.buttChange(12,true,true,false);
+        }
 		outputText("\n\n", false);
 
 		outputText("Marae laughs and teases, \"<i>If this is how you fuck it's no wonder I haven't met your children yet.  If you're going to be my disciple you need to fuck your partners hard until you're stuffing them with cum.  Then you need to do it again.  Alternatively you should be bouncing on their cock and milking it with your " + vaginaDescript(0) + " until your womb is packed so full you can't walk.  Now show me how you'll do it, or I might keep you here until you're properly trained!</i>\"\n\n", false);
 
 		outputText("You happily thrust forwards, ramming your " + cockDescript(0) + " into her cunt with such force that a wet slap echoes over the lake and her fluids splatter your abdomen.  ", false);
-		if(player.cockTotal() > 1) outputText("Her asshole is squelching and dripping from your " + cockDescript(1) + ", actually squirting more lubricant than her pussy from the violent fucking!  ", false);
-		outputText("In spite of the obscene amount of pleasure " + sMultiCockDesc() + " is getting, you focus on obeying your goddess, and you work the muscles in your " + vaginaDescript(0) + " and " + assholeDescript() + " to pleasure her tentacles.  Muffled sloshes and spurts reach your ears, and you realize just how successful your efforts are.  Marae's pinching her nipples and arching her back, and a moment later a wave of pleasure hits you upside the head with the force of a hammer-blow.\n\n", false);
+		if(player.cockTotal() > 1 && !assholeOffLimits()) outputText("Her asshole is squelching and dripping from your " + cockDescript(1) + ", actually squirting more lubricant than her pussy from the violent fucking!  ", false);
+		outputText("In spite of the obscene amount of pleasure " + sMultiCockDesc() + " is getting, you focus on obeying your goddess, and you work the muscles in your " + vaginaDescript(0) + assholeOffLimits("", " and " + assholeDescript()) + " to pleasure her tentacles.  Muffled sloshes and spurts reach your ears, and you realize just how successful your efforts are.  Marae's pinching her nipples and arching her back, and a moment later a wave of pleasure hits you upside the head with the force of a hammer-blow.\n\n", false);
 
 		outputText("Cum boils out of your ", false);
 		if(player.balls > 0) outputText("rapidly contracting balls", false);
 		else outputText("tentacle-squeezed prostate", false);
 		outputText(" and erupts into Marae's womb.  Your hips rock forward, grazing her cervix with your " + cockHead(0) + " to better fill her uterus.  ", false);
-		if(player.cockTotal() > 1) outputText("The " + cockDescript(1) + " in her ass spasms and explodes with its brother, glazing her slippery colon with a coating of syrupy spunk.  ", false);
-		if(player.cockTotal() > 2) {
+		if(player.cockTotal() > 1 && !assholeOffLimits()) outputText("The " + cockDescript(1) + " in her ass spasms and explodes with its brother, glazing her slippery colon with a coating of syrupy spunk.  ", false);
+		if(player.cockTotal() > assholeOffLimits(1, 2)) {
 			outputText("Neglected but orgasming, ", false);
-			if(player.cockTotal() > 3) outputText("the remainder of ", false);
+			if(player.cockTotal() > assholeOffLimits(2, 3)) outputText("the remainder of ", false);
 			outputText("your ", false);
-			if(player.cockTotal() > 3) outputText(multiCockDescriptLight(), false);
-			else outputText(cockDescript(2), false);
+			if(player.cockTotal() > assholeOffLimits(2, 3)) outputText(multiCockDescriptLight(), false);
+			else outputText(cockDescript(assholeOffLimits(1, 2)), false);
 			outputText(" does its best to coat Marae's thighs with whiteness.  ", false);
 		}
 		outputText("The goop from inside you never seems to end, and you pump Marae's belly up with it until she looks a little pregnant.  ", false);
@@ -415,7 +420,7 @@ private function MaraeIIStageII():void {
 		if(player.cumQ() > 1000) outputText("She's actually surprised when you keep fountaining more seed into her.  Her nipples start to squirt out the excess seed, but you keep cumming until she's squirted enough to soak herself with your jism.  ", false);
 		outputText("The goddess' tentacles never let up during it all, and you have a belly that matches Marae's perfectly.\n\n", false);
 
-		outputText("You slide out and slump over, utterly exhausted by the breeding session.  The goddess pulls her tentacles from your abused openings, marveling at the outflow of plant-spunk while you relax and pass out.  You feel her fold your hands around your belly to cradle the pregnant bulge, and then you're snoring contentedly.\n\n", false);
+		outputText("You slide out and slump over, utterly exhausted by the breeding session.  The goddess pulls her tentacles from your abused opening" + assholeOffLimits(", ""s") + ", marveling at the outflow of plant-spunk while you relax and pass out.  You feel her fold your hands around your belly to cradle the pregnant bulge, and then you're snoring contentedly.\n\n", false);
 	}
 	//ONWARD TO NUMBER 3
 	doNext(MaraePt2RoundIIIPrizes);
