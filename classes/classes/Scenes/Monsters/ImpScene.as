@@ -210,6 +210,11 @@ package classes.Scenes.Monsters
 			outputText("A goblin appears from the underbrush behind you, but a swift kick sends her flying; she's not what you're after. You're soon rewarded with a trio of imps, who fly up to you, cocks at the ready.  Grabbing the defeated imp by the head, you explain your need to the group and waft a bit of your scent over to them with your tail. They confer among themselves only briefly, clear on the decision, as you toss their weaker fellow underneath them. The larger of the three, evidently the leader, smiles lewdly at you and agrees to your 'demands'.\n\n", false);
 			//[Female:
 			if(player.hasVagina()) {
+                // XXX assholeOffLimits: I have no idea how to adapt this 
+                // scene without changing the premise entirely. You can't 
+                // stuff dog and cat dicks in the same hole—the cat dick 
+                // would tear up the dog dick, and the dog dick's knot would 
+                // crush the cat dick. Just leaving it as is for now.
 				outputText("The imps approach you, their various genitalia glistening in the sun and drawing your attention. Their cocks swing lewdly with every flap of their wings, but you turn around, wanting their ministrations to be a surprise.\n\n", false);
 			
 				outputText("Hands slide over you, stroking and patting your equine form. The roving fingers find their way to your rear quickly, and begin teasing around your " + vaginaDescript() + " and " + assholeDescript() + ". They probe around but don't penetrate and you stamp your hoof in frustration. There's a chuckle from behind you and all but a handful of the hands disappear.\n\n", false);
