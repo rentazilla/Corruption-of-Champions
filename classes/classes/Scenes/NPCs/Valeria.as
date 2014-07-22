@@ -205,25 +205,30 @@ private function valeriaGetFucked():void {
 	}
 	//(If Male/Herm)
 	else if(player.hasCock()) {
-		outputText("\n\nWith your cock stuffed into Valeria's warm, gooey innards, the goo-girl makes a show of rocking herself back and forth in your lap, using her entire bottom like one sopping-wet cunt riding your cock.  With her own rod in hand, she pushes down, letting the base of her prick shift down her body until it bends around your hips and pops back into form just above your [butt].  Your eyes go wide, but when you try to yelp, Val roughly shoves one of her feet into your mouth.  \"<i>Shh, partner,</i>\" she laughs, flicking your tongue with her soft, citrusy toes, \"<i>just let it happen... It'll be good, I promise.</i>\"");
+		outputText("\n\nWith your cock stuffed into Valeria's warm, gooey innards, the goo-girl makes a show of rocking herself back and forth in your lap, using her entire bottom like one sopping-wet cunt riding your cock.  With her own rod in hand, she pushes down, letting the base of her prick shift down her body until it bends around your hips and pops back into form just above your [if (assholeOffLimits = true) [vagina]|[butt]].  Your eyes go wide, but when you try to yelp, Val roughly shoves one of her feet into your mouth.  \"<i>Shh, partner,</i>\" she laughs, flicking your tongue with her soft, citrusy toes, \"<i>just let it happen... It'll be good, I promise.</i>\"");
 		
-		outputText("\n\nResigned, you let the goo-girl have her way.  You try your best to relax as her goo-cock slithers between your ass-cheeks, her prick remaining just hard enough for her to hotdog herself between your cheeks.  But rather than penetrate, she instead seems content for the moment to rock her hips in your lap, riding your " + cockDescript(0) + " and fucking your butt-cheeks with her own rod.  As she rides you, Valeria slips a little more foot into your mouth, pouring her leg into you until you get the hint and start to suckle her dainty toes, easily slipping your tongue into her soft body to taste her insides.");
-		outputText("\n\nJust as you're getting into the rhythm of things, you feel a sudden pressure against your [asshole].  Oh, shit.  You squirm and try to relax yourself, but surprisingly, you don't feel the hard pinch of a cock's insertion.  Instead, Valeria pours a tiny trickle of herself into your anus, slowly but surely stretching you out as her cock inflates half-way inside you.  You groan in pleasure as she stretches you out and redoubles her pace on your " + cockDescript(0));
+		outputText("\n\nResigned, you let the goo-girl have her way.  You try your best to relax as her goo-cock slithers between your [if (assholeOffLimits = true) thighs|ass-cheeks], her prick remaining just hard enough for her to [if (assholeOffLimits = true) rub herself along your slit|hotdog herself between your cheeks].  But rather than penetrate, she instead seems content for the moment to rock her hips in your lap, riding your " + cockDescript(0) + " and [if (assholeOffLimits = true) gliding along your dripping gash|fucking your butt-cheeks] with her own rod.  As she rides you, Valeria slips a little more foot into your mouth, pouring her leg into you until you get the hint and start to suckle her dainty toes, easily slipping your tongue into her soft body to taste her insides.");
+		outputText("\n\nJust as you're getting into the rhythm of things, you feel a sudden pressure against your [if (assholeOffLimits = true) [vagina]|[asshole]].  Oh, [if (assholeOffLimits = true) yes|shit].  You squirm and try to relax yourself, but surprisingly, you don't feel the [if (assholeOffLimits = true) solid thrust|hard pinch] of a cock's insertion.  Instead, Valeria pours a tiny trickle of herself into your [if (assholeOffLimits = true) vagina|anus], slowly but surely stretching you out as her cock inflates half-way inside you.  You groan in pleasure as she stretches you out and redoubles her pace on your " + cockDescript(0));
 		//(if Herm: [
-		if(player.hasVagina()) {
+		if(player.hasVagina() && !assholeOffLimits()) {
 			player.cuntChange(10,true,true,false);
 			outputText(", the double-attack's pleasure is so great that you barely even notice her creating a second cock above the first and pouring it into your unused [vagina], filling your last hole up with a firm, gooey cock");
 		}
 		outputText(".");
-		player.buttChange(10,true,true,false);
+        if(assholeOffLimits()) {
+			player.cuntChange(10,true,true,false);
+        }
+        else {
+    		player.buttChange(10,true,true,false);
+        }
 		
 		outputText("\n\nValeria begins to buck her hips in your lap, stuffing your hole");
-		if(player.hasVagina()) outputText("s");
+		if(player.hasVagina() && !assholeOffLimits()) outputText("s");
 		outputText(" and fucking your " + cockDescript(0) + " with one fluid, passionate motion.  You're both moaning openly now, nearly overwhelmed by a multitude of pleasures.  You can feel your impending orgasm rising, and by the heightening pitch of Valeria's moans, she seems to be just as close to the edge."); 
 		outputText("\n\nYou cum, screaming as you unload into Valeria's depths.  You can see your cum spurting into her, swirling and dancing in her brightly-colored, transparent body.  She echoes your cry as you feel hot goo squirting into you, her cock");
-		if(player.hasVagina()) outputText("s");
-		outputText(" literally popping as she climaxes, filling your stretched ass ");
-		if(player.hasVagina()) outputText("and vag ");
+		if(player.hasVagina() && !assholeOffLimits()) outputText("s");
+		outputText(" literally popping as she climaxes, filling your stretched [if (assholeOffLimits = true) vag|ass] ");
+		if(player.hasVagina() && !assholeOffLimits()) outputText("and vag ");
 		outputText("with warm, sticky goop.");
 	}
 	//(If PC is Genderless OR [Gooflation])
