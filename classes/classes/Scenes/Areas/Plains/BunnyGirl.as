@@ -98,6 +98,7 @@ private function talkToBunnyBunBun():void {
 	outputText("In no time flat she's on her back, playing with herself and lifting her balls to expose a bubblegum-pink gash.  You could 'help' her with that or you could leave.  Of course if you leave you doubt you'll find her again.  Maybe a good fucking will clear her head long enough for her to figure out how to leave this land and return to wherever she came from?\n\n", false);
 	outputText("(If you're going to sex her, which of her body parts will you use?", false);
 	var DickInV:Function = null;
+	var DickInA:Function = null;
 	var Vagina:Function = null;
 	var sixtyNine:Function = null;
 	//Dick requires one 40 area or smaller.
@@ -114,10 +115,14 @@ private function talkToBunnyBunBun():void {
 		sixtyNine = bunbun69;
 		outputText("  Sixty-nine her?", false);
 	}
-	outputText("  Her dick in your ass?)", false);
+	if(!assholeOffLimits()) {
+		DickInA = bunbunFucksPCInAss;
+		outputText("  Her dick in your ass?", false);
+	}
+    outputText(")", false);
 	//var Ass:Number = 0;
 	//Dick In V] [Dick in A] [Vagina] [Ass] [Leave]
-	simpleChoices("DickInVag",DickInV,"DickInAss",bunbunFucksPCInAss,"Vagina",Vagina,"69",sixtyNine,"Leave",13);
+	simpleChoices("DickInVag",DickInV,"DickInAss",DickInA,"Vagina",Vagina,"69",sixtyNine,"Leave",13);
 	dynStats("lus", 5+player.lib/20);
 }
 //[Rape Her]
@@ -142,6 +147,7 @@ private function rapeBunBun():void {
 		dynStats("lus", 10, "cor", 3);
 		outputText("(If you're going to sex her, which of her body parts will you use?", false);
 		var DickInV:Function = null;
+    	var DickInA:Function = null;
 		var Vagina:Function = null;
 		var sixtyNine:Function = null;
 		//Dick requires one 40 area or smaller.
@@ -158,10 +164,14 @@ private function rapeBunBun():void {
 			sixtyNine = bunbun69;
 			outputText("  Sixty-nine her?", false);
 		}
-		outputText("  Her dick in your ass?)", false);
+    	if(!assholeOffLimits()) {
+    		DickInA = bunbunFucksPCInAss;
+    		outputText("  Her dick in your ass?", false);
+    	}
+        outputText(")", false);
 		//var Ass:Number = 0;
 		//Dick In V] [Dick in A] [Vagina] [Ass] [Leave]
-		simpleChoices("DickInVag",DickInV,"DickInAss",bunbunFucksPCInAss,"Vagina",Vagina,"69",sixtyNine,"Leave",13);
+		simpleChoices("DickInVag",DickInV,"DickInAss",DickInA,"Vagina",Vagina,"69",sixtyNine,"Leave",13);
 
 	}
 }

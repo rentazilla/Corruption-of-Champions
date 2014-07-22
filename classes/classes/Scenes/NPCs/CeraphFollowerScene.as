@@ -137,7 +137,7 @@ package classes.Scenes.NPCs
 				outputText("You could make her lick your pussy.  ", false);
 				femaleFuck = followerCeraphTongueFucking;
 			}
-			if (player.hasCock() && player.hasVagina() && player.lust >= 33) {
+			if (player.hasCock() && player.hasVagina() && player.lust >= 33 && !assholeOffLimits()) {
 				outputText("You could command her to please all of your organs.  ", false);
 				hermFuck = ceraphTentacleGrape;
 			}

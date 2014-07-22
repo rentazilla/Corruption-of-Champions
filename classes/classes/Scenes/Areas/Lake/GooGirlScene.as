@@ -310,6 +310,9 @@ package classes.Scenes.Areas.Lake
 						sex2S = "Exhib.Fuck";
 						sex2N = exhibitionismGooGirlVictoryRape;
 					}
+                    if(assholeOffLimits()) {
+                        valeria = null;
+                    }
 				}
 				if (player.findPerk(PerkLib.Feeder) >= 0) {
 					sex4S = "Breastfeed";

@@ -136,8 +136,10 @@ public function fappingItems(menus:Boolean = true):Boolean {
 	if(player.hasKeyItem("Dildo") >= 0)
 	{
 		if(menus) {
-			addButton(button,"Anal Dildo",dildoButts);
-			button++;
+            if(!assholeOffLimits()) {
+    			addButton(button,"Anal Dildo",dildoButts);
+    			button++;
+            }
 			if(player.hasVagina()) 
 			{
 				addButton(button,"Dildo",stickADildoInYourVagooSlut);

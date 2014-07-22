@@ -1385,7 +1385,7 @@ private function arianSexMenu(output:Boolean = true):void {
 	}
 	//Get Anal:
 	//Arian must have a cock.
-	if(flags[kFLAGS.ARIAN_COCK_SIZE] > 0) addButton(1,"Anal - Catch",getButtWreckedByArian);
+	if(flags[kFLAGS.ARIAN_COCK_SIZE] > 0 && !assholeOffLimits()) addButton(1,"Anal - Catch",getButtWreckedByArian);
 	//Blow:
 	//Arian must have a cock.
 	if(flags[kFLAGS.ARIAN_COCK_SIZE] > 0) addButton(3,"Blow " + arianMF("Him","Her"),suckAriansDick);
