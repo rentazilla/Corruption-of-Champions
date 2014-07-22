@@ -2747,7 +2747,7 @@ public function tentacleSelfFuck():void {
 	outputText("\n\nRipples of delight radiate along your " + cockDescript(x) + " as it buries itself as deeply into your velvet tunnel as possible.  The fat, purplish head stretches you out as it goes, just enough that the trailing stalk is comfortably ensconced in twat.  Tugging on the exposed portion, you find yourself pumping wildly on your length, squeezing it while paroxysms of ecstasy render your fine muscle control useless.  The dual sensations of being fucked and dishing out a hot dicking have overlapped into a tangled-up knot inside you.");
 	if(y >= 0) {
 		outputText("  Your " + cockDescript(y) + " is getting jacked off by the engorged cock-coil's motions and slowly leaks creamy pre over the jerking length.");
-		if(player.cocks[y].cockType == CockTypesEnum.TENTACLE) {
+		if(player.cocks[y].cockType == CockTypesEnum.TENTACLE && !assholeOffLimits()) {
 			outputText("  In no time flat the second tendril has gotten the idea, and it elongates to reach for your unoccupied asshole.  There's a moment of token resistance before it violates your [asshole], but then, there's only the warm heat of a torrid butt-fuck.");
 			//BUTTCHANGE IF APPROPRIATE
 			player.buttChange(player.cockArea(y),true,true,false);
@@ -2760,7 +2760,7 @@ public function tentacleSelfFuck():void {
 	outputText(".");
 	if(player.lactationQ() >= 250) outputText("  Milk squirts from your engorged teat almost immediately to fall in a moist, creamy rain across your writhing form.");
 	//{no new PG}  Three + Tentalce fork - one in mouth
-	if(player.tentacleCocks() >= 3) {
+	if(player.tentacleCocks() >= assholeOffLimits(2, 3)) {
 		outputText("  The pleasured noises that have been issuing forth from your 'O'-gaped lips are cut off by a sudden intrusion from another of your arboreal phalluses.   This one punches straight into your throat without pause, sliding so smoothly across your tongue that you barely care about gagging when it feels so good.  Trickles of your sweet pre-cum are dribbling out from [eachCock] into your holes");
 		if(player.tentacleCocks() < player.cockTotal()) outputText(" and the open air");
 		outputText(".");
@@ -2780,7 +2780,7 @@ public function tentacleSelfFuck():void {
 		outputText("  You're fucking your armpits, and it feels divine, so good that your pits are swampy pits of sex within moments.");
 	}
 	//One more:
-	else if(player.tentacleCocks() >= 4) {
+	else if(player.tentacleCocks() >= assholeOffLimits(3, 4)) {
 		outputText("\n\nThe last green tool rises up above you.  It surveys the view before it in a crude approximation of a sentient surveyor, seeming to take in the shifting, squiggling view of your ardent masturbation.  In truth, you're just trying to think of where to stick it.  A droplet of liquid lust leaks from the tip in sympathetic pleasure, and it gives you the idea for just what to do with it.  It stretches out towards your torso but veers left at the last second.  Dripping onto your shoulder, the pulsating plant-prick slowly pushes into your armpit, lubricating your " + player.skinFurScales() + " with its amorous liquid.  You're fucking your armpit and it feels divine, so good that you quickly slick your pit and twist the spare cock around yourself so that it can double-fuck both sides.");
 	}
 	
@@ -2789,13 +2789,13 @@ public function tentacleSelfFuck():void {
 	if(player.balls > 0) outputText("balls");
 	else outputText("groin");
 	outputText(".  Orgasm is rapidly closing in, and there's no slowing your frenzied flora at this point.  You ");
-	if(player.tentacleCocks() >= 3) outputText("gurgle");
+	if(player.tentacleCocks() >= assholeOffLimits(2, 3)) outputText("gurgle");
 	else outputText("moan");
 	outputText(" as your inner muscles begin to contract into tight knots, the pressure building to a turgid, throbbing peak.  Then, as you");
 	if(player.tentacleCocks() >= 3) outputText("r multitude of penises");
 	outputText(" thrust deep inside yourself, a volcano of pleasure erupts, pumping thick flows of white goo straight into your snatch");
-	if(player.tentacleCocks() == 2) outputText(" and ass");
-	else if(player.tentacleCocks() > 2) outputText(", ass, and mouth");
+	if(player.tentacleCocks() == 2) outputText(assholeOffLimits("and mouth", " and ass"));
+	else if(player.tentacleCocks() > 2 && !assholeOffLimits()) outputText(", ass, and mouth");
 	outputText(".");
 	if(player.tentacleCocks() >= 3) {
 		outputText("  You gulp the salty flow down as best you are able");
@@ -2807,7 +2807,7 @@ public function tentacleSelfFuck():void {
 		outputText(".");
 	}
 	outputText("  Your birth canal is quickly flooded with white spooge");
-	if(player.tentacleCocks() >= 2) outputText(", while your [ass]'s interior is painted bright white");
+	if(player.tentacleCocks() >= 2 && !assholeOffLimits()) outputText(", while your [ass]'s interior is painted bright white");
 	outputText(".");
 	if(player.tentacleCocks() == 2) {
 		outputText("  Your untended " + cockDescript(y) + " blows spunk over you ");
@@ -2826,12 +2826,12 @@ public function tentacleSelfFuck():void {
 			outputText(".  The sensations coming from your prehensile penises are just so overwhelming that it's like a whole-body-gasm.");
 		}
 	}
-	if(player.tentacleCocks() >= 4) {
+	if(player.tentacleCocks() >= assholeOffLimits(3, 4)) {
 		outputText("  Meanwhile, the purple tip");
-		if(player.tentacleCocks() == 4) outputText("s swell");
+		if(player.tentacleCocks() == assholeOffLimits(3, 4)) outputText("s swell");
 		else outputText(" swells");
 		outputText(" in your armpit");
-		if(player.tentacleCocks() >= 5) outputText("s");
+		if(player.tentacleCocks() >= assholeOffLimits(4, 5)) outputText("s");
 		outputText(", engorging immensely as they press right into the soft, concave flesh within, the semen squirting out in pressured, arm-soaking jets.");
 	}
 	
@@ -2842,8 +2842,8 @@ public function tentacleSelfFuck():void {
 	if(player.tentacleCocks() == 1) outputText("its");
 	else outputText("their");
 	outputText(" normal length, popping out of your vagina");
-	if(player.tentacleCocks() == 2) outputText(" and ass");
-	else if(player.tentacleCocks() > 2) outputText(", ass, and mouth");
+	if(player.tentacleCocks() == 2) outputText(assholeOffLimits("and mouth", " and ass"));
+	else if(player.tentacleCocks() > 2 && !assholeOffLimits()) outputText(", ass, and mouth");
 	outputText(", leaving your orifice");
 	if(player.tentacleCocks() > 1) outputText("s");
 	outputText(" to dribble the spent passion on the ground.  Damn, that was satisfying.");
