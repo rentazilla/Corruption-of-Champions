@@ -420,7 +420,7 @@ private function MaraeIIStageII():void {
 		if(player.cumQ() > 1000) outputText("She's actually surprised when you keep fountaining more seed into her.  Her nipples start to squirt out the excess seed, but you keep cumming until she's squirted enough to soak herself with your jism.  ", false);
 		outputText("The goddess' tentacles never let up during it all, and you have a belly that matches Marae's perfectly.\n\n", false);
 
-		outputText("You slide out and slump over, utterly exhausted by the breeding session.  The goddess pulls her tentacles from your abused opening" + assholeOffLimits(", ""s") + ", marveling at the outflow of plant-spunk while you relax and pass out.  You feel her fold your hands around your belly to cradle the pregnant bulge, and then you're snoring contentedly.\n\n", false);
+		outputText("You slide out and slump over, utterly exhausted by the breeding session.  The goddess pulls her tentacles from your abused opening" + assholeOffLimits(", ", "s") + ", marveling at the outflow of plant-spunk while you relax and pass out.  You feel her fold your hands around your belly to cradle the pregnant bulge, and then you're snoring contentedly.\n\n", false);
 	}
 	//ONWARD TO NUMBER 3
 	doNext(MaraePt2RoundIIIPrizes);

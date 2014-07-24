@@ -346,7 +346,7 @@ private function nonAddictMinotaurGangBang():void {
 	
 	outputText("A huge, bloated mass stretches past your pussy lips, forcing out a squirt of girlcum and feminine lube.  ", false);
 	player.cuntChange(assholeOffLimits(90, 60),true,false,true);
-	outputText("The head flares wide as it squirts into your womb; warmth blooms from the uterine cum-deposit, turning your muscles slack, and setting off an orgasm of your own.  Your pussy ripples and squeezes at the invader" + assholeOffLimits("s filling it beyond capacity", ", matched in its orgasmic contractions by your cock-stuffed asshole")".  The minitaur behind you whines and hilts himself as hard as his relatively lithe body will allow, slapping his balls into his brother's slowly emptying cum-sacks.", false);
+	outputText("The head flares wide as it squirts into your womb; warmth blooms from the uterine cum-deposit, turning your muscles slack, and setting off an orgasm of your own.  Your pussy ripples and squeezes at the invader" + assholeOffLimits("s filling it beyond capacity", ", matched in its orgasmic contractions by your cock-stuffed asshole") + ".  The minitaur behind you whines and hilts himself as hard as his relatively lithe body will allow, slapping his balls into his brother's slowly emptying cum-sacks.", false);
 	if(player.hasCock()) {
 		outputText("  " + SMultiCockDesc() + " explodes against the minotaur's belly, weakly spurting ", false);
 		if(player.cumQ() < 25) outputText("a few spots of cum into his sweat-matted fur.", false);

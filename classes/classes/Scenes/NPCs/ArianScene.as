@@ -2227,7 +2227,7 @@ private function getPenetratedByArianAndHisHitlerMustache():void {
 		
 		outputText("\n\nYou take hold of [Arian eir] arms and pull [Arian em] up towards you, making the lizan lose [Arian eir] balance and fully penetrate you.");
 		//(Enlargement/Virginity loss messages)
-        if(assholeOffLimits) {
+        if(assholeOffLimits()) {
     		player.cuntChange(arianCockSize()*2,true,true,false);
         }
         else {
