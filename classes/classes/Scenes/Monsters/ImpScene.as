@@ -1692,7 +1692,7 @@ package classes.Scenes.Monsters
 				
 				var orifice:String = assholeOffLimits() ? "vagina" : "asshole";
 				
-				outputText("\n\nYou grin, getting a wicked idea likely due to the pleasurable haze breastfeeding has given you.  You wrap your lower body around the imp's toned hips.  He looks up questioningly, unsure of your intentions.  You simple smirk and nod at him. The little demon's eyes lit up like Christmas, and he immediately thrusts his " + eCockDescript(0) + " into your [" + orifice + "] with no hesitation.  The sudden stretching would've been painful; luckily the breastfeeding euphoria numbed much of the pain.");
+outputText("\n\nYou grin, getting a wicked idea likely due to the pleasurable haze breastfeeding has given you.  You wrap your lower body around the imp's toned hips.  He looks up questioningly, unsure of your intentions.  You simply smirk and nod at him. The little demon's eyes lit up like Christmas, and he immediately thrusts his " + eCockDescript(0) + " into your [" + orifice + "] with no hesitation.  The sudden stretching would've been painful; luckily the breastfeeding euphoria numbed much of the pain.");
 				if(assholeOffLimits()) {
 					player.cuntChange(monster.cockArea(0),true,true,false);
 				}
@@ -1717,7 +1717,7 @@ package classes.Scenes.Monsters
 				
 				outputText("\n\nAs the little demon suckles your second breast dry, you notice he's picked up the pace significantly.  You know what that means, and gently pull his head towards your [chest].  Cradling and petting his head, you clench your [" + orifice + "] encouragingly.  It only takes a few more thrusts for the imp to cum.  He floods your insides with his hot boy cream, and moans into your [chest].");
 				
-				outputText("\n\nAfter riding out his orgasm, the imp flops backwards onto the ground, his cock now semi hard and coated in his juices.  He gives his slightly bloated belly a gentle, content rub.  You chuckle at him as he falls asleep contentedly.");
+				outputText("\n\nAfter riding out his orgasm, the imp flops backwards onto the ground, his cock now semi-hard and coated in his juices.  He gives his slightly bloated belly a gentle, content rub.  You chuckle at him as he falls asleep contentedly.");
 				
 				outputText("\n\nYou pick yourself up, gather up your equipment and put your [armorName] back on.");
 				dynStats("lus", 50, "cor", 1);
