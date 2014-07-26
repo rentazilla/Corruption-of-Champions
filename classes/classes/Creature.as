@@ -299,10 +299,10 @@ import classes.PerkType;
 		private var _hoursSinceCum:Number = 0;
 		public function get hoursSinceCum():Number { return _hoursSinceCum; }
 		public function set hoursSinceCum(v:Number):void {
-			if (v == 0)
+			/*if (v == 0)
 			{
 				trace("noop");
-			}
+			}*/
 			_hoursSinceCum = v; 
 		}
 		
@@ -408,21 +408,18 @@ import classes.PerkType;
 			//keyItems = new Array();
 		}
 
-		[Deprecated]
-		public function resetDickEjaculateTimer():void
-		{
-			// Reset hoursSinceCum 
-			// trace("YOU IS JIZZING OMGLOLWTFBBQ!", this.hoursSinceCum)
-			this.hoursSinceCum = 0;
-		}
-
-		/**
-		 * Shorthand for lust=0 and resetDickEjaculateTimer, but in future can do other things (update statistics, do something perk-dependant etc)
-		 */
 		public function orgasm():void
 		{
 			game.dynStats("lus=",0,"res",false);
 			hoursSinceCum = 0;
+			
+			if (countCockSocks("gilded") > 0) {
+			
+				var randomCock:int = rand( cocks.length );
+				var bonusGems:int = rand( cocks[randomCock].cockThickness ) + countCockSocks("gilded"); // int so AS rounds to whole numbers
+				game.outputText("\n\nFeeling some minor discomfort in your " + cockDescript(randomCock) + " you slip it out of your [armor] and examine it. <b>With a little exploratory rubbing and massaging, you manage to squeeze out " + bonusGems + " gems from its cum slit.</b>" );
+				gems += bonusGems;
+	}
 		}
 
 		//Functions			
@@ -2194,7 +2191,7 @@ import classes.PerkType;
 		
 		public function hasSockRoom():Boolean
 		{
-			var index:int = cockTotal();
+			var index:int = cocks.length;
 			while (index > 0)
 			{
 				index--;
@@ -2204,19 +2201,33 @@ import classes.PerkType;
 			return false
 		}
 		
+		// Deprecated
 		public function hasSock(arg:String = ""):Boolean
 		{
-			var index:int = cockTotal();
+			var index:int = cocks.length;
+			
 			while (index > 0)
 			{
 				index--;
 				if (cocks[index].sock != "")
 				{
-					if (arg == "" || cocks[index].sock == arg)
-						return true;
+				if (arg == "" || cocks[index].sock == arg)
+					return true;
 				}
 			}
 			return false
+		}
+		public function countCockSocks(type:String):int
+		{
+			var count:int = 0;
+			
+			for (var i:Number = 0; i < cocks.length; i++) {
+				if (cocks[i].sock == type) {
+					count++
+				}
+			}
+			trace("countCockSocks found " + count + " " + type);
+			return count;
 		}
 		
 		public function canAutoFellate():Boolean
@@ -2789,6 +2800,10 @@ import classes.PerkType;
 			{
 				//trace("ERROR: removeBreastRow called but cocks do not exist.");
 			}
+			else if (breastRows.length == 1 || breastRows.length - totalRemoved < 1)
+			{
+				//trace("ERROR: Removing the current breast row would break the Creature classes assumptions about breastRow contents.");
+			}
 			else
 			{
 				if (arraySpot > breastRows.length - 1)
@@ -3359,17 +3374,6 @@ import classes.PerkType;
 			return fertilizedEggs();
 		}
 
-		public function increaseCock(increase:Number, cockNum:Number):Number
-		{
-			if (findPerk(PerkLib.BigCock) >= 0)
-				increase *= perk(findPerk(PerkLib.BigCock)).value1;
-			if (findPerk(PerkLib.PhallicPotential) >= 0)
-				increase *= 1.5;
-			if (findPerk(PerkLib.PhallicRestraint) >= 0)
-				increase *= .25;
-			return cocks[cockNum].growCock(increase);
-		}
-
 		public function breastCup(rowNum:Number):String
 		{
 			if (breastRows[rowNum].breastRating < 1)
@@ -3740,6 +3744,8 @@ import classes.PerkType;
 
 		public function canTitFuck():Boolean
 		{
+			if (breastRows.length == 0) return false;
+			
 			var counter:Number = breastRows.length;
 			var index:Number = 0;
 			while (counter > 0) {
@@ -3754,6 +3760,8 @@ import classes.PerkType;
 
 		public function mostBreastsPerRow():Number
 		{
+			if (breastRows.length == 0) return 2;
+			
 			var counter:Number = breastRows.length;
 			var index:Number = 0;
 			while (counter > 0) {

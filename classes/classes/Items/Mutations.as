@@ -93,8 +93,8 @@
 				if (player.cocks.length == 1) {
 					if (player.cocks[0].cockType != CockTypesEnum.DEMON) outputText("\n\nYour " + cockDescript(0) + " becomes shockingly hard.  It turns a shiny inhuman purple and spasms, dribbling hot demon-like cum as it begins to grow.", false);
 					else outputText("\n\nYour " + cockDescript(0) + " becomes shockingly hard.  It dribbles hot demon-like cum as it begins to grow.", false);
-					if (rand(4) == 0) temp = player.cocks[0].growCock(3);
-					else temp = player.cocks[0].growCock(1);
+					if (rand(4) == 0) temp = player.increaseCock(0, 3);
+					else temp = player.increaseCock(0, 1);
 					dynStats("int", 1, "lib", 2, "sen", 1, "lust", 5 + temp * 3, "cor", tainted ? 1 : 0);
 					if (temp < .5) outputText("  It stops almost as soon as it starts, growing only a tiny bit longer.", false);
 					if (temp >= .5 && temp < 1) outputText("  It grows slowly, stopping after roughly half an inch of growth.", false);
@@ -115,8 +115,8 @@
 							temp2 = temp;
 						}
 					}
-					if (int(Math.random() * 4) == 0) temp3 = player.cocks[temp2].growCock(3);
-					else temp3 = player.cocks[temp2].growCock(1);
+					if (int(Math.random() * 4) == 0) temp3 = player.increaseCock(temp2, 3);
+					else temp3 = player.increaseCock(temp2, 1);
 					if (tainted) dynStats("int", 1, "lib", 2, "sen", 1, "lus", 5 + temp * 3, "cor", 1);
 					else dynStats("int", 1, "lib", 2, "sen", 1, "lus", 5 + temp * 3);
 					//Grammar police for 2 cocks
@@ -156,7 +156,7 @@
 					temp = player.cocks.length;
 					while (temp > 0) {
 						temp--;
-						temp2 = player.cocks[temp].growCock(rand(3) + 2);
+						temp2 = player.increaseCock(temp, rand(3) + 2);
 						temp3 = player.cocks[temp].thickenCock(1);
 						if (temp3 < .1) player.cocks[temp].cockThickness += .05;
 					}
@@ -180,7 +180,7 @@
 				if (player.cocks.length == 1) {
 					outputText("\n\nYour cock fills to its normal size and begins growing... ", false);
 					temp3 = player.cocks[0].thickenCock(1);
-					temp2 = player.cocks[0].growCock(rand(3) + 2);
+					temp2 = player.increaseCock(0, rand(3) + 2);
 					player.lengthChange(temp2, 1);
 					//Display the degree of thickness change.
 					if (temp3 >= 1) {
@@ -352,7 +352,7 @@
 			else if (player.cor < 75) dynStats("cor", .5);
 			else dynStats("cor", .25);
 			outputText("\n\nIntermittent waves of numbness wash through your body, turning into a warm tingling that makes you feel sensitive all over.  The warmth flows through you, converging in your loins and bubbling up into lust.", false);
-			if (player.totalCocks() > 0) {
+			if (player.cocks.length > 0) {
 				outputText("  ", false);
 				if (player.cockTotal() == 1) outputText("Y", false);
 				else outputText("Each of y", false);
@@ -609,7 +609,7 @@
 					//Thickness too if small enough
 					if (player.cocks[selectedCock].cockThickness < 5) {
 						//Increase by 2 + rand(8), and store the actual amount in temp
-						temp = player.increaseCock(2 + rand(8), selectedCock);
+						temp = player.increaseCock(selectedCock, 2 + rand(8));
 						temp += player.cocks[selectedCock].thickenCock(1);
 						//Comment on length changes
 						if (temp > 6) outputText("\n\nGasping in sudden pleasure, your " + cockDescript(selectedCock) + " surges free of its sheath, emerging with over half a foot of new dick-flesh.", false);
@@ -621,7 +621,7 @@
 					//Just length...
 					else {
 						//Increase by 2 + rand(8), and store the actual amount in temp
-						temp = player.increaseCock(2 + rand(8), selectedCock);
+						temp = player.increaseCock(selectedCock, 2 + rand(8));
 						//Comment on length changes
 						if (temp > 6) outputText("\n\nGasping in sudden pleasure, your " + cockDescript(selectedCock) + " surges free of its sheath, emerging with over half a foot of new dick-flesh.", false);
 						if (temp <= 6 && temp >= 3) outputText("\n\nYou pant in delight as a few inches of " + cockDescript(selectedCock) + " pop free from your sheath, the thick new horse-flesh still slick and sensitive.", false);
@@ -648,7 +648,7 @@
 					//Text for dogdicks
 					if (player.cocks[selectedCock].cockType == CockTypesEnum.DOG) outputText("\n\nYour " + Appearance.dogDescript(selectedCock) + " begins to feel odd...  You pull down your clothes to take a look and see it darkening.  You feel a growing tightness in the tip of your " + Appearance.dogDescript(selectedCock) + " as it flattens, flaring outwards.  Your cock pushes out of your sheath, inch after inch of animal-flesh growing beyond its traditional size.  You notice your knot vanishing, the extra flesh pushing more fresh horsecock out from your sheath.  <b>Your hands are drawn to the strange new " + Appearance.horseDescript(selectedCock) + "</b>, and you jerk yourself off, splattering thick ropes of cum with intense force.", false);
 					player.cocks[selectedCock].cockType = CockTypesEnum.HORSE;
-					player.increaseCock(4, selectedCock);
+					player.increaseCock(selectedCock, 4);
 					dynStats("lib", 5, "sen", 4, "lus", 35);
 					outputText("<b>  You now have a");
 					if (player.horseCocks() > 1) outputText("nother")
@@ -656,15 +656,17 @@
 					changes++;
 				}
 			}
+			
 			//Males go into rut
 			if (rand(4) == 0) {
 				player.goIntoRut(true);
 			}
+			
 			//Anti-masturbation status
 			if (rand(4) == 0 && changes < changeLimit && player.findStatusAffect(StatusAffects.Dysfunction) < 0) {
-				if (player.totalCocks() > 0) outputText("\n\nYour " + cockDescript(0) + " tingles abruptly, then stops.  Worried, you reach down to check it, only to discover that it feels... numb.  It will be very hard to masturbate like this.", false);
+				if (player.cocks.length > 0) outputText("\n\nYour " + cockDescript(0) + " tingles abruptly, then stops.  Worried, you reach down to check it, only to discover that it feels... numb.  It will be very hard to masturbate like this.", false);
 				else if (player.hasVagina()) outputText("\n\nYour " + vaginaDescript(0) + " tingles abruptly, then stops.  Worried, you reach down to check it, only to discover that it feels... numb.  It will be very hard to masturbate like this.", false);
-				if (player.totalCocks() > 0 || player.hasVagina()) {
+				if (player.cocks.length > 0 || player.hasVagina()) {
 					player.createStatusAffect(StatusAffects.Dysfunction, 96, 0, 0, 0);
 					changes++;
 				}
@@ -974,28 +976,28 @@
 						if (player.cocks[0].cockType == CockTypesEnum.HUMAN) {
 							outputText("\n\nYour " + cockDescript(0) + " begins to feel strange... you pull down your pants to take a look and see it darkening as you feel a tightness near the base where your skin seems to be bunching up.  A sheath begins forming around your cock's base, tightening and pulling your cock inside its depths.  A hot feeling envelops your member as it suddenly grows into a horse penis, dwarfing its old size.  The skin is mottled brown and black and feels more sensitive than normal.  Your hands are irresistibly drawn to it, and you jerk yourself off, splattering cum with intense force.", false);
 							temp = player.addHorseCock();
-							temp2 = player.increaseCock(rand(4) + 4, temp);
+							temp2 = player.increaseCock(temp, rand(4) + 4);
 							temp3 = 1;
 							dynStats("lib", 5, "sen", 4, "lus", 35);
 						}
 						if (player.cocks[0].cockType == CockTypesEnum.DOG) {
 							temp = player.addHorseCock();
 							outputText("\n\nYour " + Appearance.dogDescript(0) + " begins to feel odd... you pull down your clothes to take a look and see it darkening.  You feel a growing tightness in the tip of your " + Appearance.dogDescript(0) + " as it flattens, flaring outwards.  Your cock pushes out of your sheath, inch after inch of animal-flesh growing beyond it's traditional size.  You notice your knot vanishing, the extra flesh pushing more horsecock out from your sheath.  Your hands are drawn to the strange new " + Appearance.horseDescript(0) + ", and you jerk yourself off, splattering thick ropes of cum with intense force.", false);
-							temp2 = player.increaseCock(rand(4) + 4, temp);
+							temp2 = player.increaseCock(temp, rand(4) + 4);
 							temp3 = 1;
 							dynStats("lib", 5, "sen", 4, "lus", 35);
 						}
 						if (player.cocks[0].cockType == CockTypesEnum.TENTACLE) {
 							temp = player.addHorseCock();
 							outputText("\n\nYour " + cockDescript(0) + " begins to feel odd... you pull down your clothes to take a look and see it darkening.  You feel a growing tightness in the tip of your " + cockDescript(0) + " as it flattens, flaring outwards.  Your skin folds and bunches around the base, forming an animalistic sheath.  The slick inhuman texture you recently had fades, taking on a more leathery texture.  Your hands are drawn to the strange new " + Appearance.horseDescript(0) + ", and you jerk yourself off, splattering thick ropes of cum with intense force.", false);
-							temp2 = player.increaseCock(rand(4) + 4, temp);
+							temp2 = player.increaseCock(temp, rand(4) + 4);
 							temp3 = 1;
 							dynStats("lib", 5, "sen", 4, "lus", 35);
 						}
 						if (player.cocks[0].cockType.Index > 4) {
 							outputText("\n\nYour " + cockDescript(0) + " begins to feel odd... you pull down your clothes to take a look and see it darkening.  You feel a growing tightness in the tip of your " + cockDescript(0) + " as it flattens, flaring outwards.  Your skin folds and bunches around the base, forming an animalistic sheath.  The slick inhuman texture you recently had fades, taking on a more leathery texture.  Your hands are drawn to the strange new " + Appearance.horseDescript(0) + ", and you jerk yourself off, splattering thick ropes of cum with intense force.", false);
 							temp = player.addHorseCock();
-							temp2 = player.increaseCock(rand(4) + 4, temp);
+							temp2 = player.cocks[temp](rand(4) + 4);
 							temp3 = 1;
 							dynStats("lib", 5, "sen", 4, "lus", 35);
 						}
@@ -1013,7 +1015,7 @@
 						//Already have a sheath
 						if (player.horseCocks() > 1 || player.dogCocks() > 0) outputText("  Your sheath tingles and begins growing larger as the cock's base shifts to lie inside it.", false);
 						else outputText("  You feel a tightness near the base where your skin seems to be bunching up.  A sheath begins forming around your " + cockDescript(temp) + "'s root, tightening and pulling your " + cockDescript(temp) + " inside its depths.", false);
-						temp2 = player.increaseCock(rand(4) + 4, temp);
+						temp2 = player.increaseCock(temp, rand(4) + 4);
 						outputText("  The shaft suddenly explodes with movement, growing longer and developing a thick flared head leaking steady stream of animal-cum.", false);
 						outputText("  <b>You now have a horse-cock.</b>", false);
 					}
@@ -1025,7 +1027,7 @@
 				else {
 					//single cock
 					if (player.cocks.length == 1) {
-						temp2 = player.increaseCock(rand(3) + 1, 0);
+						temp2 = player.increaseCock(0, rand(3) + 1);
 						temp = 0;
 						dynStats("sen", 1, "lus", 10);
 					}
@@ -1046,7 +1048,7 @@
 						}
 						//Grow smallest cock!
 						//temp2 changes to growth amount
-						temp2 = player.increaseCock(rand(4) + 1, temp);
+						temp2 = player.increaseCock(temp, rand(4) + 1);
 						dynStats("sen", 1, "lus", 10);
 					}
 					outputText("\n\n", false);
@@ -1382,7 +1384,7 @@
 							if (player.cocks[temp].cockThickness * 8 > player.cocks[temp].cockLength) player.cocks[temp].cockThickness -= .2;
 							if (player.cocks[temp].cockThickness < .5) player.cocks[temp].cockThickness = .5;
 						}
-						temp3 += player.cocks[temp].growCock((rand(3) + 1) * -1);
+						temp3 += player.increaseCock(temp, (rand(3) + 1) * -1);
 						outputText("\n\n", false);
 						player.lengthChange(temp3, 1);
 						if (player.cocks[temp].cockLength < 2) {
@@ -1417,7 +1419,7 @@
 					if (player.cocks[temp].cockLength < 6 && player.cocks[temp].cockLength >= 2.9) {
 						player.cocks[temp].cockLength -= .5;
 					}
-					temp3 = player.cocks[temp].growCock(-1 * (rand(3) + 1));
+					temp3 = player.increaseCock(temp, -1 * (rand(3) + 1));
 					player.lengthChange(temp3, 1);
 					if (player.cocks[temp].cockLength < 3) {
 						outputText("  ", false);
@@ -1876,7 +1878,7 @@
 					//GET LONGER
 					//single cock
 					if (player.cocks.length == 1) {
-						temp2 = player.increaseCock(rand(4) + 3, 0);
+						temp2 = player.increaseCock(0, rand(4) + 3);
 						temp = 0;
 						dynStats("sen", 1, "lus", 10);
 					}
@@ -1897,7 +1899,7 @@
 						}
 						//Grow smallest cock!
 						//temp2 changes to growth amount
-						temp2 = player.increaseCock(rand(4) + 3, temp);
+						temp2 = player.increaseCock(temp, rand(4) + 3);
 						dynStats("sen", 1, "lus", 10);
 						if (player.cocks[temp].cockThickness <= 2) player.cocks[temp].thickenCock(1);
 					}
@@ -2196,7 +2198,7 @@
 			if (player.cocks.length > 0) {
 				outputText("The food tastes strange and corrupt - you can't really think of a better word for it, but it's unclean.", false);
 				if (player.cocks[0].cockLength < 12) {
-					temp = player.increaseCock(rand(2) + 2, 0);
+					temp = player.increaseCock(0, rand(2) + 2);
 					outputText("\n\n", false);
 					player.lengthChange(temp, 1);
 				}
@@ -2764,7 +2766,7 @@
 						temp = player.cocks.length;
 						while (temp > 0) {
 							temp--;
-							temp2 = player.cocks[temp].growCock(rand(3) + 2);
+							temp2 = player.increaseCock(temp, rand(3) + 2);
 							temp3 = player.cocks[temp].thickenCock(1);
 						}
 						player.lengthChange(temp2, player.cocks.length);
@@ -2787,7 +2789,7 @@
 					if (player.cocks.length == 1) {
 						outputText("\n\nYour " + multiCockDescript() + " fills to its normal size... and begins growing... ", false);
 						temp3 = player.cocks[0].thickenCock(1);
-						temp2 = player.cocks[0].growCock(rand(3) + 2);
+						temp2 = player.increaseCock(0, rand(3) + 2);
 						player.lengthChange(temp2, 1);
 						//Display the degree of thickness change.
 						if (temp3 >= 1) {
@@ -2848,7 +2850,7 @@
 						temp = player.cocks.length;
 						while (temp > 0) {
 							temp--;
-							temp2 = player.cocks[temp].growCock(rand(3) + 5);
+							temp2 = player.increaseCock(temp, rand(3) + 5);
 							temp3 = player.cocks[temp].thickenCock(1.5);
 						}
 						player.lengthChange(temp2, player.cocks.length);
@@ -2871,7 +2873,7 @@
 					if (player.cocks.length == 1) {
 						outputText("\n\nYour " + multiCockDescript() + " fills to its normal size... and begins growing...", false);
 						temp3 = player.cocks[0].thickenCock(1.5);
-						temp2 = player.cocks[0].growCock(rand(3) + 5);
+						temp2 = player.increaseCock(0, rand(3) + 5);
 						player.lengthChange(temp2, 1);
 						//Display the degree of thickness change.
 						if (temp3 >= 1) {
@@ -3248,7 +3250,7 @@
 				dynStats("cor", temp / 10);
 			}
 			//Sex bits - Duderiffic
-			if (player.totalCocks() > 0 && rand(2) == 0 && !flags[kFLAGS.HYPER_HAPPY]) {
+			if (player.cocks.length > 0 && rand(2) == 0 && !flags[kFLAGS.HYPER_HAPPY]) {
 				//If the player has at least one dick, decrease the size of each slightly,
 				outputText("\n\n", false);
 				temp = 0;
@@ -3264,7 +3266,7 @@
 					player.cocks[temp].cockLength -= .5;
 					temp3 -= .5;
 				}
-				temp3 += player.cocks[temp].growCock((rand(3) + 1) * -1);
+				temp3 += player.increaseCock(temp, (rand(3) + 1) * -1);
 				player.lengthChange(temp3, 1);
 				if (player.cocks[temp].cockLength < 2) {
 					outputText("  ", false);
@@ -3284,7 +3286,7 @@
 					}
 				}
 				//if the last of the player's dicks are eliminated this way, they gain a virgin vagina;
-				if (player.totalCocks() == 0 && !player.hasVagina()) {
+				if (player.cocks.length == 0 && !player.hasVagina()) {
 					player.createVagina();
 					player.vaginas[0].vaginalLooseness = VAGINA_LOOSENESS_TIGHT;
 					player.vaginas[0].vaginalWetness = VAGINA_WETNESS_NORMAL;
@@ -3765,7 +3767,7 @@
 			}
 			//SEXYTIEMS
 			//Multidick killa!
-			if (player.totalCocks() > 1 && rand(3) == 0 && changes < changeLimit) {
+			if (player.cocks.length > 1 && rand(3) == 0 && changes < changeLimit) {
 				outputText("\n\n", false);
 				player.killCocks(1);
 				changes++;
@@ -3784,7 +3786,7 @@
 				outputText("\n\nYou feel strange.  Fertile... somehow.  You don't know how else to think of it, but you're ready to be a mother.", false);
 			}
 			//Shrink primary dick to no longer than 12 inches
-			else if (player.totalCocks() == 1 && rand(2) == 0 && changes < changeLimit && !flags[kFLAGS.HYPER_HAPPY]) {
+			else if (player.cocks.length == 1 && rand(2) == 0 && changes < changeLimit && !flags[kFLAGS.HYPER_HAPPY]) {
 				if (player.cocks[0].cockLength > 12) {
 					changes++;
 					var temp3:Number = 0;
@@ -3794,7 +3796,7 @@
 						player.cocks[0].cockLength -= .5;
 						temp3 -= .5;
 					}
-					temp3 += player.cocks[0].growCock((rand(3) + 1) * -1);
+					temp3 += player.increaseCock(0, (rand(3) + 1) * -1);
 					player.lengthChange(temp3, 1);
 				}
 			}
@@ -4559,27 +4561,33 @@
 				dynStats("lib", 1, "sen", .25);
 				changes++;
 			}
+			
 			//Sexual changes would go here if I wasn't a tard.
 			//Heat
-			if (and(4) == 0 && changes < changeLimit) {
-        var intensified:Boolean = player.inHeat;
+			if (rand(4) == 0 && changes < changeLimit) 
+			{
+				var intensified:Boolean = player.inHeat;
         
-        if(player.goIntoHeat(false)) {
-          if(intensified) {
-  					if (rand(2) == 0) outputText("\n\nThe itch inside your " + vaginaDescript(0) + " is growing stronger, and you desperately want to find a nice cock to massage the inside.", false);
-  					else outputText("\n\nThe need inside your " + vaginaDescript(0) + " grows even stronger.  You desperately need to find a mate to 'scratch your itch' and fill your womb with kittens.  It's difficult NOT to think about a cock slipping inside your moist fuck-tunnel, and at this point you'll have a hard time resisting ANY male who approaches.", false);
-          }
-          else {
-  					outputText("\n\nThe interior of your " + vaginaDescript(0) + " clenches tightly, squeezing with reflexive, aching need.  Your skin flushes hot ", false);
-  					if (player.skinType == SKIN_TYPE_FUR) outputText("underneath your fur ", false);
-  					outputText("as images and fantasies ", false);
-  					if (player.cor < 50) outputText("assault ", false);
-  					else outputText("fill ", false);
-  					outputText(" your mind.  Lithe cat-boys with their perfect, spine-covered cocks line up behind you, and you bend over to present your needy pussy to them.  You tremble with the desire to feel the exotic texture of their soft barbs rubbing your inner walls, smearing your " + vaginaDescript(0) + " with their cum as you're impregnated.  Shivering, you recover from the fantasy and pull your fingers from your aroused sex.  <b>It would seem you've gone into heat!</b>", false);
-          }
-  				changes++;
-        }
+				if (player.goIntoHeat(false)) 
+				{
+					if (intensified) 
+					{
+						if (rand(2) == 0) outputText("\n\nThe itch inside your " + vaginaDescript(0) + " is growing stronger, and you desperately want to find a nice cock to massage the inside.", false);
+						else outputText("\n\nThe need inside your " + vaginaDescript(0) + " grows even stronger.  You desperately need to find a mate to 'scratch your itch' and fill your womb with kittens.  It's difficult NOT to think about a cock slipping inside your moist fuck-tunnel, and at this point you'll have a hard time resisting ANY male who approaches.", false);
+					}
+					else 
+					{
+						outputText("\n\nThe interior of your " + vaginaDescript(0) + " clenches tightly, squeezing with reflexive, aching need.  Your skin flushes hot ", false);
+						if (player.skinType == SKIN_TYPE_FUR) outputText("underneath your fur ", false);
+						outputText("as images and fantasies ", false);
+						if (player.cor < 50) outputText("assault ", false);
+						else outputText("fill ", false);
+						outputText(" your mind.  Lithe cat-boys with their perfect, spine-covered cocks line up behind you, and you bend over to present your needy pussy to them.  You tremble with the desire to feel the exotic texture of their soft barbs rubbing your inner walls, smearing your " + vaginaDescript(0) + " with their cum as you're impregnated.  Shivering, you recover from the fantasy and pull your fingers from your aroused sex.  <b>It would seem you've gone into heat!</b>", false);
+					}
+					changes++;
+				}
 			}
+			
 			//Shrink the boobalies down to A for men or C for girls.
 			if (changes < changeLimit && rand(4) == 0 && !flags[kFLAGS.HYPER_HAPPY]) {
 				temp2 = 0;
@@ -4654,7 +4662,7 @@
 					//Check for any more!
 					temp2 = 0;
 					j++;
-					for (j; j < player.totalCocks(); j++) {
+					for (j; j < player.cocks.length; j++) {
 						//Found another cat wang!
 						if (player.cocks[j].cockType == CockTypesEnum.CAT) {
 							//Long enough - change it
@@ -4797,9 +4805,9 @@
 			if (player.lib < 100 && changes < changeLimit && rand(3) == 0) {
 				outputText("\n\nA knot of fire in your gut doubles you over but passes after a few moments.  As you straighten you can feel the heat seeping into you, ", false);
 				//(DICK)
-				if (player.totalCocks() > 0 && (player.gender != 3 || rand(2) == 0)) {
+				if (player.cocks.length > 0 && (player.gender != 3 || rand(2) == 0)) {
 					outputText("filling ", false);
-					if (player.totalCocks() > 1) outputText("each of ", false);
+					if (player.cocks.length > 1) outputText("each of ", false);
 					outputText("your " + multiCockDescriptLight() + " with the desire to breed.  You get a bit hornier when you realize your sex-drive has gotten a boost.", false);
 				}
 				//(COOCH)
@@ -4839,7 +4847,7 @@
 			//-Lizard dick - first one
 			if (player.lizardCocks() == 0 && player.cockTotal() > 0 && changes < changeLimit && rand(4) == 0) {
 				//Find the first non-lizzy dick
-				for (temp2 = 0; temp2 < player.totalCocks(); temp2++) {
+				for (temp2 = 0; temp2 < player.cocks.length; temp2++) {
 					//Stop loopahn when dick be found
 					if (player.cocks[temp2].cockType != CockTypesEnum.LIZARD) break;
 				}
@@ -4868,7 +4876,7 @@
 			//Requires 1 lizard cock, multiple cocks
 			if (player.cockTotal() > 1 && player.lizardCocks() > 0 && player.cockTotal() > player.lizardCocks() && rand(4) == 0 && changes < changeLimit) {
 				outputText("\n\nA familiar tingle starts in your crotch, and before you can miss the show, you pull open your " + player.armorName + ".  As if operating on a cue, ", false);
-				for (temp2 = 0; temp2 < player.totalCocks(); temp2++) {
+				for (temp2 = 0; temp2 < player.cocks.length; temp2++) {
 					//Stop loopahn when dick be found
 					if (player.cocks[temp2].cockType != CockTypesEnum.LIZARD) break;
 				}
@@ -4889,7 +4897,7 @@
 				dynStats("lib", 3, "lus", 10);
 			}
 			//-Grows second lizard dick if only 1 dick
-			if (player.lizardCocks() == 1 && player.totalCocks() == 1 && rand(4) == 0 && changes < changeLimit) {
+			if (player.lizardCocks() == 1 && player.cocks.length == 1 && rand(4) == 0 && changes < changeLimit) {
 				outputText("\n\nA knot of pressure forms in your groin, forcing you off your " + player.feet() + " as you try to endure it.  You examine the affected area and see a lump starting to bulge under your " + player.skinDesc + ", adjacent to your " + cockDescript(0) + ".  The flesh darkens, turning purple", false);
 				if (player.skinType == SKIN_TYPE_FUR || player.skinType == SKIN_TYPE_SCALES)
 					outputText(" and shedding " + player.skinDesc, false);
@@ -6886,7 +6894,7 @@
 			}
 
 			//dog cocks!
-			if (changes < changeLimit && rand(3) == 0 && player.dogCocks() < player.totalCocks()) {
+			if (changes < changeLimit && rand(3) == 0 && player.dogCocks() < player.cocks.length) {
 				var choices:Array = [];
 				counter = player.cockTotal();
 				while (counter > 0) {
@@ -7424,39 +7432,44 @@
 			clearOutput();
 			outputText("Curiosity gets the best of you, and you decide to open the package.  After all, what's the worst that could happen?\n\n");
 			//Opening the gift randomly results in one of the following:
-			var choice:int = rand(12);
 			menuLoc = 28;
+			
+			switch(rand(12)) {
 			//[Fox Jewel]
-			if (choice == 0) {
+				case 0: 
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and to your delight, sitting in the center is a small teardrop-shaped jewel!");
 				outputText("\n\n<b>You've received a shining Fox Jewel from the kitsune's gift!  How generous!</b>  ");
 				inventory.takeItem(consumables.FOXJEWL, false);
-			}
+				break;
+
 			//[Fox Berries]
-			else if (choice == 1) {
+				case 1:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and to your delight, there is a small cluster of orange-colored berries sitting in the center!");
 				outputText("\n\n<b>You've received a fox berry from the kitsune's gift!  How generous!</b>  ");
 				//add Fox Berries to inventory
 				inventory.takeItem(consumables.FOXBERY, false);
-			}
+				break;
+
 			//[Gems]
-			else if (choice == 2) {
+				case 2:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and to your delight, it is filled to the brim with shining gems!");
 				var gems:int = 2 + rand(20);
 				outputText("\n\n<b>You've received " + num2Text(gems) + " shining gems from the kitsune's gift!  How generous!</b>");
 				player.gems += gems;
 				//add X gems to inventory
 				statScreenRefresh();
-			}
+				break;
+
 			//[Kitsune Tea/Scholar's Tea] //Just use Scholar's Tea and drop the "trick" effect if you don't want to throw in another new item.
-			else if (choice == 3) {
+				case 3:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and to your delight, it contains a small bag of dried tea leaves!");
 				outputText("\n\n<b>You've received a bag of tea from the kitsune's gift!  How thoughtful!</b>  ");
 				//add Kitsune Tea/Scholar's Tea to inventory
 				inventory.takeItem(consumables.SMART_T, false);
-			}
+				break;
+
 			//[Hair Dye]
-			else if (choice == 4) {
+				case 4:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and to your delight, it contains a small vial filled with hair dye!");
 				var itype:ItemType = [
 					consumables.RED_DYE,
@@ -7468,55 +7481,65 @@
 				outputText("\n\n<b>You've received " + itype.longName + " from the kitsune's gift!  How generous!</b>  ");
 				//add <color> Dye to inventory
 				inventory.takeItem(itype, false);
-			}
+				break;
+
 			//[Knowledge Spell]
-			else if (choice == 5) {
+				case 5:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, but it seems like there's nothing else inside.  As you peer into the box, a glowing circle filled with strange symbols suddenly flashes to life!  Light washes over you, and your mind is suddenly assaulted with new knowledge...  and the urge to use that knowledge for mischief!");
 
 				outputText("\n\n<b>The kitsune has shared some of its knowledge with you!</b>  But in the process, you've gained some of the kitsune's promiscuous trickster nature...");
 				//Increase INT and Libido, +10 LUST
 				dynStats("int", 4, "sen", 2, "lus", 10);
-			}
+				break;
+
 			//[Thief!]
-			else if (choice == 6) {
+				case 6:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and sitting in the center is an artfully crafted paper doll.  Before your eyes, the doll springs to life, dancing about fancifully.  Without warning, it leaps into your item pouch, then hops away and gallavants into the woods, carting off a small fortune in gems.");
 
 				outputText("\n\n<b>The kitsune's familiar has stolen your gems!</b>");
 				// Lose X gems as though losing in battle to a kitsune
 				player.gems -= 2 + rand(15);
 				statScreenRefresh();
-			}
+				break;
+
 			//[Prank]
-			else if (choice == 7) {
+				case 7:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and sitting in the center is an artfully crafted paper doll.  Before your eyes, the doll springs to life, dancing about fancifully.  Without warning, it pulls a large calligraphy brush from thin air and leaps up into your face, then hops away and gallavants off into the woods.  Touching your face experimentally, you come away with a fresh coat of black ink on your fingertips.");
 
 				outputText("\n\n<b>The kitsune's familiar has drawn all over your face!</b>  The resilient marks take about an hour to completely scrub off in the nearby stream.  You could swear you heard some mirthful snickering among the trees while you were cleaning yourself off.");
 				//Advance time 1 hour, -20 LUST
 				dynStats("lus", -20);
-			}
+				break;
+
 			//[Aphrodisiac]
-			else if (choice == 8) {
+				case 8:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and sitting in the center is an artfully crafted paper doll.  Before your eyes, the doll springs to life, dancing about fancifully.  Without warning, it tosses a handful of sweet-smelling pink dust into your face, then hops over the rim of the box and gallavants off into the woods.  Before you know what has happened, you feel yourself growing hot and flushed, unable to keep your hands away from your groin.");
 				outputText("\n\n<b>Oh no!  The kitsune's familiar has hit you with a powerful aphrodisiac!  You are debilitatingly aroused and can think of nothing other than masturbating.</b>");
 				//+100 LUST
 				dynStats("lus=", 100, "resisted", false);
-			}
+				break;
+
 			//[Wither]
-			else if (choice == 9) {
+				case 9:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, and sitting in the center is an artfully crafted paper doll.  Before your eyes, the doll springs to life, dancing about fancifully.  Without warning, it tosses a handful of sour-smelling orange powder into your face, then hops over the rim of the box and gallavants off into the woods.  Before you know what has happened, you feel the strength draining from your muscles, withering away before your eyes.");
 				outputText("\n\n<b>Oh no!  The kitsune's familiar has hit you with a strength draining spell!  Hopefully it's only temporary...</b>");
 				dynStats("str", -5, "tou", -5);
-			}
+				break;
+
 			//[Dud]
-			else if (choice == 10) {
+				case 10:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, but to your disappointment, the only other contents appear to be nothing more than twigs, leaves, and other forest refuse.");
 				outputText("\n\n<b>It seems the kitsune's gift was just a pile of useless junk!  What a ripoff!</b>");
-			}
+				break;
+
 			//[Dud...  Or is it?]
-			else {
+				case 11:
 				outputText("As the paper falls away, you carefully lift the cover of the box, your hands trembling nervously.  The inside of the box is lined with purple velvet, but to your disappointment, the only other contents appear to be nothing more than twigs, leaves, and other forest refuse.  Upon further investigation, though, you find a shard of shiny black chitinous plating mixed in with the other useless junk.");
-				outputText("\n\n<b>It seems the kitsune's gift was just a pile of useless junk!  At least you managed to salvage a shard of black chitin from it...</b>  ");
+					outputText("\n\n<b>At least you managed to salvage a shard of black chitin from it...</b>  ");
 				inventory.takeItem(useables.B_CHITN, false);
+				break;
+
+				default: trace("Kitsune's gift roll foobar..."); break;
 			}
 		}
 
@@ -7723,7 +7746,7 @@
 							if (player.cocks[temp].cockThickness < .5) player.cocks[temp].cockThickness = .5;
 						}
 						player.cocks[temp].cockLength -= 0.5;
-						player.cocks[temp].growCock(Math.round(player.cocks[temp].cockLength * 0.33) * -1);
+						player.increaseCock(temp, Math.round(player.cocks[temp].cockLength * 0.33) * -1);
 					}
 					temp++;
 				}
@@ -8721,72 +8744,72 @@
 			}
 		}
 		
-    public function liquidVirgin(player:Player):void {
-    	clearOutput();
-	
-    	outputText("You pop open the flask and tip it into your mouth. The thick, pink-tinged liquid within coats your tongue and throat with a salty, metallic tang on the way down.  ");
-	
-    	if(player.hasVagina() && !player.vaginas[0].virgin) {
-    		outputText("You're soon bent double, hands pressed to your cramping pelvis, as you feel a series of unusual sensations between your legs: your [cunt] clenches hard on nothing, then ");
-		
-    		if(player.vaginas[0].vaginalLooseness > 0) {
-    			outputText("it relaxes without moving at all, ")
-    			player.vaginas[0].vaginalLooseness = 0;
-    			player.removeStatusAffect(StatusAffects.CuntStretched);
-    		}
-    		if(player.vaginas[0].vaginalWetness > 1) {
-    			outputText("most of the moisture inside you seems to be wicked away through your inner walls, ")
-    			player.vaginas[0].vaginalWetness = 1;				
-    		}
-    		if(!player.vaginas[0].virgin) {
-    			outputText("you feel an odd sort of tug at a point a few inches inside you, ")
-    			player.vaginas[0].virgin = true;
-    		}
-		
-    		outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
-		
-    		outputText("Tentatively, you slip your hands lower, working a finger inside yourself with some effort, pressing it in until you encounter a barrier, confirming your suspicions. <b>You've regained your virginity!</b>");
-    	}
-    	else if(player.ass.analLooseness != 0) {
-    		outputText("You're soon bent double, hands pressed to your cramping gut, as you feel a series of unusual sensations between your [butt] cheeks: your [ass] clenches hard on nothing, then ")
-		
-    		if(player.ass.analWetness > 0) {
-    			outputText("the moisture inside you seems to be wicked away through your inner walls, ")
-    			player.ass.analWetness = 0;
-    		}
-		
-    		if(player.ass.analLooseness > 0) {
-    			outputText("it relaxes without moving at all, ");
-    			player.ass.analLooseness = 0;
-    			player.removeStatusAffect(StatusAffects.ButtStretched);
-    		}
-		
-    		outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
-		
-    		outputText("Tentatively, you slip your hands lower and around, sliding a finger over your sensitive--and unbelievably tight--rear entrance, confirming your suspicions. <b>You've regained your anal virginity!</b>");
-    	}
-    	else {
-    		outputText("Though a wave of lust washes over you, you feel no other effect.");
-    	}
-	
-    	dynStats("lus+", 10, "cor+", 2);
-			
-    	// One in three times, we go into heat or rut
-    	if(rand(3) == 0) {
-    		// In case this character is a herm, we'll randomize the order we try to enter heat or rut.
-    		if(rand(2) == 0) {
-    			// Try heat first
-    			if(!player.goIntoHeat(true)) {
-    				player.goIntoRut(true);
-    			}
-    		}
-    		else {
-    			// Try rut first
-    			if(!player.goIntoRut(true)) {
-    				player.goIntoHeat(true);
-    			}
-    		}
-    	}
-    }
+        public function liquidVirgin(player:Player):void {
+            clearOutput();
+            
+            outputText("You pop open the flask and tip it into your mouth. The thick, pink-tinged liquid within coats your tongue and throat with a salty, metallic tang on the way down.  ");
+            
+            if(player.hasVagina() && !player.vaginas[0].virgin) {
+                outputText("You're soon bent double, hands pressed to your cramping pelvis, as you feel a series of unusual sensations between your legs: your [cunt] clenches hard on nothing, then ");
+                
+                if(player.vaginas[0].vaginalLooseness > 0) {
+                    outputText("it relaxes without moving at all, ")
+                    player.vaginas[0].vaginalLooseness = 0;
+                    player.removeStatusAffect(StatusAffects.CuntStretched);
+                }
+                if(player.vaginas[0].vaginalWetness > 1) {
+                    outputText("most of the moisture inside you seems to be wicked away through your inner walls, ")
+                    player.vaginas[0].vaginalWetness = 1;        		
+                }
+                if(!player.vaginas[0].virgin) {
+                    outputText("you feel an odd sort of tug at a point a few inches inside you, ")
+                    player.vaginas[0].virgin = true;
+                }
+                
+                outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
+                
+                outputText("Tentatively, you slip your hands lower, working a finger inside yourself with some effort, pressing it in until you encounter a barrier, confirming your suspicions. <b>You've regained your virginity!</b>");
+            }
+            else if(player.ass.analLooseness != 0) {
+                outputText("You're soon bent double, hands pressed to your cramping gut, as you feel a series of unusual sensations between your [butt] cheeks: your [ass] clenches hard on nothing, then ")
+                
+                if(player.ass.analWetness > 0) {
+                    outputText("the moisture inside you seems to be wicked away through your inner walls, ")
+                    player.ass.analWetness = 0;
+                }
+                
+                if(player.ass.analLooseness > 0) {
+                    outputText("it relaxes without moving at all, ");
+                    player.ass.analLooseness = 0;
+                    player.removeStatusAffect(StatusAffects.ButtStretched);
+                }
+                
+                outputText("and a wave of lust radiates from your clearly altered hole.\n\n");
+                
+                outputText("Tentatively, you slip your hands lower and around, sliding a finger over your sensitive--and unbelievably tight--rear entrance, confirming your suspicions. <b>You've regained your anal virginity!</b>");
+            }
+            else {
+                outputText("Though a wave of lust washes over you, you feel no other effect.");
+            }
+            
+            dynStats("lus+", 10, "cor+", 2);
+        	
+            // One in three times, we go into heat or rut
+            if(rand(3) == 0) {
+                // In case this character is a herm, we'll randomize the order we try to enter heat or rut.
+                if(rand(2) == 0) {
+                	// Try heat first
+                	if(!player.goIntoHeat(true)) {
+                		player.goIntoRut(true);
+                	}
+                }
+                else {
+                	// Try rut first
+                	if(!player.goIntoRut(true)) {
+                		player.goIntoHeat(true);
+                	}
+                }
+            }
+        }
 	}
 }
